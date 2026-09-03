@@ -1,0 +1,5 @@
+.DS_Store
+*.swp
+
+# Redundant with the extracted grok-assets/ folder
+grok-assets.zip
