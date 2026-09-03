@@ -938,9 +938,11 @@
       gameSec.hidden = isSite;
       siteBtn.setAttribute('aria-pressed', String(isSite));
       gameBtn.setAttribute('aria-pressed', String(!isSite));
+      try{ history.replaceState(null, '', isSite ? '#site' : '#game'); }catch(e){}
     }
     siteBtn.addEventListener('click', function(){ show('site'); });
     gameBtn.addEventListener('click', function(){ show('game'); });
+    if(location.hash === '#game'){ show('game'); }
 
     /* ---- illustrated scene player ---- */
     var SCENES = [

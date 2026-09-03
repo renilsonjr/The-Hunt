@@ -4,6 +4,13 @@
 
 A science-fiction novel in development, plus early product concepts for adapting it.
 
+### ▶ [Open the site](https://renilsonjr.github.io/The-Hunt/)
+
+| | |
+|---|---|
+| 🌗 **[Website concept](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html#site)** | The two worlds either side of the Barrier |
+| 🎮 **[Game concept](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html#game)** | Four playable scenes — pick a chapter, then a line |
+
 **The premise.** An ordinary man in Nor Yesey wakes carrying memories of a dream he was never meant to remember. He was selected — not chosen, *selected*, by a probability algorithm scanning billions of minds for a dormant strand of alien DNA — and used as a biological relay so an advanced sibling civilization could siphon the codes of creation from a god who cannot read thoughts, only words and dreams. The theft leaves him no longer entirely human, and the god he wants to warn has already severed the connection. To reach her, he must find the mirror of himself: a woman in another galaxy who carries a fragment of that same god, and violate her sleep exactly as his own was violated.
 
 ---
@@ -18,6 +25,7 @@ A science-fiction novel in development, plus early product concepts for adapting
 | [`book_roadmap.md`](book_roadmap.md) | Six-phase development plan from dream log to published illustrated novel |
 | [`grok-assets/`](grok-assets/) | 22 illustrations — character sheets, world plates, key scenes |
 | [`concepts/`](concepts/) | Interactive product concepts (below) |
+| [`index.html`](index.html) | Landing page served at [renilsonjr.github.io/The-Hunt](https://renilsonjr.github.io/The-Hunt/) |
 
 ---
 
@@ -33,7 +41,9 @@ Two anomalies mirror each other across the void. **Fridan**, an Earth 1 human ca
 
 ## Concepts
 
-[`concepts/worlds-of-the-hunt.html`](concepts/worlds-of-the-hunt.html) — a single self-contained page holding two directions for adapting the story. Open it in any browser; it needs no server and no network.
+**[Open them live →](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html)** ([website](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html#site) · [game](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html#game))
+
+[`concepts/worlds-of-the-hunt.html`](concepts/worlds-of-the-hunt.html) — a single self-contained page holding two directions for adapting the story. Every illustration is embedded, so it also opens straight from disk with no server and no network.
 
 **Website concept.** An interactive illustrated story site. The hero splits Earth 1 and Earth 2 either side of the Barrier, rendered as a live lightning seam; below it the four principals are presented as two mirrored pairs — each hybrid cracked open by the other world's color.
 
