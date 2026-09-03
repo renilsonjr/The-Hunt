@@ -148,7 +148,7 @@ After touching the Sphere and waking with memory:
 
 > *"In Earth 2, there is a female Virden named Uxies who carries a fragment of Zalian's DNA."*
 
-This is the story's second major narrative pillar (detailed fully in [second_lore_uxies.md](file:///Users/renilsonjr/.gemini/antigravity/brain/4fc7ec0c-3b48-4a39-a941-82bf9efe7901/second_lore_uxies.md)):
+This is the story's second major narrative pillar (detailed fully in `second_lore_uxies.md`):
 
 - **Uxies:** A female Virden citizen of Earth 2, living among the chaotic Virden society with a latent fragment of Zalian's DNA. She feels alienated and senses an inexplicable inner frequency/stillness that no other Virden experiences.
 - **Fridan's Discovery:** Fridan reverse-engineers the very mechanism Earth 2 used against him. Realizing that his Balian DNA anchored their dream infiltration, he deduces that a Virden carrying Zalian DNA can anchor a reverse transmission back to Zalian.
