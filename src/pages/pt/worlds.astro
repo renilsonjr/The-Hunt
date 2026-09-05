@@ -1,0 +1,51 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import WorldsSplit from '~/components/WorldsSplit.astro';
+
+const locale = 'pt' as const;
+---
+<StoryPage
+  locale={locale}
+  route="worlds"
+  title="Os Dois Mundos — The Hunt"
+  description="Terra 1 e Terra 2, o pacto que as separou, e a Barreira de ar que mata qualquer um que tente atravessar."
+  eyebrow="A cosmologia"
+  heading="Duas Terras, um véu"
+>
+  <WorldsSplit locale={locale}>
+    <Fragment slot="z-label">Terra 1</Fragment>
+    <Fragment slot="z-heading">O reino de Zalian</Fragment>
+    <Fragment slot="z-creed">Ordem · Lei · Pureza</Fragment>
+    <Fragment slot="z-body">
+      Zalian construiu a Terra 1 e a povoou com humanos puros, sem mistura com nada
+      mais. Ela os guia à distância, através dos sonhos e do que dizem em voz alta, e
+      não entra numa mente sem convite. Seu povo nunca soube que existe outro céu.
+    </Fragment>
+
+    <Fragment slot="b-label">Terra 2</Fragment>
+    <Fragment slot="b-heading">O reino de Balian</Fragment>
+    <Fragment slot="b-creed">Caos · Vontade · Hibridez</Fragment>
+    <Fragment slot="b-body">
+      Balian foi embora e levou seguidores consigo. O que construíram na Terra 2 são
+      os Virden — humanos e anjos caídos misturados, vivendo em convulsão permanente.
+      Balian vive fisicamente entre eles. O sofrimento os tornou rápidos: ultrapassaram
+      a Terra 1 por milênios.
+    </Fragment>
+
+    <Fragment slot="barrier-heading">A Barreira</Fragment>
+    <Fragment slot="barrier-body">
+      <p class="prose">
+        O que separa os dois mundos não é um muro. É o ar. Zalian pôs as atmosferas das
+        duas Terras uma contra a outra: um humano puro que respira o ar Virden morre, e um
+        Virden puro que respira o ar humano morre. Nenhuma frota atravessa isso. Nenhuma
+        arma resolve.
+      </p>
+      <p class="prose">
+        Existe exatamente uma falha. Um ser que carregue DNA dos dois lados consegue
+        respirar em qualquer um dos mundos — e, ao longo de um tempo imenso, dois deles
+        surgiram por acidente. É disso que a história inteira trata.
+      </p>
+    </Fragment>
+    <Fragment slot="figcaption">O Universo Abstrato esquematizado: dois autores, dois povos, um véu.</Fragment>
+  </WorldsSplit>
+</StoryPage>

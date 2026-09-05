@@ -1,0 +1,87 @@
+---
+// Shared markup and styling for the two-worlds split panel and the Barrier
+// section below it. Locale page pairs must not duplicate CSS: this component
+// owns the skeleton and every rule below, and each locale page supplies only
+// its own text through the named slots.
+//
+// Gold (var(--zalian)) is always Earth 1, violet (var(--balian)) is always
+// Earth 2 — the colours are semantic, never decorative.
+import Plate from '~/components/Plate.astro';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+<div class="split">
+  <section class="world z">
+    <p class="label"><slot name="z-label" /></p>
+    <h2><slot name="z-heading" /></h2>
+    <p class="creed"><slot name="z-creed" /></p>
+    <p><slot name="z-body" /></p>
+  </section>
+
+  <section class="world b">
+    <p class="label"><slot name="b-label" /></p>
+    <h2><slot name="b-heading" /></h2>
+    <p class="creed"><slot name="b-creed" /></p>
+    <p><slot name="b-body" /></p>
+  </section>
+</div>
+
+<section class="barrier">
+  <h2><slot name="barrier-heading" /></h2>
+  <slot name="barrier-body" />
+  <figure>
+    <Plate id="lore-diagram" locale={locale} sizes="(max-width: 900px) 92vw, 820px" />
+    <figcaption><slot name="figcaption" /></figcaption>
+  </figure>
+</section>
+
+<style>
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--hair);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .world { padding: clamp(1.4rem, 3vw, 2.2rem); }
+  .world p:last-child { color: var(--dim); margin-bottom: 0; }
+  .world.z { border-inline-end: 2px solid var(--zalian); }
+  .world.b { border-inline-start: 2px solid var(--balian); }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .z .label { color: var(--zalian); }
+  .b .label { color: var(--balian); }
+  .creed {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 1rem;
+  }
+  .barrier { margin-top: 3rem; }
+  figure { margin: 2rem 0 0; }
+  figure :global(img) { width: 100%; border-radius: 10px; border: 1px solid var(--hair); }
+  figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--dim);
+    margin-top: 0.7rem;
+  }
+  @media (max-width: 760px) {
+    .split { grid-template-columns: 1fr; }
+    .world.z { border-inline-end: none; border-bottom: 2px solid var(--zalian); }
+    .world.b { border-inline-start: none; }
+  }
+</style>

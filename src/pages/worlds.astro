@@ -1,0 +1,52 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import WorldsSplit from '~/components/WorldsSplit.astro';
+
+const locale = 'en' as const;
+---
+<StoryPage
+  locale={locale}
+  route="worlds"
+  title="The Two Worlds — The Hunt"
+  description="Earth 1 and Earth 2, the pact that separated them, and the Barrier of air that kills anything trying to cross."
+  eyebrow="The cosmology"
+  heading="Two Earths, one veil"
+>
+  <WorldsSplit locale={locale}>
+    <Fragment slot="z-label">Earth 1</Fragment>
+    <Fragment slot="z-heading">Zalian's realm</Fragment>
+    <Fragment slot="z-creed">Order · Law · Purity</Fragment>
+    <Fragment slot="z-body">
+      Zalian built Earth 1 and populated it with pure humans, unmixed with anything
+      else. She guides them at a distance, through dreams and through what they say
+      aloud, and she does not enter a mind uninvited. Her people have never known
+      there is another sky.
+    </Fragment>
+
+    <Fragment slot="b-label">Earth 2</Fragment>
+    <Fragment slot="b-heading">Balian's realm</Fragment>
+    <Fragment slot="b-creed">Chaos · Will · Hybridity</Fragment>
+    <Fragment slot="b-body">
+      Balian walked out and took followers with him. What they built on Earth 2 is
+      the Virden — humans and fallen angels mixed together, living in permanent
+      upheaval. Balian lives among them physically. Suffering made them fast: they
+      outran Earth 1 by millennia.
+    </Fragment>
+
+    <Fragment slot="barrier-heading">The Barrier</Fragment>
+    <Fragment slot="barrier-body">
+      <p class="prose">
+        What separates the two worlds is not a wall. It is the air. Zalian set the
+        atmospheres of the two Earths against each other, so that a pure human breathing
+        Virden air dies, and a pure Virden breathing human air dies. No fleet crosses
+        that. No weapon solves it.
+      </p>
+      <p class="prose">
+        It has exactly one flaw. A being carrying DNA from both sides can breathe in
+        either world — and across deep time, two of those came into existence by
+        accident. That is the entire story.
+      </p>
+    </Fragment>
+    <Fragment slot="figcaption">The Abstract Universe, schematised: two authors, two peoples, one veil.</Fragment>
+  </WorldsSplit>
+</StoryPage>
