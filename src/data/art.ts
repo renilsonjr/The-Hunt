@@ -1,5 +1,4 @@
 import type { ImageMetadata } from 'astro';
-import { getImage } from 'astro:assets';
 import type { Locale } from '~/i18n/config';
 
 import zalianPortrait from '~/assets/art/zalian-portrait.jpg';
@@ -236,39 +235,3 @@ export const PLATE_INTRINSIC_WIDTH = 1152;
  * which only moves it further under the cap tests/build/images.test.ts enforces.
  */
 export const PLATE_QUALITY = 50;
-
-// Astro only prunes the untouched multi-megabyte source JPEG for an imported
-// image once that image has been requested through getImage/Image/Picture at
-// least once during the build; an id that's merely imported into this
-// manifest but never rendered by any page in the current build ships as a raw
-// copy otherwise. Warm every manifest entry here, at true module scope: ESM
-// modules are singletons, so the Promise.all below is created exactly once
-// per build no matter how many <Plate> instances import this module or how
-// many times they render (unlike a warm-up inside Plate.astro's frontmatter,
-// which Astro compiles into the per-render function body and would re-run on
-// every instantiation).
-//
-// This promise is exported and awaited from inside BaseLayout.astro's
-// frontmatter — code that already sits on Astro's awaited per-page render
-// path. The ordering guarantee comes from that `await`, not from timing.
-// Awaiting an already-created, already-running promise is O(1): it does not
-// re-trigger the 22 getImage() calls, it just blocks BaseLayout's render
-// (and therefore generatePages' await) until the warm-up has settled.
-//
-// A literal top-level `await` at this point in the module graph reproducibly
-// deadlocks the Astro/Vite static build in this project: art.ts is still
-// being evaluated as part of resolving Plate.astro's dependency graph, and a
-// dynamic import() nested inside that synchronous window (getImage's first
-// call lazily imports the image service) never settles (verified — see
-// task-4-report.md, "Fix round 1"). The exported promise with a .catch()
-// handler avoids this while ensuring error containment: any rejection (corrupt
-// source JPEG, unreadable file, etc.) is caught at promise creation time and
-// surfaces as a non-zero exit code rather than an unhandled-rejection crash.
-export const artWarmup: Promise<unknown> = import.meta.env.PROD
-  ? Promise.all(
-      ART_IDS.map((id) => getImage({ src: ART[id].src, format: 'avif', width: 400 })),
-    ).catch((err) => {
-      console.error('[art warm-up] Failed to optimize images:', err);
-      process.exitCode = 1;
-    })
-  : Promise.resolve();

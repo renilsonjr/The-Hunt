@@ -45,6 +45,18 @@ const fullSrc = Object.fromEntries(
 ---
 <div class="grid">
   {/*
+    Rendering EVERY entry in the manifest here is load-bearing, not incidental.
+    Astro ships a raw, unoptimized copy of any image imported into the manifest
+    that no page in the build ever requests through getImage/Image/Picture —
+    19MB of source JPEGs. That used to be handled by an explicit warm-up loop in
+    src/data/art.ts; it is unnecessary now, because this grid iterates ART_IDS
+    itself, so a plate added to the manifest is rendered the moment it is added.
+    tests/build/images.test.ts is what enforces it: Astro's sharp service writes
+    optimized output as `.jpeg`, so any `.jpg` in dist/_astro is a leaked
+    original and fails the suite. Do not narrow this to a hand-picked subset
+    without restoring a warm-up.
+  */}
+  {/*
     No aria-label on the trigger, deliberately: an aria-label overrides the
     accessible name computed from an element's contents, so it would silence
     the rich bilingual alt text the manifest carries for all 22 plates and
