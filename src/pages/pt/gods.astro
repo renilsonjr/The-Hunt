@@ -1,0 +1,61 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import CharacterCard from '~/components/CharacterCard.astro';
+import CharacterPair from '~/components/CharacterPair.astro';
+
+const locale = 'pt' as const;
+---
+<StoryPage
+  locale={locale}
+  route="gods"
+  title="Os Deuses — The Hunt"
+  description="Zalian criou Balian, e então discordaram sobre como sustentar um universo. O pacto que assinaram ainda se mantém — e ainda vaza."
+  eyebrow="Os dois que se dividiram"
+  heading="Deuses"
+>
+  <CharacterPair>
+    <Fragment slot="lede">
+      Um deles criou o outro. Discordaram sobre uma única questão — se um criador deve
+      permanecer à distância ou viver entre suas criaturas — e, em vez de se destruírem,
+      dividiram tudo.
+    </Fragment>
+
+    <CharacterCard
+      id="zalian-portrait"
+      locale={locale}
+      name="Zalian"
+      epithet="Arquiteta Suprema · Terra 1"
+      ring="gold"
+    >
+      <p>
+        A criadora original. Ela obedece a uma lei que escreveu para si mesma: não lê
+        uma mente consciente. Ouve apenas o que é dito <strong>em voz alta</strong> e o
+        que é sonhado — porque no sono REM a fronteira entre pensar e falar se dissolve.
+      </p>
+      <p>
+        É uma regra feita por respeito ao livre-arbítrio, e é a fresta por onde o roubo
+        inteiro passa. Ela sempre soube que havia DNA estrangeiro em um de seus humanos.
+        Ainda assim, deixou que ele existisse.
+      </p>
+    </CharacterCard>
+
+    <CharacterCard
+      id="balian-sheet"
+      locale={locale}
+      name="Balian"
+      epithet="O Primogênito · Terra 2"
+      ring="violet"
+    >
+      <p>
+        Criação da própria Zalian, crescida além do que ela pretendia. Ele queria
+        presença: estar dentro do seu mundo, não acima dele. Levou seguidores e partiu,
+        e do outro lado da Barreira caminha em pessoa entre os Virden.
+      </p>
+      <p>
+        Ele entende a arquitetura de Zalian melhor do que qualquer um, inclusive o
+        formato exato do ponto cego dela. Se planejou a falha ou apenas a percebeu é a
+        pergunta que a história não para de fazer.
+      </p>
+    </CharacterCard>
+  </CharacterPair>
+</StoryPage>

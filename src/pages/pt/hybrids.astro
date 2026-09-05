@@ -1,0 +1,64 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import CharacterCard from '~/components/CharacterCard.astro';
+import CharacterPair from '~/components/CharacterPair.astro';
+
+const locale = 'pt' as const;
+---
+<StoryPage
+  locale={locale}
+  route="hybrids"
+  title="Os Híbridos — The Hunt"
+  description="Duas pessoas, uma em cada mundo, cada uma carregando um fragmento do deus do outro lado. São a única travessia possível da Barreira."
+  eyebrow="Dois espelhos, um circuito"
+  heading="Híbridos"
+>
+  <CharacterPair>
+    <Fragment slot="lede">
+      O tempo profundo cometeu dois erros, um em cada mundo, e eles se encaixam. Cada um
+      carrega um fragmento do deus que pertence ao outro céu. Ninguém os projetou — e é
+      justamente por isso que são a única porta.
+    </Fragment>
+
+    <CharacterCard
+      id="fridan-sheet"
+      locale={locale}
+      name="Fridan"
+      epithet="Humano da Terra 1 · fragmento de Balian"
+      ring="mirror-gold"
+    >
+      <p>
+        Um homem comum de Nor Yesey com um fio da linhagem de Balian enterrado no
+        genoma. A máquina de probabilidades da Terra 2 varreu bilhões de mentes e o
+        encontrou — não por quem ele é, mas por onde ele podia ser conectado.
+      </p>
+      <p>
+        Ele deveria acordar sem lembrar de nada. Uma interferência quebrou a supressão
+        da memória, e ele acordou lembrando de tudo.
+      </p>
+    </CharacterCard>
+
+    <CharacterCard
+      id="uxies-sheet"
+      locale={locale}
+      name="Uxies"
+      epithet="Virden da Terra 2 · fragmento de Zalian"
+      ring="mirror-violet"
+    >
+      <p>
+        Uma mulher Virden vivendo no ruído da Terra 2, carregando um fragmento de
+        Zalian para o qual não tem nome. Sente uma quietude que ninguém à sua volta
+        sente, e isso sempre a manteve um pouco à parte.
+      </p>
+      <p>
+        Ela não sabe que é a outra metade de um circuito. Não sabe que alguém a procura.
+      </p>
+    </CharacterCard>
+
+    <Fragment slot="closing">
+      Fridan é um humano carregando Balian. Uxies é uma Virden carregando Zalian. Coloque
+      os dois nas pontas da mesma linha e a Barreira terá, pela primeira vez, algo que não
+      consegue deter.
+    </Fragment>
+  </CharacterPair>
+</StoryPage>

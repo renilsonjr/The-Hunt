@@ -1,0 +1,65 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import CharacterCard from '~/components/CharacterCard.astro';
+import CharacterPair from '~/components/CharacterPair.astro';
+
+const locale = 'en' as const;
+---
+<StoryPage
+  locale={locale}
+  route="hybrids"
+  title="The Hybrids — The Hunt"
+  description="Two people, one in each world, each carrying a fragment of the other side's god. They are the only way across the Barrier."
+  eyebrow="Two mirrors, one circuit"
+  heading="Hybrids"
+>
+  <CharacterPair>
+    <Fragment slot="lede">
+      Deep time made two mistakes, one in each world, and they match. Each carries a
+      fragment of the god who belongs to the other sky. Nobody designed them — which is
+      what makes them the only door.
+    </Fragment>
+
+    <CharacterCard
+      id="fridan-sheet"
+      locale={locale}
+      name="Fridan"
+      epithet="Earth 1 human · Balian fragment"
+      ring="mirror-gold"
+    >
+      <p>
+        An ordinary man from Nor Yesey with a strand of Balian's lineage buried in his
+        genome. Earth 2's probability engine scanned billions of minds and found him —
+        not for who he is, but for what he could be plugged into.
+      </p>
+      <p>
+        He was meant to wake up remembering nothing. Interference broke the memory
+        suppression, and he woke remembering everything.
+      </p>
+    </CharacterCard>
+
+    <CharacterCard
+      id="uxies-sheet"
+      locale={locale}
+      name="Uxies"
+      epithet="Earth 2 Virden · Zalian fragment"
+      ring="mirror-violet"
+    >
+      <p>
+        A Virden woman living in the noise of Earth 2, carrying a fragment of Zalian
+        she has no name for. She feels a stillness nobody around her feels, and it has
+        always set her slightly apart.
+      </p>
+      <p>
+        She does not know she is the other half of a circuit. She does not know anyone
+        is looking for her.
+      </p>
+    </CharacterCard>
+
+    <Fragment slot="closing">
+      Fridan is a human carrying Balian. Uxies is a Virden carrying Zalian. Put them at
+      either end of the same line and the Barrier has, for the first time, something it
+      cannot stop.
+    </Fragment>
+  </CharacterPair>
+</StoryPage>

@@ -1,0 +1,41 @@
+---
+// Shared markup and styling for the /gods/ and /hybrids/ pages: an intro
+// paragraph followed by two CharacterCards side by side. Locale page pairs
+// must not duplicate CSS: this component owns the skeleton and every rule
+// below, and each locale page supplies only its own text and cards through
+// slots.
+//
+// /hybrids/ additionally closes with a Seam (the Barrier) and a closing
+// line; /gods/ does not. Rather than a boolean prop, presence of the
+// `closing` slot decides it — a page that has closing text gets the seam,
+// one that doesn't, doesn't.
+import Seam from '~/components/Seam.astro';
+
+const hasClosing = Astro.slots.has('closing');
+---
+<p class="prose lede"><slot name="lede" /></p>
+
+<div class="pair">
+  <slot />
+</div>
+
+{hasClosing && (
+  <>
+    <Seam />
+    <p class="prose closing"><slot name="closing" /></p>
+  </>
+)}
+
+<style>
+  .lede { color: var(--dim); margin-bottom: 2.4rem; }
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+    margin-bottom: 2.4rem;
+  }
+  .closing { color: var(--ink); font-style: italic; margin-top: 2rem; }
+  @media (max-width: 760px) {
+    .pair { grid-template-columns: 1fr; }
+  }
+</style>

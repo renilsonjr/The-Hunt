@@ -1,0 +1,84 @@
+---
+import { localizePath } from '~/i18n/utils';
+import { t } from '~/i18n/ui';
+import type { Locale, Route } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+  route: Route;
+}
+const { locale, route } = Astro.props;
+const other: Locale = locale === 'en' ? 'pt' : 'en';
+
+const links = [
+  { route: 'worlds', label: t('nav.worlds', locale) },
+  { route: 'gods', label: t('nav.gods', locale) },
+  { route: 'hybrids', label: t('nav.hybrids', locale) },
+  { route: 'sphere', label: t('nav.sphere', locale) },
+  { route: 'gallery', label: t('nav.gallery', locale) },
+];
+---
+<header class="site-header">
+  <a class="wordmark" href={localizePath('', locale)}>
+    <span class="the">The</span> <span class="glitch">Hunt</span>
+  </a>
+
+  <nav aria-label={t('nav.aria', locale)}>
+    {links.map((l) => (
+      <a href={localizePath(l.route, locale)} aria-current={route === l.route ? 'page' : undefined}>
+        {l.label}
+      </a>
+    ))}
+  </nav>
+
+  <a class="lang" href={localizePath(route, other)} lang={other === 'pt' ? 'pt-BR' : 'en'}>
+    {t('lang.switch', locale)}
+  </a>
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.6rem;
+    padding: 1.1rem var(--gutter);
+    border-bottom: 1px solid var(--hair);
+  }
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .wordmark .the { color: var(--zalian); }
+  .wordmark .glitch { font-family: var(--font-glitch); color: var(--balian); }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-inline-end: auto;
+  }
+  nav a {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+  }
+  nav a:hover, nav a[aria-current='page'] { color: var(--ink); }
+  nav a[aria-current='page'] { border-bottom: 1px solid var(--zalian); }
+  .lang {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--virden);
+    text-decoration: none;
+    border: 1px solid var(--hair);
+    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+  }
+  .lang:hover { border-color: var(--virden); }
+</style>

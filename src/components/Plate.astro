@@ -1,0 +1,54 @@
+---
+import { Picture } from 'astro:assets';
+import { ART, PLATE_QUALITY, type ArtId } from '~/data/art';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  id: ArtId;
+  locale: Locale;
+  sizes: string;
+  widths?: number[];
+  loading?: 'lazy' | 'eager';
+  decorative?: boolean;
+  class?: string;
+}
+
+const {
+  id,
+  locale,
+  sizes,
+  widths = [400, 800, 1200, 1600],
+  loading = 'lazy',
+  decorative = false,
+  class: className,
+} = Astro.props;
+
+const entry = ART[id];
+---
+<!-- Picture, not Image: it emits both AVIF and WebP with a JPEG fallback. -->
+<!--
+  `quality` is deliberately a single value: Astro 5.18's Picture.astro spreads
+  one `...props` object into the getImage() call for every entry in `formats`
+  AND into the fallback call (verified in node_modules/astro/components/Picture.astro),
+  so there is no per-format quality knob to reach for. See PLATE_QUALITY in
+  src/data/art.ts for why the value is what it is.
+
+  `fetchpriority`: Astro defaults it to "auto" unless the `priority` prop is
+  set (astro/dist/assets/internal.js). The eager hero is the LCP element, so it
+  must not queue behind the stylesheet and six font files. Set here rather than
+  via `priority`, because loading/decoding are already set explicitly above and
+  `priority` would be a second source of truth for the same three attributes.
+-->
+<Picture
+  src={entry.src}
+  alt={decorative ? '' : entry.alt[locale]}
+  widths={widths}
+  sizes={sizes}
+  formats={['avif', 'webp']}
+  fallbackFormat="jpeg"
+  quality={PLATE_QUALITY}
+  loading={loading}
+  decoding={loading === 'eager' ? 'sync' : 'async'}
+  fetchpriority={loading === 'eager' ? 'high' : 'auto'}
+  class={className}
+/>

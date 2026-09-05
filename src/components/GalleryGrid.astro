@@ -1,0 +1,123 @@
+---
+// Shared markup and styling for /gallery/: every plate in the manifest as a
+// clickable tile that opens the Lightbox. Locale page pairs must not
+// duplicate CSS: this component owns the grid skeleton and every rule
+// below, iterating ART_IDS itself and pulling both caption and alt text from
+// the manifest in the caller's locale. The locale pages supply nothing but
+// `locale` — there is no authored prose on this page, unlike the others.
+import Plate from '~/components/Plate.astro';
+import { getImage } from 'astro:assets';
+import { ART, ART_IDS, PLATE_INTRINSIC_WIDTH, PLATE_QUALITY } from '~/data/art';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+// Weight budget: only the first two plates load eagerly above the fold;
+// the rest stay lazy so the gallery's first screen stays at or under 1.2MB
+// transferred. Do not raise this count.
+const EAGER_COUNT = 2;
+
+// Full-size URL for the Lightbox, one per plate. The tile's own <picture>
+// resolves to the 300w derivative on a 1x desktop; handing the dialog that
+// file would upscale it ~2.9x on the one page whose whole point is looking at
+// the artwork. These options (format, width, quality) hash to exactly the same
+// derivative as the 1152w entry in the tile's own AVIF srcset below, so this
+// call reuses that file rather than emitting a new one.
+const fullSrc = Object.fromEntries(
+  await Promise.all(
+    ART_IDS.map(async (id) => [
+      id,
+      (
+        await getImage({
+          src: ART[id].src,
+          format: 'avif',
+          width: PLATE_INTRINSIC_WIDTH,
+          quality: PLATE_QUALITY,
+        })
+      ).src,
+    ]),
+  ),
+) as Record<string, string>;
+---
+<div class="grid">
+  {/*
+    Rendering EVERY entry in the manifest here is load-bearing, not incidental.
+    Astro ships a raw, unoptimized copy of any image imported into the manifest
+    that no page in the build ever requests through getImage/Image/Picture —
+    19MB of source JPEGs. That used to be handled by an explicit warm-up loop in
+    src/data/art.ts; it is unnecessary now, because this grid iterates ART_IDS
+    itself, so a plate added to the manifest is rendered the moment it is added.
+    tests/build/images.test.ts is what enforces it: Astro's sharp service writes
+    optimized output as `.jpeg`, so any `.jpg` in dist/_astro is a leaked
+    original and fails the suite. Do not narrow this to a hand-picked subset
+    without restoring a warm-up.
+  */}
+  {/*
+    No aria-label on the trigger, deliberately: an aria-label overrides the
+    accessible name computed from an element's contents, so it would silence
+    the rich bilingual alt text the manifest carries for all 22 plates and
+    leave screen-reader users with the short title alone — which is already
+    the visible <figcaption> immediately below. The inner <img alt> names the
+    button.
+  */}
+  {ART_IDS.map((id, index) => (
+    <figure class="tile">
+      <button
+        type="button"
+        class="tile-open"
+        data-plate="true"
+        data-caption={ART[id].title[locale]}
+        data-full={fullSrc[id]}
+      >
+        <Plate
+          id={id}
+          locale={locale}
+          sizes="(max-width: 640px) 46vw, (max-width: 1000px) 30vw, 260px"
+          widths={[300, 600, 900, PLATE_INTRINSIC_WIDTH]}
+          loading={index < EAGER_COUNT ? 'eager' : 'lazy'}
+        />
+      </button>
+      <figcaption>{ART[id].title[locale]}</figcaption>
+    </figure>
+  ))}
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .tile {
+    margin: 0;
+  }
+  .tile-open {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: zoom-in;
+    font: inherit;
+    border-radius: 8px;
+  }
+  .tile :global(img) {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--hair);
+    display: block;
+  }
+  figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    color: var(--dim);
+    margin-top: 0.5rem;
+  }
+</style>

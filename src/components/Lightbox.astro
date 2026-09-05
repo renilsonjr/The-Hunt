@@ -1,0 +1,88 @@
+---
+import type { Locale } from '~/i18n/config';
+import { t } from '~/i18n/ui';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<dialog id="lightbox" aria-label={t('lightbox.title', locale)}>
+  <button id="lightbox-close" type="button">{t('lightbox.close', locale)}</button>
+  <img id="lightbox-img" alt="" />
+  <p id="lightbox-caption"></p>
+</dialog>
+
+<style>
+  #lightbox {
+    border: none;
+    background: var(--void);
+    color: var(--ink);
+    max-width: min(92vw, 900px);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  #lightbox::backdrop { background: color-mix(in srgb, var(--void) 92%, transparent); }
+  #lightbox img { width: 100%; height: auto; border-radius: 8px; display: block; }
+  #lightbox-caption {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--dim);
+    margin: 0.8rem 0 0;
+  }
+  #lightbox-close {
+    float: right;
+    background: none;
+    border: 1px solid var(--hair);
+    border-radius: 999px;
+    color: var(--dim);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    margin-bottom: 0.6rem;
+  }
+</style>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const caption = document.getElementById('lightbox-caption');
+  const close = document.getElementById('lightbox-close');
+  if (dialog && img && caption && close) {
+    const open = (trigger: HTMLElement) => {
+      const source = trigger.querySelector('img');
+      if (!source) return;
+      // Prefer the full-size derivative the tile carries in `data-full`
+      // (GalleryGrid.astro). `currentSrc` is whatever the *tile* resolved —
+      // the 300w file on a 1x desktop — and the dialog renders at ~870px, so
+      // using it upscales roughly 2.9x. Fall back to it only if the attribute
+      // is missing.
+      const tileSrc = source.currentSrc || source.src;
+      // `data-full` is an AVIF derivative, and this is a bare <img> with no
+      // <picture> to fall through. The tiles themselves ship WebP and JPEG
+      // fallbacks precisely because AVIF is not assumed, so honour that here
+      // too: if the browser cannot decode it, drop back to what the tile
+      // already resolved rather than showing a broken image.
+      img.onerror = () => {
+        img.onerror = null;
+        if (img.src !== tileSrc) img.src = tileSrc;
+      };
+      img.src = trigger.dataset.full || tileSrc;
+      img.alt = source.alt;
+      caption.textContent = trigger.dataset.caption ?? '';
+      dialog.showModal();
+    };
+    // Tiles are native <button> elements (GalleryGrid.astro), so they're
+    // focusable and keyboard-operable by default: a click listener alone is
+    // enough, since the browser already fires `click` for both a mouse click
+    // and an Enter/Space keypress on a button. No custom keydown handling is
+    // needed (and adding one would double-fire the click).
+    document.querySelectorAll<HTMLElement>('[data-plate]').forEach((trigger) => {
+      trigger.addEventListener('click', () => open(trigger));
+    });
+    close.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+</script>

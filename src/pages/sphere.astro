@@ -1,0 +1,52 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import SphereLead from '~/components/SphereLead.astro';
+
+const locale = 'en' as const;
+---
+<StoryPage
+  locale={locale}
+  route="sphere"
+  title="The Sphere — The Hunt"
+  description="A small blue object marked with three dots. It is not a gift. It is an interface, and it runs in both directions."
+  eyebrow="The object"
+  heading="The Sphere"
+>
+  <SphereLead locale={locale}>
+    <Fragment slot="lead">
+      <p class="prose">
+        It is small, blue and unremarkable — closer to a felted lint remover than to
+        anything holy. Nothing about it announces what it is. That is the point: the
+        Hunt is built so the finder believes he found a prize.
+      </p>
+      <p class="prose">
+        On its surface are two marks in front and one behind: <span class="glyph">(: .)</span>
+        It has never been explained. It might be a dimensional marker, an activation key
+        readable only by someone carrying the right DNA, or a serial number — which
+        would mean this is not the first Sphere, and Fridan is not the first finder.
+      </p>
+    </Fragment>
+
+    <Fragment slot="mechanic-heading">What it actually does</Fragment>
+
+    <Fragment slot="mechanic-body">
+      <p class="prose">
+        Touching it expands the finder's cognition to the scale of the universe: total
+        clarity, the sense of finally knowing what one was always supposed to know. That
+        part is real, and it lasts seconds.
+      </p>
+      <p class="prose">
+        Underneath, the Sphere is an interface running in both directions. While it gives,
+        it takes: everything the god communicated through the dream, everything the finder
+        understood, transmitted intact to receivers in another galaxy. And it leaves
+        something behind — foreign biology, written into a human body that did not consent
+        and will not be asked.
+      </p>
+      <p class="prose">
+        The god scans him afterwards and finds something that is no longer entirely her
+        own. By her own law, she closes the connection. The theft is complete, and the man
+        it went through is the only one who knows it happened.
+      </p>
+    </Fragment>
+  </SphereLead>
+</StoryPage>

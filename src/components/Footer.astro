@@ -1,0 +1,29 @@
+---
+import { t } from '~/i18n/ui';
+import type { Locale } from '~/i18n/config';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<footer class="site-footer">
+  <span>{t('footer.status', locale)}</span>
+  <a href="https://github.com/renilsonjr/The-Hunt">{t('footer.repo', locale)}</a>
+</footer>
+
+<style>
+  .site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem var(--gutter);
+    margin-top: 4rem;
+    border-top: 1px solid var(--hair);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--dim);
+  }
+  .site-footer a { color: var(--zalian); text-decoration: none; }
+  .site-footer a:hover { text-decoration: underline; }
+</style>
