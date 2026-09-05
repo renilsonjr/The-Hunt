@@ -1,46 +1,40 @@
 # Phase A — follow-ups carried into Phase B
 
-**Date:** 2026-09-05
-**Status:** Phase A complete and reviewed. Nothing here blocks the site shipping; every item was raised in review, judged non-blocking, and deliberately deferred.
+**Date:** 2026-09-05 · **Updated:** 2026-09-05, after the fix pass
+**Status:** Phase A complete and reviewed. The fix pass closed items 1, 2 and 4; what remains below is genuinely Phase B work or a deliberate deferral.
 
-Phase A built the bilingual site — landing, worlds, gods, hybrids, sphere and gallery in English and Portuguese — with an image pipeline, site chrome and CI deployment. This is what review found and left for later.
+Phase A built the bilingual site — landing, worlds, gods, hybrids, sphere and gallery in English and Portuguese — with an image pipeline, site chrome and CI deployment. This is what review found and what is still outstanding.
 
 ---
 
-## 1. The site has no type-check step
+## ✅ Closed by the fix pass
 
-`@astrojs/check` is not a dependency, so `npm test`, `npm run test:build` and the CI job never type-check. Every type in `src/` — `Route`, `Locale`, `ArtId` — is enforced only by an editor.
+- **Type-check step.** `@astrojs/check` is installed and `npm test` now runs `astro check` ahead of the unit tests, so types gate both local runs and CI. Running it the first time immediately found 43 errors — every test file imports `node:fs`/`node:path` with no `@types/node` installed. Both fixed. The `Route` typing added during the review is now genuinely load-bearing.
+- **Lightbox WebP rung.** The format chain is now full-size AVIF → full-size WebP → the tile's own image, so a browser without AVIF support gets a full-size picture instead of the 300w tile upscaled ~2.9×. Verified to emit no new derivatives: `dist/_astro` still has zero unreferenced files.
+- **Social cards.** Every page carries an absolute `og:image` built from the key art at 1200w, with localized `og:image:alt`, explicit dimensions and `twitter:card=summary_large_image`. `og:locale` now emits `en_US`/`pt_BR` from a dedicated map rather than being derived from the hreflang codes, where a bare `en` is correct but invalid as an OG locale.
+- **404 page.** Carries the site chrome, speaks both languages (it cannot know the reader's locale, since GitHub Pages serves it for unmatched paths in either), is marked `noindex`, and is excluded from the sitemap.
+- **Sitemap.** All 12 routes with `xhtml:link` alternates, so crawlers learn each page's counterpart instead of treating the pair as duplicates.
+- **Favicon guard.** `head.test.ts` now asserts the icon link, so it cannot be silently dropped.
 
-This matters most for `route`, which was deliberately typed as `Route` rather than `string` during the final fix wave precisely so a typo like `route="wolrds"` would be caught. Today it still would not be: it compiles clean and silently breaks that page's canonical URL, both hreflang alternates, the language toggle and `aria-current`.
+Seven new tests cover this; the suite is 58 green.
 
-**Fix:** add `@astrojs/check` and `astro check` to the test script and the workflow. This is the single largest gap in the suite's authority.
+---
 
-## 2. The lightbox has no WebP rung
-
-The gallery lightbox loads a full-size AVIF via `data-full`, falling back to the tile's own resolved image if AVIF cannot be decoded. That fallback works — no broken image — but the tile is the 300w derivative, so a browser without AVIF support silently gets a 300px image rendered at ~870px. That is the exact upscale the `data-full` mechanism was added to remove, now invisible instead of visible.
-
-**Fix:** emit `data-full-webp` alongside `data-full` in `GalleryGrid.astro`'s frontmatter loop and chain AVIF → WebP@1152 → tile. The 1152w WebP derivative already exists on disk and is already referenced by the tile's srcset, so this costs zero additional bytes.
-
-## 3. `dist/_astro` ships ~9.5 MB of JPEG nothing will fetch
+## 1. `dist/_astro` ships ~9.5 MB of JPEG nothing will fetch
 
 The `<picture>` JPEG fallback is only reached by a browser supporting neither AVIF nor WebP — effectively none since 2020. It is repository and artifact weight, not transferred weight, so no visitor pays for it, but it is the largest remaining lever on build size. `<Picture>`'s `fallbackFormat` is the knob.
 
-## 4. Missing page-level furniture
+## 2. No page-level `x-default` hreflang
 
-None of these were in the Phase A plan; all are cheap and worth doing before the site is promoted anywhere:
+The sitemap now carries per-page alternates, but the pages themselves emit only `en` and `pt-BR` — no `x-default` telling crawlers which version to serve a reader whose language matches neither. One line in `Head.astro`; left out of the fix pass only because it belongs with the toggle work in item 4.
 
-- **`og:image` and `twitter:card`** — a link pasted into WhatsApp, Discord or Twitter currently renders as a bare text card, despite the project having 22 illustrations and dedicated key art. Also `og:locale` emits `en` for English where the spec wants `en_US` (the Portuguese side correctly emits `pt_BR`).
-- **A `404.astro`** — a mistyped URL gets GitHub's unstyled generic page.
-- **A sitemap** and **`x-default` hreflang**.
-- **A test guarding the favicon** — `head.test.ts` covers lang, hreflang, canonical, title, description and the palette tokens, but the favicon link could be dropped without failing anything.
-
-## 5. The language toggle will 404 when translation parity breaks
+## 3. The language toggle will 404 when translation parity breaks
 
 `localizePath` builds the other locale's URL unconditionally; nothing checks the target exists. With 6 of 6 pages translated this is invisible. The design spec (§6) requires that a missing translation fall back to English with a visible notice rather than a broken route — so the first English-only journal post in Phase B turns the toggle into a 404.
 
 Cheap to guard now (a route-existence set the toggle consults), expensive to retrofit once the pattern is copied across a content collection.
 
-## 6. Content collections, before the journal multiplies the pattern
+## 4. Content collections, before the journal multiplies the pattern
 
 Phase A is one `.astro` file per route per locale, with prose inline. That is right for six teaser pages and wrong for a journal and a chapter reader. The design spec chose Astro specifically for Markdown content collections, and requires locale-keyed content with a visible English fallback — none of which exists yet.
 
