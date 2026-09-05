@@ -29,8 +29,8 @@ describe('site chrome', () => {
 
   it('renders the wordmark with Hunt in the glitch face only', () => {
     const doc = html('index.html');
-    // Astro appends a scope class (class="wordmark astro-xxxx"), so match a prefix.
+    // Astro 5 emits a separate data-astro-cid-* attribute, so allow attributes between the class and the text.
     expect(doc).toMatch(/class="wordmark[^"]*"/);
-    expect(doc).toMatch(/class="glitch[^"]*">Hunt</);
+    expect(doc).toMatch(/class="glitch[^"]*"[^>]*>Hunt</);
   });
 });
