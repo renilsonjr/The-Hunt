@@ -1,0 +1,62 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import CharacterCard from '~/components/CharacterCard.astro';
+import CharacterPair from '~/components/CharacterPair.astro';
+
+const locale = 'en' as const;
+---
+<StoryPage
+  locale={locale}
+  route="gods"
+  title="The Gods — The Hunt"
+  description="Zalian made Balian, and then they disagreed about how to hold a universe. The pact they signed is still holding — and still leaking."
+  eyebrow="The two who split"
+  heading="Gods"
+>
+  <CharacterPair>
+    <Fragment slot="lede">
+      One of them made the other. They disagreed about a single question — whether a
+      creator should stand at a distance or live among the created — and rather than
+      destroy each other they divided everything.
+    </Fragment>
+
+    <CharacterCard
+      id="zalian-portrait"
+      locale={locale}
+      name="Zalian"
+      epithet="Supreme Architect · Earth 1"
+      ring="gold"
+    >
+      <p>
+        The original creator. She holds to a law she wrote for herself: she does not
+        read a conscious mind. She hears only what is said <strong>aloud</strong>, and
+        what is dreamed — because in REM the boundary between thinking and speaking
+        dissolves.
+      </p>
+      <p>
+        It is a rule made out of respect for free will, and it is the crack the whole
+        theft runs through. She has always known there is foreign DNA in one of her
+        humans. She let him exist anyway.
+      </p>
+    </CharacterCard>
+
+    <CharacterCard
+      id="balian-sheet"
+      locale={locale}
+      name="Balian"
+      epithet="The Firstborn · Earth 2"
+      ring="violet"
+    >
+      <p>
+        Zalian's own creation, grown past what she intended. He wanted presence: to
+        stand inside his world rather than above it. He took followers and left, and
+        on the far side of the Barrier he walks among the Virden in person.
+      </p>
+      <p>
+        He understands Zalian's architecture better than anyone alive, including the
+        exact shape of her blind spot. Whether he engineered the flaw or merely noticed
+        it is the question the story keeps asking.
+      </p>
+    </CharacterCard>
+  </CharacterPair>
+</StoryPage>
