@@ -1,0 +1,58 @@
+---
+// Shared markup and styling for the /sphere/ page: the two-column lead
+// (prose beside the pedestal Plate, the prose carrying the glyph inline),
+// a Seam (the Barrier) beneath it, and the "what it actually does" mechanic
+// section. Locale page pairs must not duplicate CSS: this component owns
+// the skeleton and every rule below, and each locale page supplies only its
+// own text through slots.
+import Plate from '~/components/Plate.astro';
+import Seam from '~/components/Seam.astro';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+<div class="lead">
+  <div>
+    <slot name="lead" />
+  </div>
+  <figure>
+    <Plate id="sphere-pedestal" locale={locale} sizes="(max-width: 860px) 90vw, 420px" />
+  </figure>
+</div>
+
+<Seam />
+
+<section class="mechanic">
+  <h2><slot name="mechanic-heading" /></h2>
+  <slot name="mechanic-body" />
+</section>
+
+<style>
+  .lead {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 2.4rem;
+    align-items: start;
+  }
+  figure { margin: 0; }
+  figure :global(img) {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--hair);
+  }
+  .lead :global(.glyph) {
+    font-family: var(--font-mono);
+    color: var(--zalian);
+    font-size: 1.05em;
+    letter-spacing: 0.08em;
+  }
+  .mechanic { margin-top: 2.4rem; }
+  .mechanic :global(.prose) { color: var(--dim); }
+  @media (max-width: 860px) {
+    .lead { grid-template-columns: 1fr; }
+  }
+</style>

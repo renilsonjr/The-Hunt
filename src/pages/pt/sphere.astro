@@ -1,0 +1,53 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import SphereLead from '~/components/SphereLead.astro';
+
+const locale = 'pt' as const;
+---
+<StoryPage
+  locale={locale}
+  route="sphere"
+  title="A Esfera — The Hunt"
+  description="Um pequeno objeto azul marcado com três pontos. Não é um presente. É uma interface, e funciona nos dois sentidos."
+  eyebrow="O objeto"
+  heading="A Esfera"
+>
+  <SphereLead locale={locale}>
+    <Fragment slot="lead">
+      <p class="prose">
+        É pequena, azul e banal — mais parecida com um tira-fiapos de feltro do que com
+        qualquer coisa sagrada. Nada nela anuncia o que é. E esse é o ponto: a Caçada é
+        construída para que quem encontra acredite ter encontrado um prêmio.
+      </p>
+      <p class="prose">
+        Na superfície há duas marcas à frente e uma atrás: <span class="glyph">(: .)</span>
+        Nunca foram explicadas. Podem ser um marcador dimensional, uma chave de ativação
+        legível apenas por quem carrega o DNA certo, ou um número de série — o que
+        significaria que esta não é a primeira Esfera, e Fridan não é o primeiro a
+        encontrá-la.
+      </p>
+    </Fragment>
+
+    <Fragment slot="mechanic-heading">O que ela faz de verdade</Fragment>
+
+    <Fragment slot="mechanic-body">
+      <p class="prose">
+        Tocá-la expande a cognição de quem a encontra à escala do universo: clareza total,
+        a sensação de finalmente saber o que sempre se deveria saber. Essa parte é real, e
+        dura segundos.
+      </p>
+      <p class="prose">
+        Por baixo, a Esfera é uma interface que corre nos dois sentidos. Enquanto dá, ela
+        tira: tudo o que a deusa comunicou pelo sonho, tudo o que o sonhador entendeu,
+        transmitido intacto para receptores em outra galáxia. E deixa algo para trás —
+        biologia estrangeira, escrita dentro de um corpo humano que não consentiu e não
+        será consultado.
+      </p>
+      <p class="prose">
+        Depois, a deusa o examina e encontra algo que já não é inteiramente dela. Pela
+        própria lei, encerra a conexão. O roubo está completo, e o homem por quem ele
+        passou é o único que sabe que aconteceu.
+      </p>
+    </Fragment>
+  </SphereLead>
+</StoryPage>
