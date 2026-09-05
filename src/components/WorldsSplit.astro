@@ -7,6 +7,7 @@
 // Gold (var(--zalian)) is always Earth 1, violet (var(--balian)) is always
 // Earth 2 — the colours are semantic, never decorative.
 import Plate from '~/components/Plate.astro';
+import Seam from '~/components/Seam.astro';
 import type { Locale } from '~/i18n/config';
 
 interface Props {
@@ -32,6 +33,7 @@ const { locale } = Astro.props;
 </div>
 
 <section class="barrier">
+  <Seam />
   <h2><slot name="barrier-heading" /></h2>
   <slot name="barrier-body" />
   <figure>
@@ -71,6 +73,7 @@ const { locale } = Astro.props;
     margin-bottom: 1rem;
   }
   .barrier { margin-top: 3rem; }
+  :global(.seam) { margin-bottom: 1rem; }
   figure { margin: 2rem 0 0; }
   figure :global(img) { width: 100%; border-radius: 10px; border: 1px solid var(--hair); }
   figcaption {
