@@ -8,6 +8,16 @@ export const HREFLANG: Record<Locale, string> = {
   pt: 'pt-BR',
 };
 
+/**
+ * Open Graph locale codes. Deliberately NOT derived from HREFLANG: og:locale
+ * requires language_TERRITORY, so bare 'en' is invalid there even though it is
+ * the correct hreflang value.
+ */
+export const OG_LOCALE: Record<Locale, string> = {
+  en: 'en_US',
+  pt: 'pt_BR',
+};
+
 /** Every route on the site, without locale prefix or slashes. '' is home. */
 export const ROUTES = ['', 'worlds', 'gods', 'hybrids', 'sphere', 'gallery'] as const;
 export type Route = (typeof ROUTES)[number];

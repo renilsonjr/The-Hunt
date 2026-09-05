@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { ART_IDS } from '~/data/art';
 
@@ -28,5 +28,28 @@ describe('gallery page', () => {
   it('exposes an accessible dialog for the lightbox', () => {
     const doc = html('gallery/index.html');
     expect(doc).toMatch(/<dialog[^>]*id="lightbox"/);
+  });
+
+  // The lightbox loads a full-size derivative rather than the tile's own
+  // 300w file, which it would otherwise upscale ~2.9x. AVIF is the first
+  // choice; a browser that cannot decode it needs a full-size WebP to fall
+  // back to, not the 300w tile — falling back to the tile reintroduces the
+  // very upscale the full-size URL exists to prevent.
+  it('gives every plate both a full-size AVIF and a full-size WebP', () => {
+    const doc = html('gallery/index.html');
+    const avif = doc.match(/data-full="[^"]+\.avif"/g) ?? [];
+    const webp = doc.match(/data-full-webp="[^"]+\.webp"/g) ?? [];
+    expect(avif).toHaveLength(ART_IDS.length);
+    expect(webp).toHaveLength(ART_IDS.length);
+  });
+
+  it('points the full-size fallbacks at files the build actually emitted', () => {
+    const doc = html('gallery/index.html');
+    const urls = [...doc.matchAll(/data-full(?:-webp)?="([^"]+)"/g)].map((m) => m[1]);
+    expect(urls.length).toBe(ART_IDS.length * 2);
+    for (const url of urls) {
+      const path = url.replace('/The-Hunt/', '');
+      expect(existsSync(resolve(process.cwd(), 'dist', path)), `missing ${path}`).toBe(true);
+    }
   });
 });

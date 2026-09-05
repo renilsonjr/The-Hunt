@@ -1,18 +1,34 @@
 ---
+import { getImage } from 'astro:assets';
 import { alternatesFor } from '~/i18n/utils';
-import { HREFLANG, type Locale, type Route } from '~/i18n/config';
+import { HREFLANG, OG_LOCALE, type Locale, type Route } from '~/i18n/config';
+import { ART, PLATE_QUALITY } from '~/data/art';
 
 interface Props {
   locale: Locale;
   route: Route;
   title: string;
   description: string;
+  /** Keep this page out of search results. Only the 404 page needs it. */
+  noindex?: boolean;
 }
 
-const { locale, route, title, description } = Astro.props;
+const { locale, route, title, description, noindex = false } = Astro.props;
 const alternates = alternatesFor(route);
 const self = alternates.find((a) => a.locale === locale)!;
 const canonical = new URL(self.href, Astro.site).href;
+
+// Social card image. The key art is the story's cover, so every page shares
+// it rather than each carrying its own. Crawlers do not resolve relative
+// URLs, so this must be absolute — hence new URL() against Astro.site.
+// 1200w is the width Open Graph consumers expect for a large card.
+const social = await getImage({
+  src: ART['key-art'].src,
+  format: 'jpeg',
+  width: 1200,
+  quality: PLATE_QUALITY,
+});
+const socialUrl = new URL(social.src, Astro.site).href;
 
 // Never hand-write a path beginning '/' (Global Constraints): BASE_URL is
 // '/The-Hunt/' here, and the guard keeps this correct if the base is ever
@@ -24,6 +40,7 @@ const favicon = `${base}${base.endsWith('/') ? '' : '/'}favicon.svg`;
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex" />}
 <link rel="icon" type="image/svg+xml" href={favicon} />
 <link rel="canonical" href={canonical} />
 {alternates.map((a) => (
@@ -33,4 +50,9 @@ const favicon = `${base}${base.endsWith('/') ? '' : '/'}favicon.svg`;
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonical} />
-<meta property="og:locale" content={HREFLANG[locale].replace('-', '_')} />
+<meta property="og:locale" content={OG_LOCALE[locale]} />
+<meta property="og:image" content={socialUrl} />
+<meta property="og:image:alt" content={ART['key-art'].alt[locale]} />
+<meta property="og:image:width" content={String(social.attributes.width ?? 1200)} />
+<meta property="og:image:height" content={String(social.attributes.height ?? 1800)} />
+<meta name="twitter:card" content="summary_large_image" />
