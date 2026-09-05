@@ -1,6 +1,6 @@
 ---
-import { Picture, getImage } from 'astro:assets';
-import { ART, ART_IDS, type ArtId } from '~/data/art';
+import { Picture } from 'astro:assets';
+import { ART, type ArtId } from '~/data/art';
 import type { Locale } from '~/i18n/config';
 
 interface Props {
@@ -24,19 +24,6 @@ const {
 } = Astro.props;
 
 const entry = ART[id];
-
-// Astro only prunes the untouched multi-megabyte source JPEG for an imported
-// image once that image has been requested through getImage/Image/Picture at
-// least once during the build; an id that's merely imported into the manifest
-// but never rendered on the page(s) being built ships as-is otherwise. Not
-// every plate is necessarily used by whichever pages exist at any point in the
-// site, so warm every manifest entry here — cached after the first render, so
-// this is effectively free on repeat Plate usages.
-if (import.meta.env.PROD) {
-  await Promise.all(
-    ART_IDS.map((otherId) => getImage({ src: ART[otherId].src, format: 'avif', width: 400 })),
-  );
-}
 ---
 <!-- Picture, not Image: it emits both AVIF and WebP with a JPEG fallback. -->
 <Picture

@@ -1,4 +1,5 @@
 import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
 import type { Locale } from '~/i18n/config';
 
 import zalianPortrait from '~/assets/art/zalian-portrait.jpg';
@@ -212,3 +213,32 @@ export const ART = {
 
 export type ArtId = keyof typeof ART;
 export const ART_IDS = Object.keys(ART) as ArtId[];
+
+// Astro only prunes the untouched multi-megabyte source JPEG for an imported
+// image once that image has been requested through getImage/Image/Picture at
+// least once during the build; an id that's merely imported into this
+// manifest but never rendered by any page in the current build ships as a raw
+// copy otherwise. Warm every manifest entry here, at true module scope: ESM
+// modules are singletons, so this runs exactly once per build no matter how
+// many <Plate> instances render (unlike a warm-up inside Plate.astro's
+// frontmatter, which Astro compiles into the per-render function body and
+// would re-run on every instantiation).
+//
+// Deliberately NOT `await`-ed at top level: a literal top-level `await` here
+// deadlocks the Astro/Vite static build in this project (verified — see
+// task-4-report.md, "Fix round 1"). Astro's own build machinery still waits
+// for this promise to settle (via Node's normal event-loop/libuv semantics,
+// since the image encode goes through sharp's thread pool) before it starts
+// the "generating optimized images" pass that reads the registry this
+// populates, so firing it without awaiting is sufficient and avoids the
+// deadlock. A rejection here (e.g. a corrupt source file) is surfaced as a
+// non-zero exit rather than a silent success or an ugly unhandled-rejection
+// crash mid-build.
+if (import.meta.env.PROD) {
+  Promise.all(
+    ART_IDS.map((id) => getImage({ src: ART[id].src, format: 'avif', width: 400 })),
+  ).catch((err) => {
+    console.error('Art warm-up failed:', err);
+    process.exitCode = 1;
+  });
+}
