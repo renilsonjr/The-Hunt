@@ -15,7 +15,9 @@ describe('gallery page', () => {
   it('lazy-loads everything except the first two plates', () => {
     const doc = html('gallery/index.html');
     const eager = doc.match(/loading="eager"/g) ?? [];
-    expect(eager.length).toBeLessThanOrEqual(2);
+    // Exactly two, not "at most two": zero eager images is the LCP regression
+    // this assertion exists to catch, and <= would pass straight through it.
+    expect(eager.length).toBe(2);
   });
 
   it('uses localized captions', () => {
