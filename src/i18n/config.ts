@@ -8,11 +8,6 @@ export const HREFLANG: Record<Locale, string> = {
   pt: 'pt-BR',
 };
 
-export const LOCALE_NAME: Record<Locale, string> = {
-  en: 'English',
-  pt: 'Português',
-};
-
 /** Every route on the site, without locale prefix or slashes. '' is home. */
 export const ROUTES = ['', 'worlds', 'gods', 'hybrids', 'sphere', 'gallery'] as const;
 export type Route = (typeof ROUTES)[number];

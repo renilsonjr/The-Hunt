@@ -1,11 +1,11 @@
 ---
 import type { Locale } from '~/i18n/config';
+import { t } from '~/i18n/ui';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
-const closeLabel = locale === 'en' ? 'Close' : 'Fechar';
 ---
-<dialog id="lightbox" aria-label={locale === 'en' ? 'Artwork viewer' : 'Visualizador de arte'}>
-  <button id="lightbox-close" type="button">{closeLabel}</button>
+<dialog id="lightbox" aria-label={t('lightbox.title', locale)}>
+  <button id="lightbox-close" type="button">{t('lightbox.close', locale)}</button>
   <img id="lightbox-img" alt="" />
   <p id="lightbox-caption"></p>
 </dialog>

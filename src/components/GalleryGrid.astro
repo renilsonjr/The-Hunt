@@ -44,6 +44,14 @@ const fullSrc = Object.fromEntries(
 ) as Record<string, string>;
 ---
 <div class="grid">
+  {/*
+    No aria-label on the trigger, deliberately: an aria-label overrides the
+    accessible name computed from an element's contents, so it would silence
+    the rich bilingual alt text the manifest carries for all 22 plates and
+    leave screen-reader users with the short title alone — which is already
+    the visible <figcaption> immediately below. The inner <img alt> names the
+    button.
+  */}
   {ART_IDS.map((id, index) => (
     <figure class="tile">
       <button
@@ -52,7 +60,6 @@ const fullSrc = Object.fromEntries(
         data-plate="true"
         data-caption={ART[id].title[locale]}
         data-full={fullSrc[id]}
-        aria-label={ART[id].title[locale]}
       >
         <Plate
           id={id}
