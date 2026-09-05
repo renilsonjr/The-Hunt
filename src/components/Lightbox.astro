@@ -58,16 +58,29 @@ const { locale } = Astro.props;
       // using it upscales roughly 2.9x. Fall back to it only if the attribute
       // is missing.
       const tileSrc = source.currentSrc || source.src;
-      // `data-full` is an AVIF derivative, and this is a bare <img> with no
-      // <picture> to fall through. The tiles themselves ship WebP and JPEG
-      // fallbacks precisely because AVIF is not assumed, so honour that here
-      // too: if the browser cannot decode it, drop back to what the tile
-      // already resolved rather than showing a broken image.
+      // This is a bare <img> with no <picture> to fall through, so the format
+      // chain is walked by hand: full-size AVIF, then full-size WebP, then
+      // whatever the tile itself resolved. The WebP rung matters — dropping
+      // straight from AVIF to the tile would hand an AVIF-less browser the
+      // 300w file and silently upscale it ~2.9x, which is the exact defect
+      // the full-size URL exists to prevent.
+      const chain = [
+        trigger.dataset.full,
+        trigger.dataset.fullWebp,
+        tileSrc,
+      ].filter((src): src is string => Boolean(src));
+
+      let rung = 0;
       img.onerror = () => {
-        img.onerror = null;
-        if (img.src !== tileSrc) img.src = tileSrc;
+        rung += 1;
+        if (rung < chain.length) {
+          img.src = chain[rung];
+        } else {
+          // Every format failed; stop rather than retrying forever.
+          img.onerror = null;
+        }
       };
-      img.src = trigger.dataset.full || tileSrc;
+      img.src = chain[0];
       img.alt = source.alt;
       caption.textContent = trigger.dataset.caption ?? '';
       dialog.showModal();

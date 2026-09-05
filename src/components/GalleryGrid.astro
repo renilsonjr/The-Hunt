@@ -27,21 +27,28 @@ const EAGER_COUNT = 2;
 // the artwork. These options (format, width, quality) hash to exactly the same
 // derivative as the 1152w entry in the tile's own AVIF srcset below, so this
 // call reuses that file rather than emitting a new one.
+// A WebP of the same size accompanies it. AVIF is not universally decodable,
+// and a bare <img> has no <picture> to fall through, so without this rung the
+// fallback would be the 300w tile — silently reinstating the upscale this
+// exists to remove. Both formats at 1152w are already in the tile's srcset
+// below, so neither call emits a new file.
 const fullSrc = Object.fromEntries(
   await Promise.all(
-    ART_IDS.map(async (id) => [
-      id,
-      (
-        await getImage({
-          src: ART[id].src,
-          format: 'avif',
-          width: PLATE_INTRINSIC_WIDTH,
-          quality: PLATE_QUALITY,
-        })
-      ).src,
-    ]),
+    ART_IDS.map(async (id) => {
+      const [avif, webp] = await Promise.all(
+        (['avif', 'webp'] as const).map((format) =>
+          getImage({
+            src: ART[id].src,
+            format,
+            width: PLATE_INTRINSIC_WIDTH,
+            quality: PLATE_QUALITY,
+          }),
+        ),
+      );
+      return [id, { avif: avif.src, webp: webp.src }];
+    }),
   ),
-) as Record<string, string>;
+) as Record<string, { avif: string; webp: string }>;
 ---
 <div class="grid">
   {/*
@@ -71,7 +78,8 @@ const fullSrc = Object.fromEntries(
         class="tile-open"
         data-plate="true"
         data-caption={ART[id].title[locale]}
-        data-full={fullSrc[id]}
+        data-full={fullSrc[id].avif}
+        data-full-webp={fullSrc[id].webp}
       >
         <Plate
           id={id}
