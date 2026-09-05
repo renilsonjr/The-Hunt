@@ -1,0 +1,29 @@
+---
+import Head from '~/components/Head.astro';
+import { HREFLANG, type Locale } from '~/i18n/config';
+import { t } from '~/i18n/ui';
+import '~/styles/global.css';
+
+interface Props {
+  locale: Locale;
+  route: string;
+  title: string;
+  description: string;
+}
+
+const { locale, route, title, description } = Astro.props;
+---
+<!doctype html>
+<html lang={HREFLANG[locale]}>
+  <head>
+    <Head locale={locale} route={route} title={title} description={description} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t('nav.skip', locale)}</a>
+    <slot name="header" />
+    <main id="main">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

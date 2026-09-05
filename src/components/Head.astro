@@ -1,0 +1,29 @@
+---
+import { alternatesFor } from '~/i18n/utils';
+import { HREFLANG, type Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+  route: string;
+  title: string;
+  description: string;
+}
+
+const { locale, route, title, description } = Astro.props;
+const alternates = alternatesFor(route);
+const self = alternates.find((a) => a.locale === locale)!;
+const canonical = new URL(self.href, Astro.site).href;
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{alternates.map((a) => (
+  <link rel="alternate" hreflang={a.hreflang} href={a.href} />
+))}
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={HREFLANG[locale].replace('-', '_')} />
