@@ -225,28 +225,27 @@ export const ART_IDS = Object.keys(ART) as ArtId[];
 // which Astro compiles into the per-render function body and would re-run on
 // every instantiation).
 //
-// This promise is exported, NOT awaited here. A literal top-level `await` at
-// this point in the module graph reproducibly deadlocks the Astro/Vite
-// static build in this project (verified — see task-4-report.md, "Fix round
-// 1"): art.ts is still being evaluated as part of resolving Plate.astro's
-// dependency graph, and a dynamic import() nested inside that synchronous
-// evaluation window (getImage's first call lazily imports the configured
-// image service) never settles. Un-awaited fire-and-forget avoided the
-// deadlock but only *by chance*: nothing actually ordered these background
-// promises ahead of Astro's generatePages, which awaits each page's render
-// and then, with no further await, synchronously reads the
-// globalThis.astroAsset.staticImages map that getImage populates at the tail
-// of its own promise chain (see task-4-report.md, "Fix round 2" for the
-// traced call path in Astro's own source). Instead, this promise is awaited
-// from inside BaseLayout.astro's frontmatter — code that already sits on
-// Astro's awaited per-page render path, so the ordering guarantee comes from
-// that `await`, not from process/event-loop timing. Awaiting an
-// already-created, already-running promise is O(1): it does not re-trigger
-// the 22 getImage() calls, it just blocks BaseLayout's render (and therefore
-// generatePages' await) until the single warm-up this module created has
-// settled.
+// This promise is exported and awaited from inside BaseLayout.astro's
+// frontmatter — code that already sits on Astro's awaited per-page render
+// path. The ordering guarantee comes from that `await`, not from timing.
+// Awaiting an already-created, already-running promise is O(1): it does not
+// re-trigger the 22 getImage() calls, it just blocks BaseLayout's render
+// (and therefore generatePages' await) until the warm-up has settled.
+//
+// A literal top-level `await` at this point in the module graph reproducibly
+// deadlocks the Astro/Vite static build in this project: art.ts is still
+// being evaluated as part of resolving Plate.astro's dependency graph, and a
+// dynamic import() nested inside that synchronous window (getImage's first
+// call lazily imports the image service) never settles (verified — see
+// task-4-report.md, "Fix round 1"). The exported promise with a .catch()
+// handler avoids this while ensuring error containment: any rejection (corrupt
+// source JPEG, unreadable file, etc.) is caught at promise creation time and
+// surfaces as a non-zero exit code rather than an unhandled-rejection crash.
 export const artWarmup: Promise<unknown> = import.meta.env.PROD
   ? Promise.all(
       ART_IDS.map((id) => getImage({ src: ART[id].src, format: 'avif', width: 400 })),
-    )
+    ).catch((err) => {
+      console.error('[art warm-up] Failed to optimize images:', err);
+      process.exitCode = 1;
+    })
   : Promise.resolve();
