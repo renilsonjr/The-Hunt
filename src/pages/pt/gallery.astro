@@ -1,0 +1,18 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import GalleryGrid from '~/components/GalleryGrid.astro';
+import Lightbox from '~/components/Lightbox.astro';
+
+const locale = 'pt' as const;
+---
+<StoryPage
+  locale={locale}
+  route="gallery"
+  title="Galeria — The Hunt"
+  description="Todas as ilustrações de The Hunt: os deuses, os dois mundos, a Esfera e os dois híbridos que os ligam."
+  eyebrow="O arquivo"
+  heading="Galeria"
+>
+  <GalleryGrid locale={locale} />
+  <Lightbox locale={locale} />
+</StoryPage>

@@ -1,0 +1,75 @@
+---
+// Shared markup and styling for /gallery/: every plate in the manifest as a
+// clickable tile that opens the Lightbox. Locale page pairs must not
+// duplicate CSS: this component owns the grid skeleton and every rule
+// below, iterating ART_IDS itself and pulling both caption and alt text from
+// the manifest in the caller's locale. The locale pages supply nothing but
+// `locale` — there is no authored prose on this page, unlike the others.
+import Plate from '~/components/Plate.astro';
+import { ART, ART_IDS } from '~/data/art';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+// Weight budget: only the first two plates load eagerly above the fold;
+// the rest stay lazy so the gallery's first screen stays at or under 1.2MB
+// transferred. Do not raise this count.
+const EAGER_COUNT = 2;
+---
+<div class="grid">
+  {ART_IDS.map((id, index) => (
+    <figure
+      class="tile"
+      data-plate="true"
+      data-caption={ART[id].title[locale]}
+      tabindex="0"
+      role="button"
+      aria-label={ART[id].title[locale]}
+    >
+      <Plate
+        id={id}
+        locale={locale}
+        sizes="(max-width: 640px) 46vw, (max-width: 1000px) 30vw, 260px"
+        widths={[300, 600, 900]}
+        loading={index < EAGER_COUNT ? 'eager' : 'lazy'}
+      />
+      <figcaption>{ART[id].title[locale]}</figcaption>
+    </figure>
+  ))}
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .tile {
+    margin: 0;
+    cursor: zoom-in;
+  }
+  .tile:focus-visible {
+    outline: 2px solid var(--zalian);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+  .tile :global(img) {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--hair);
+    display: block;
+  }
+  figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    color: var(--dim);
+    margin-top: 0.5rem;
+  }
+</style>

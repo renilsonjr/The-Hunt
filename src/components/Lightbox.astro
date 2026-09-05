@@ -1,0 +1,77 @@
+---
+import type { Locale } from '~/i18n/config';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const closeLabel = locale === 'en' ? 'Close' : 'Fechar';
+---
+<dialog id="lightbox" aria-label={locale === 'en' ? 'Artwork viewer' : 'Visualizador de arte'}>
+  <button id="lightbox-close" type="button">{closeLabel}</button>
+  <img id="lightbox-img" alt="" />
+  <p id="lightbox-caption"></p>
+</dialog>
+
+<style>
+  #lightbox {
+    border: none;
+    background: var(--void);
+    color: var(--ink);
+    max-width: min(92vw, 900px);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  #lightbox::backdrop { background: color-mix(in srgb, var(--void) 92%, transparent); }
+  #lightbox img { width: 100%; height: auto; border-radius: 8px; display: block; }
+  #lightbox-caption {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--dim);
+    margin: 0.8rem 0 0;
+  }
+  #lightbox-close {
+    float: right;
+    background: none;
+    border: 1px solid var(--hair);
+    border-radius: 999px;
+    color: var(--dim);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    margin-bottom: 0.6rem;
+  }
+</style>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const caption = document.getElementById('lightbox-caption');
+  const close = document.getElementById('lightbox-close');
+  if (dialog && img && caption && close) {
+    const open = (figure: HTMLElement) => {
+      const source = figure.querySelector('img');
+      if (!source) return;
+      img.src = source.currentSrc || source.src;
+      img.alt = source.alt;
+      caption.textContent = figure.dataset.caption ?? '';
+      dialog.showModal();
+    };
+    // Tiles are focusable (tabindex + role="button" on the <figure>, set by
+    // GalleryGrid.astro) so the lightbox trigger itself is keyboard-operable,
+    // not just clickable: Enter/Space open it the same as a mouse click.
+    document.querySelectorAll<HTMLElement>('[data-plate]').forEach((figure) => {
+      figure.addEventListener('click', () => open(figure));
+      figure.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          open(figure);
+        }
+      });
+    });
+    close.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+</script>
