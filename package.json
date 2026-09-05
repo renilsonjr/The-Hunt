@@ -1,0 +1,26 @@
+{
+  "name": "the-hunt-site",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run tests/unit",
+    "test:build": "astro build && vitest run tests/build"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@fontsource/cinzel": "^5.0.0",
+    "@fontsource/literata": "^5.0.0",
+    "@fontsource/ibm-plex-mono": "^5.0.0",
+    "@fontsource/rubik-glitch": "^5.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.0",
+    "typescript": "^5.6.0"
+  },
+  "overrides": {
+    "vite": "^6.4.1"
+  }
+}

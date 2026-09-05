@@ -3,3 +3,7 @@
 
 # Redundant with the extracted grok-assets/ folder
 grok-assets.zip
+
+node_modules/
+dist/
+.astro/
