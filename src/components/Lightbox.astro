@@ -57,7 +57,17 @@ const { locale } = Astro.props;
       // the 300w file on a 1x desktop — and the dialog renders at ~870px, so
       // using it upscales roughly 2.9x. Fall back to it only if the attribute
       // is missing.
-      img.src = trigger.dataset.full || source.currentSrc || source.src;
+      const tileSrc = source.currentSrc || source.src;
+      // `data-full` is an AVIF derivative, and this is a bare <img> with no
+      // <picture> to fall through. The tiles themselves ship WebP and JPEG
+      // fallbacks precisely because AVIF is not assumed, so honour that here
+      // too: if the browser cannot decode it, drop back to what the tile
+      // already resolved rather than showing a broken image.
+      img.onerror = () => {
+        img.onerror = null;
+        if (img.src !== tileSrc) img.src = tileSrc;
+      };
+      img.src = trigger.dataset.full || tileSrc;
       img.alt = source.alt;
       caption.textContent = trigger.dataset.caption ?? '';
       dialog.showModal();
