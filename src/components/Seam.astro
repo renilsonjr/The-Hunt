@@ -7,17 +7,46 @@ const { orientation = 'horizontal' } = Astro.props;
 <div class={`seam seam--${orientation}`} role="presentation" aria-hidden="true"></div>
 
 <style>
-  /* The seam is the Barrier. Gold is Earth 1, violet is Earth 2. */
+  /*
+    The seam is the Barrier — the site's signature device — so it is drawn
+    jagged, not as a ruled line. Gold is Earth 1, violet is Earth 2.
+
+    The jag is an SVG path, but it arrives as a mask rather than as inline
+    markup: the colour then stays a CSS linear-gradient over the palette
+    tokens (Global Constraints: palette via custom properties, never
+    literals), and there is no <linearGradient id> to collide with when a page
+    renders more than one seam. `mask-repeat` tiles the path at a fixed size,
+    so the teeth keep their shape at any width instead of stretching. The path
+    starts and ends at the same mid-line coordinate so the tiles join cleanly.
+
+    Static by design: the plan forbids looping motion, so there is no
+    animation here and no @media (prefers-reduced-motion) block to need.
+
+    Where mask-image is unsupported the gradient still paints as a plain bar —
+    the previous appearance, and a safe degradation for a decorative element.
+  */
   .seam--horizontal {
-    height: 2px;
+    height: 16px;
     width: 100%;
     background: linear-gradient(90deg, var(--zalian), var(--balian));
-    opacity: 0.75;
+    -webkit-mask-image: var(--seam-jag-h);
+    mask-image: var(--seam-jag-h);
+    -webkit-mask-size: 240px 16px;
+    mask-size: 240px 16px;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+    opacity: 0.85;
   }
   .seam--vertical {
-    width: 2px;
+    width: 16px;
     align-self: stretch;
     background: linear-gradient(180deg, var(--zalian), var(--balian));
-    opacity: 0.75;
+    -webkit-mask-image: var(--seam-jag-v);
+    mask-image: var(--seam-jag-v);
+    -webkit-mask-size: 16px 240px;
+    mask-size: 16px 240px;
+    -webkit-mask-repeat: repeat-y;
+    mask-repeat: repeat-y;
+    opacity: 0.85;
   }
 </style>

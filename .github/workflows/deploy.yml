@@ -12,7 +12,9 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # GitHub's own Pages guidance: never cancel a run that may already be inside
+  # deploy-pages, or the deployment can be left inconsistent. Queue instead.
+  cancel-in-progress: false
 
 jobs:
   build:

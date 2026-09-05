@@ -2,6 +2,7 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Hero from '~/components/Hero.astro';
 import { localizePath } from '~/i18n/utils';
+import { t } from '~/i18n/ui';
 
 const locale = 'pt' as const;
 ---
@@ -12,7 +13,7 @@ const locale = 'pt' as const;
   description="Um homem acorda lembrando de um sonho que jamais deveria lembrar — e descobre que foi usado como chave para roubar de uma deusa os códigos da criação."
 >
   <Hero locale={locale}>
-    <Fragment slot="eyebrow">Um romance em desenvolvimento</Fragment>
+    <Fragment slot="eyebrow">{t('footer.status', locale)}</Fragment>
     <Fragment slot="heading">The Hunt</Fragment>
     <Fragment slot="logline">
       "Num universo onde os deuses só ouvem o que é dito em voz alta, o sono mais

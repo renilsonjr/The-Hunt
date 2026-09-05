@@ -13,11 +13,18 @@ const { locale, route, title, description } = Astro.props;
 const alternates = alternatesFor(route);
 const self = alternates.find((a) => a.locale === locale)!;
 const canonical = new URL(self.href, Astro.site).href;
+
+// Never hand-write a path beginning '/' (Global Constraints): BASE_URL is
+// '/The-Hunt/' here, and the guard keeps this correct if the base is ever
+// configured without its trailing slash.
+const base = import.meta.env.BASE_URL;
+const favicon = `${base}${base.endsWith('/') ? '' : '/'}favicon.svg`;
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content={description} />
+<link rel="icon" type="image/svg+xml" href={favicon} />
 <link rel="canonical" href={canonical} />
 {alternates.map((a) => (
   <link rel="alternate" hreflang={a.hreflang} href={a.href} />

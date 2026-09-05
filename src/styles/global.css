@@ -9,6 +9,12 @@
 @import '@fontsource/rubik-glitch/400.css';
 
 :root {
+  /* Dark only, by mandate. Declared so native scrollbars, form controls and
+     the canvas the browser paints before our CSS lands are dark too, instead
+     of flashing the light defaults. There is deliberately no light theme and
+     no prefers-color-scheme block anywhere in this stylesheet. */
+  color-scheme: dark;
+
   --void: #0a0b12;
   --panel: #151726;
   --zalian: #e8c873;
@@ -25,6 +31,14 @@
 
   --measure: 62ch;
   --gutter: clamp(1.2rem, 4vw, 2.6rem);
+
+  /* The Barrier's jagged edge, as a mask for Seam.astro. The shape lives here
+     and the colour lives in the component, so the gold-to-violet gradient
+     stays CSS over the palette tokens and no <linearGradient id> can collide
+     when a page renders more than one seam. Both paths start and end at the
+     same mid-line coordinate, so the tiles join cleanly when repeated. */
+  --seam-jag-h: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 16'%3E%3Cpath d='M0 8 L22 3 L46 13 L70 2 L96 14 L120 4 L146 12 L170 3 L196 13 L220 5 L240 8' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E");
+  --seam-jag-v: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 240'%3E%3Cpath d='M8 0 L3 22 L13 46 L2 70 L14 96 L4 120 L12 146 L3 170 L13 196 L5 220 L8 240' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E");
 }
 
 *, *::before, *::after { box-sizing: border-box; }
