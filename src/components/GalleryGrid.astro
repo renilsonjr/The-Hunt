@@ -22,21 +22,22 @@ const EAGER_COUNT = 2;
 ---
 <div class="grid">
   {ART_IDS.map((id, index) => (
-    <figure
-      class="tile"
-      data-plate="true"
-      data-caption={ART[id].title[locale]}
-      tabindex="0"
-      role="button"
-      aria-label={ART[id].title[locale]}
-    >
-      <Plate
-        id={id}
-        locale={locale}
-        sizes="(max-width: 640px) 46vw, (max-width: 1000px) 30vw, 260px"
-        widths={[300, 600, 900]}
-        loading={index < EAGER_COUNT ? 'eager' : 'lazy'}
-      />
+    <figure class="tile">
+      <button
+        type="button"
+        class="tile-open"
+        data-plate="true"
+        data-caption={ART[id].title[locale]}
+        aria-label={ART[id].title[locale]}
+      >
+        <Plate
+          id={id}
+          locale={locale}
+          sizes="(max-width: 640px) 46vw, (max-width: 1000px) 30vw, 260px"
+          widths={[300, 600, 900]}
+          loading={index < EAGER_COUNT ? 'eager' : 'lazy'}
+        />
+      </button>
       <figcaption>{ART[id].title[locale]}</figcaption>
     </figure>
   ))}
@@ -50,11 +51,15 @@ const EAGER_COUNT = 2;
   }
   .tile {
     margin: 0;
-    cursor: zoom-in;
   }
-  .tile:focus-visible {
-    outline: 2px solid var(--zalian);
-    outline-offset: 4px;
+  .tile-open {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: zoom-in;
+    font: inherit;
     border-radius: 8px;
   }
   .tile :global(img) {

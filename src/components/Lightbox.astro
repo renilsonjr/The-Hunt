@@ -49,25 +49,21 @@ const closeLabel = locale === 'en' ? 'Close' : 'Fechar';
   const caption = document.getElementById('lightbox-caption');
   const close = document.getElementById('lightbox-close');
   if (dialog && img && caption && close) {
-    const open = (figure: HTMLElement) => {
-      const source = figure.querySelector('img');
+    const open = (trigger: HTMLElement) => {
+      const source = trigger.querySelector('img');
       if (!source) return;
       img.src = source.currentSrc || source.src;
       img.alt = source.alt;
-      caption.textContent = figure.dataset.caption ?? '';
+      caption.textContent = trigger.dataset.caption ?? '';
       dialog.showModal();
     };
-    // Tiles are focusable (tabindex + role="button" on the <figure>, set by
-    // GalleryGrid.astro) so the lightbox trigger itself is keyboard-operable,
-    // not just clickable: Enter/Space open it the same as a mouse click.
-    document.querySelectorAll<HTMLElement>('[data-plate]').forEach((figure) => {
-      figure.addEventListener('click', () => open(figure));
-      figure.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          open(figure);
-        }
-      });
+    // Tiles are native <button> elements (GalleryGrid.astro), so they're
+    // focusable and keyboard-operable by default: a click listener alone is
+    // enough, since the browser already fires `click` for both a mouse click
+    // and an Enter/Space keypress on a button. No custom keydown handling is
+    // needed (and adding one would double-fire the click).
+    document.querySelectorAll<HTMLElement>('[data-plate]').forEach((trigger) => {
+      trigger.addEventListener('click', () => open(trigger));
     });
     close.addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', (event) => {
