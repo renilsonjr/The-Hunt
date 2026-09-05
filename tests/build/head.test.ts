@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const html = (p: string) => readFileSync(resolve(process.cwd(), 'dist', p), 'utf8');
@@ -47,5 +47,57 @@ describe('document head', () => {
 
   it('paints an explicit background on body rather than inheriting one', () => {
     expect(allCss()).toMatch(/body\{[^}]*background:var\(--void\)/);
+  });
+
+  it('links a favicon so no page 404s on /favicon.ico', () => {
+    expect(html('index.html')).toContain('<link rel="icon" type="image/svg+xml" href="/The-Hunt/favicon.svg"');
+  });
+});
+
+describe('social sharing metadata', () => {
+  // A link pasted into WhatsApp, Discord or Twitter should render as a card
+  // with the key art, not as bare text. Crawlers do not resolve relative URLs,
+  // so og:image must be absolute.
+  it('emits an absolute og:image pointing at a real built file', () => {
+    const doc = html('index.html');
+    const match = doc.match(/<meta property="og:image" content="([^"]+)"/);
+    expect(match, 'og:image is missing').not.toBeNull();
+
+    const url = match![1];
+    expect(url).toMatch(/^https:\/\/renilsonjr\.github\.io\/The-Hunt\//);
+
+    // The URL must correspond to a file the build actually emitted.
+    const path = url.replace('https://renilsonjr.github.io/The-Hunt/', '');
+    expect(
+      existsSync(resolve(process.cwd(), 'dist', path)),
+      `og:image points at ${path}, which the build did not emit`,
+    ).toBe(true);
+  });
+
+  it('describes the og:image for people who cannot see it', () => {
+    expect(html('index.html')).toMatch(/<meta property="og:image:alt" content=".{20,}"/);
+  });
+
+  it('localizes the og:image alt text', () => {
+    const en = html('index.html').match(/<meta property="og:image:alt" content="([^"]+)"/)![1];
+    const pt = html('pt/index.html').match(/<meta property="og:image:alt" content="([^"]+)"/)![1];
+    expect(pt).not.toBe(en);
+  });
+
+  it('emits og:image dimensions so cards render without a reflow', () => {
+    const doc = html('index.html');
+    expect(doc).toMatch(/<meta property="og:image:width" content="\d+"/);
+    expect(doc).toMatch(/<meta property="og:image:height" content="\d+"/);
+  });
+
+  it('requests a large Twitter card', () => {
+    expect(html('index.html')).toContain('<meta name="twitter:card" content="summary_large_image"');
+  });
+
+  it('emits valid OG locale codes, which are not the hreflang codes', () => {
+    // og:locale wants language_TERRITORY. 'en' alone is not valid there,
+    // even though it is the correct hreflang value.
+    expect(html('index.html')).toContain('<meta property="og:locale" content="en_US"');
+    expect(html('pt/index.html')).toContain('<meta property="og:locale" content="pt_BR"');
   });
 });
