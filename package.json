@@ -11,6 +11,7 @@
     "test:build": "astro build && vitest run tests/build"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "@fontsource/cinzel": "^5.0.0",
     "@fontsource/ibm-plex-mono": "^5.0.0",
     "@fontsource/literata": "^5.0.0",

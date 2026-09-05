@@ -11,14 +11,22 @@ interface Props {
   route: Route;
   title: string;
   description: string;
+  /** Keep this page out of search results. Only the 404 page needs it. */
+  noindex?: boolean;
 }
 
-const { locale, route, title, description } = Astro.props;
+const { locale, route, title, description, noindex = false } = Astro.props;
 ---
 <!doctype html>
 <html lang={HREFLANG[locale]}>
   <head>
-    <Head locale={locale} route={route} title={title} description={description} />
+    <Head
+      locale={locale}
+      route={route}
+      title={title}
+      description={description}
+      noindex={noindex}
+    />
   </head>
   <body>
     <a class="skip-link" href="#main">{t('nav.skip', locale)}</a>

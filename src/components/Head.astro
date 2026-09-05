@@ -9,9 +9,11 @@ interface Props {
   route: Route;
   title: string;
   description: string;
+  /** Keep this page out of search results. Only the 404 page needs it. */
+  noindex?: boolean;
 }
 
-const { locale, route, title, description } = Astro.props;
+const { locale, route, title, description, noindex = false } = Astro.props;
 const alternates = alternatesFor(route);
 const self = alternates.find((a) => a.locale === locale)!;
 const canonical = new URL(self.href, Astro.site).href;
@@ -38,6 +40,7 @@ const favicon = `${base}${base.endsWith('/') ? '' : '/'}favicon.svg`;
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex" />}
 <link rel="icon" type="image/svg+xml" href={favicon} />
 <link rel="canonical" href={canonical} />
 {alternates.map((a) => (

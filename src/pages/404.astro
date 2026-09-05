@@ -1,0 +1,64 @@
+---
+// GitHub Pages serves this for any unmatched path under the site, in either
+// language — so unlike every other page it cannot know the reader's locale.
+// It carries both languages rather than guessing, and is excluded from the
+// sitemap and from search results.
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Seam from '~/components/Seam.astro';
+import { localizePath } from '~/i18n/utils';
+---
+<BaseLayout
+  locale="en"
+  route=""
+  noindex={true}
+  title="Not found — The Hunt"
+  description="That page does not exist on this site."
+>
+  <article class="lost">
+    <p class="eyebrow">404</p>
+    <h1>This page was never written</h1>
+
+    <Seam />
+
+    <p class="line">
+      There is nothing at that address. It may have moved, or it may never
+      have existed — the site is still being built.
+    </p>
+    <p class="line" lang="pt-BR">
+      Não há nada nesse endereço. Pode ter mudado de lugar, ou pode nunca ter
+      existido — o site ainda está sendo construído.
+    </p>
+
+    <p class="ways">
+      <a href={localizePath('', 'en')}>Back to the beginning</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href={localizePath('', 'pt')} lang="pt-BR">Voltar ao início</a>
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .lost {
+    padding: clamp(3rem, 10vw, 6rem) var(--gutter);
+    max-width: 60ch;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    margin-bottom: 1.6rem;
+  }
+  .line {
+    color: var(--dim);
+    margin-top: 1.2rem;
+  }
+  .ways {
+    margin-top: 2.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .ways a { text-decoration: none; }
+  .ways a:hover { text-decoration: underline; }
+  .sep { color: var(--dim); margin: 0 0.7rem; }
+</style>
