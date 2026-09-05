@@ -1,13 +1,40 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
-import Plate from '~/components/Plate.astro';
+import Hero from '~/components/Hero.astro';
+import { localizePath } from '~/i18n/utils';
+
+const locale = 'en' as const;
 ---
 <BaseLayout
-  locale="en"
+  locale={locale}
   route=""
   title="The Hunt"
-  description="A man wakes remembering a dream he was never meant to remember — and discovers he was used as a key to rob a god."
+  description="A man wakes remembering a dream he was never meant to remember — and finds he was used as a key to rob a god of the codes of creation."
 >
-  <h1>The Hunt</h1>
-  <Plate id="key-art" locale="en" loading="eager" sizes="(max-width: 720px) 80vw, 380px" />
+  <Hero locale={locale}>
+    <Fragment slot="eyebrow">A novel in development</Fragment>
+    <Fragment slot="heading">The Hunt</Fragment>
+    <Fragment slot="logline">
+      "In a universe where gods only hear what is spoken, the mind's deepest sleep
+      became an open door."
+    </Fragment>
+    <Fragment slot="body">
+      <p class="prose">
+        An ordinary man in Nor Yesey wakes carrying memories of a dream he was never
+        meant to remember. He was not chosen. He was <em>selected</em> — by a probability
+        engine scanning billions of minds for a dormant strand of foreign DNA — and used
+        as a biological relay so another civilization could siphon the codes of creation
+        from a god who cannot read thoughts, only words and dreams.
+      </p>
+      <p class="prose">
+        The theft leaves him no longer entirely human. The god he needs to warn has
+        already closed the connection. To reach her he must find his own mirror: a woman
+        in another galaxy who carries a fragment of that same god — and enter her sleep
+        exactly as his own was entered.
+      </p>
+    </Fragment>
+    <Fragment slot="onward">
+      <a href={localizePath('worlds', locale)}>Begin with the two worlds →</a>
+    </Fragment>
+  </Hero>
 </BaseLayout>

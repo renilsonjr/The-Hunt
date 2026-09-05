@@ -1,11 +1,41 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/Hero.astro';
+import { localizePath } from '~/i18n/utils';
+
+const locale = 'pt' as const;
 ---
 <BaseLayout
-  locale="pt"
+  locale={locale}
   route=""
   title="The Hunt"
-  description="Um homem acorda lembrando de um sonho que jamais deveria lembrar — e descobre que foi usado como chave para roubar uma deusa."
+  description="Um homem acorda lembrando de um sonho que jamais deveria lembrar — e descobre que foi usado como chave para roubar de uma deusa os códigos da criação."
 >
-  <h1>The Hunt</h1>
+  <Hero locale={locale}>
+    <Fragment slot="eyebrow">Um romance em desenvolvimento</Fragment>
+    <Fragment slot="heading">The Hunt</Fragment>
+    <Fragment slot="logline">
+      "Num universo onde os deuses só ouvem o que é dito em voz alta, o sono mais
+      profundo da mente virou uma porta aberta."
+    </Fragment>
+    <Fragment slot="body">
+      <p class="prose">
+        Um homem comum em Nor Yesey acorda carregando a memória de um sonho que jamais
+        deveria lembrar. Ele não foi escolhido. Ele foi <em>selecionado</em> — por uma
+        máquina de probabilidades que varreu bilhões de mentes atrás de um fragmento
+        adormecido de DNA estrangeiro — e usado como retransmissor biológico para que
+        outra civilização drenasse os códigos da criação de uma deusa que não lê
+        pensamentos, apenas palavras e sonhos.
+      </p>
+      <p class="prose">
+        O roubo o deixa não inteiramente humano. A deusa que ele precisa avisar já
+        encerrou a conexão. Para alcançá-la, ele precisa encontrar o próprio espelho:
+        uma mulher em outra galáxia que carrega um fragmento dessa mesma deusa — e
+        entrar no sono dela exatamente como entraram no dele.
+      </p>
+    </Fragment>
+    <Fragment slot="onward">
+      <a href={localizePath('worlds', locale)}>Comece pelos dois mundos →</a>
+    </Fragment>
+  </Hero>
 </BaseLayout>

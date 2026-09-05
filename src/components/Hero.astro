@@ -1,0 +1,70 @@
+---
+import Plate from '~/components/Plate.astro';
+import Seam from '~/components/Seam.astro';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow"><slot name="eyebrow" /></p>
+    <h1><slot name="heading" /></h1>
+    <p class="logline"><slot name="logline" /></p>
+    <Seam />
+    <slot name="body" />
+    <p class="onward">
+      <slot name="onward" />
+    </p>
+  </div>
+
+  <figure class="hero-art">
+    <Plate id="key-art" locale={locale} loading="eager" sizes="(max-width: 720px) 80vw, 380px" />
+  </figure>
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: clamp(2rem, 6vw, 4rem);
+    align-items: center;
+    padding: clamp(2.5rem, 7vw, 5rem) var(--gutter);
+  }
+  h1 {
+    font-size: clamp(2.6rem, 8vw, 4.4rem);
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+  .logline {
+    font-style: italic;
+    color: var(--ink);
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    max-width: 44ch;
+    margin-bottom: 1.4rem;
+  }
+  .hero-copy :global(.prose) { color: var(--dim); }
+  .onward {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 1.6rem;
+  }
+  .onward :global(a) { text-decoration: none; }
+  .onward :global(a:hover) { text-decoration: underline; }
+  .hero-art { margin: 0; }
+  .hero-art :global(img) {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--hair);
+    box-shadow: 0 30px 60px -26px rgba(0, 0, 0, 0.95);
+  }
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-art { order: -1; max-width: 260px; }
+  }
+</style>
