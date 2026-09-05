@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
+import Plate from '~/components/Plate.astro';
 ---
 <BaseLayout
   locale="en"
@@ -8,4 +9,5 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
   description="A man wakes remembering a dream he was never meant to remember — and discovers he was used as a key to rob a god."
 >
   <h1>The Hunt</h1>
+  <Plate id="key-art" locale="en" loading="eager" sizes="(max-width: 720px) 80vw, 380px" />
 </BaseLayout>
