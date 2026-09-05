@@ -1,0 +1,23 @@
+---
+interface Props {
+  orientation?: 'horizontal' | 'vertical';
+}
+const { orientation = 'horizontal' } = Astro.props;
+---
+<div class={`seam seam--${orientation}`} role="presentation" aria-hidden="true"></div>
+
+<style>
+  /* The seam is the Barrier. Gold is Earth 1, violet is Earth 2. */
+  .seam--horizontal {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--zalian), var(--balian));
+    opacity: 0.75;
+  }
+  .seam--vertical {
+    width: 2px;
+    align-self: stretch;
+    background: linear-gradient(180deg, var(--zalian), var(--balian));
+    opacity: 0.75;
+  }
+</style>

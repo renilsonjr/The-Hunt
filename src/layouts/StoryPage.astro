@@ -1,0 +1,31 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+  route: string;
+  title: string;
+  description: string;
+  eyebrow: string;
+  heading: string;
+}
+
+const { locale, route, title, description, eyebrow, heading } = Astro.props;
+---
+<BaseLayout locale={locale} route={route} title={title} description={description}>
+  <article class="page">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{heading}</h1>
+    <slot />
+  </article>
+</BaseLayout>
+
+<style>
+  .page {
+    padding: clamp(2rem, 6vw, 4rem) var(--gutter);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); }
+</style>
