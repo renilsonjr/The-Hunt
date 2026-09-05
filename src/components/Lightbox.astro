@@ -52,7 +52,12 @@ const closeLabel = locale === 'en' ? 'Close' : 'Fechar';
     const open = (trigger: HTMLElement) => {
       const source = trigger.querySelector('img');
       if (!source) return;
-      img.src = source.currentSrc || source.src;
+      // Prefer the full-size derivative the tile carries in `data-full`
+      // (GalleryGrid.astro). `currentSrc` is whatever the *tile* resolved —
+      // the 300w file on a 1x desktop — and the dialog renders at ~870px, so
+      // using it upscales roughly 2.9x. Fall back to it only if the attribute
+      // is missing.
+      img.src = trigger.dataset.full || source.currentSrc || source.src;
       img.alt = source.alt;
       caption.textContent = trigger.dataset.caption ?? '';
       dialog.showModal();

@@ -214,6 +214,29 @@ export const ART = {
 export type ArtId = keyof typeof ART;
 export const ART_IDS = Object.keys(ART) as ArtId[];
 
+/**
+ * The intrinsic pixel width every plate was drawn at (1152x1728). Anything that
+ * needs the full-size derivative — the lightbox — asks for exactly this width so
+ * it reuses the srcset entry Plate.astro already emits instead of adding a file.
+ */
+export const PLATE_INTRINSIC_WIDTH = 1152;
+
+/**
+ * Encoder quality for every derivative of every plate.
+ *
+ * Astro 5.18's Picture.astro spreads a single props object — quality included —
+ * into the getImage() call for each entry in `formats` and into the JPEG
+ * fallback call, so one number governs AVIF, WebP and JPEG alike. There is no
+ * per-format quality prop to reach for.
+ *
+ * 50 is sharp's own AVIF default, which is where AVIF wants to sit; the previous
+ * value of 70 was picked for the JPEG fallback alone and inflated every AVIF and
+ * WebP derivative with it (the 800w hero AVIF was 206KB, over half the landing
+ * page's 400KB above-the-fold budget). Lowering it shrinks the JPEG fallback too,
+ * which only moves it further under the cap tests/build/images.test.ts enforces.
+ */
+export const PLATE_QUALITY = 50;
+
 // Astro only prunes the untouched multi-megabyte source JPEG for an imported
 // image once that image has been requested through getImage/Image/Picture at
 // least once during the build; an id that's merely imported into this
