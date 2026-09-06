@@ -83,6 +83,18 @@ describe('sitemap', () => {
   it('does not advertise the 404 page', () => {
     expect(read('sitemap-0.xml')).not.toContain('/404');
   });
+
+  it('lists the Phase B routes', () => {
+    const xml = read('sitemap-0.xml');
+    for (const route of ['codex', 'dream', 'journal']) {
+      expect(xml, `sitemap is missing /${route}/`).toContain(
+        `https://renilsonjr.github.io/The-Hunt/${route}/`,
+      );
+      expect(xml, `sitemap is missing /pt/${route}/`).toContain(
+        `https://renilsonjr.github.io/The-Hunt/pt/${route}/`,
+      );
+    }
+  });
 });
 
 describe('locale parity', () => {

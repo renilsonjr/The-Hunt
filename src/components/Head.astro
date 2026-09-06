@@ -1,7 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
-import { alternatesFor } from '~/i18n/utils';
-import { HREFLANG, OG_LOCALE, type Locale, type Route } from '~/i18n/config';
+import { alternatesFor, localizePath } from '~/i18n/utils';
+import { DEFAULT_LOCALE, HREFLANG, OG_LOCALE, type Locale, type Route } from '~/i18n/config';
 import { ART, PLATE_QUALITY } from '~/data/art';
 
 interface Props {
@@ -55,6 +55,13 @@ const favicon = `${base}${base.endsWith('/') ? '' : '/'}favicon.svg`;
 {alternates.map((a) => (
   <link rel="alternate" hreflang={a.hreflang} href={a.href} />
 ))}
+{/*
+  x-default tells a crawler which version to serve a reader whose language
+  matches neither alternate. It points at the default locale, using the same
+  effective pagePath as canonical and the alternates above so all four agree
+  — for a journal entry that is the entry itself, not the journal index.
+*/}
+<link rel="alternate" hreflang="x-default" href={localizePath(pagePath, DEFAULT_LOCALE)} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />

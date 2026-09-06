@@ -52,6 +52,23 @@ describe('document head', () => {
   it('links a favicon so no page 404s on /favicon.ico', () => {
     expect(html('index.html')).toContain('<link rel="icon" type="image/svg+xml" href="/The-Hunt/favicon.svg"');
   });
+
+  it('emits an x-default alternate for readers whose language matches neither', () => {
+    // Without it, a crawler has no instruction for, say, a French reader.
+    // x-default points at the default locale.
+    const doc = html('index.html');
+    expect(doc).toMatch(/<link rel="alternate" hreflang="x-default" href="\/The-Hunt\/"/);
+  });
+
+  it('points x-default at the journal entry itself, not the journal index', () => {
+    // Journal entries live at journal/<slug> while their nav route is
+    // "journal" — x-default must follow the entry's own pagePath like
+    // canonical and the other alternates do, not fall back to the index.
+    const doc = html('journal/2026-09-05-the-site-is-live/index.html');
+    expect(doc).toMatch(
+      /<link rel="alternate" hreflang="x-default" href="\/The-Hunt\/journal\/2026-09-05-the-site-is-live\/"/,
+    );
+  });
 });
 
 describe('social sharing metadata', () => {
