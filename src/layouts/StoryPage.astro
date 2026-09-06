@@ -9,18 +9,18 @@ interface Props {
   description: string;
   eyebrow: string;
   heading: string;
-  /** See Header's prop of the same name. Defaults to `route` there. */
-  togglePath?: string;
+  /** See Head's prop of the same name. Defaults to `route` there. */
+  pagePath?: string;
 }
 
-const { locale, route, title, description, eyebrow, heading, togglePath } = Astro.props;
+const { locale, route, title, description, eyebrow, heading, pagePath } = Astro.props;
 ---
 <BaseLayout
   locale={locale}
   route={route}
   title={title}
   description={description}
-  togglePath={togglePath}
+  pagePath={pagePath}
 >
   <article class="page">
     <p class="eyebrow">{eyebrow}</p>

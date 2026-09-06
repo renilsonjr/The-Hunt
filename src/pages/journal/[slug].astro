@@ -16,7 +16,7 @@ const { data } = item.entry;
 <StoryPage
   locale={locale}
   route="journal"
-  togglePath={`journal/${item.slug}`}
+  pagePath={`journal/${item.slug}`}
   title={`${data.title} — The Hunt`}
   description={data.description}
   eyebrow={data.date.toISOString().slice(0, 10)}

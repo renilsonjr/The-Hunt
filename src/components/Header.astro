@@ -7,15 +7,15 @@ interface Props {
   locale: Locale;
   route: Route;
   /**
-   * Path (without locale prefix) the language toggle should link to.
-   * Defaults to `route`, which is correct for every whole-page route. Dynamic
-   * routes with their own counterpart (e.g. a journal entry) pass their own
-   * slug path here so the toggle lands on that entry's translation rather
-   * than falling back to the section index.
+   * The path this page actually lives at, when that differs from its nav
+   * `route`. Defaults to `route`, which is correct for every whole-page
+   * route. Dynamic routes with their own counterpart (e.g. a journal entry)
+   * pass their own slug path here so the language toggle lands on that
+   * entry's translation rather than falling back to the section index.
    */
-  togglePath?: string;
+  pagePath?: string;
 }
-const { locale, route, togglePath = route } = Astro.props;
+const { locale, route, pagePath = route } = Astro.props;
 const other: Locale = locale === 'en' ? 'pt' : 'en';
 
 const links = [
@@ -41,7 +41,7 @@ const links = [
     ))}
   </nav>
 
-  <a class="lang" href={localizePath(togglePath, other)} lang={other === 'pt' ? 'pt-BR' : 'en'}>
+  <a class="lang" href={localizePath(pagePath, other)} lang={other === 'pt' ? 'pt-BR' : 'en'}>
     {t('lang.switch', locale)}
   </a>
 </header>
