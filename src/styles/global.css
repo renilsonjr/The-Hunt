@@ -53,6 +53,44 @@ body {
   line-height: 1.65;
 }
 
+/*
+ * The two worlds, as the ground the whole site stands on.
+ *
+ * Zalian's gold out of the top-left and Balian's violet out of the
+ * bottom-right, at opacities low enough to read as depth before they read as
+ * symbolism, with --void between them where they never meet. It states the
+ * cosmology once, quietly, on every page — including the ones that carry no
+ * illustration to state it for them.
+ *
+ * Three decisions worth keeping:
+ *
+ * Fixed, not scrolled. The glow belongs to the window rather than to the
+ * document, so a 2,000-word chapter does not drag two suns down the screen
+ * behind it. A fixed pseudo-element rather than `background-attachment: fixed`
+ * on the body, which forces a full-viewport repaint on every scroll frame on
+ * mobile.
+ *
+ * A layer above the body background, not a replacement for it. `body` keeps
+ * its flat --void, so the colour the browser paints before this stylesheet
+ * lands is still the right one and there is no flash.
+ *
+ * Nothing here animates, so there is deliberately no prefers-reduced-motion
+ * block — the site's only animation is `.reveal` below, already opt-in behind
+ * `no-preference`.
+ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(115vmax 85vmax at 6% -12%,
+      color-mix(in srgb, var(--zalian) 11%, transparent), transparent 62%),
+    radial-gradient(115vmax 85vmax at 94% 112%,
+      color-mix(in srgb, var(--balian) 15%, transparent), transparent 62%);
+}
+
 h1, h2, h3 {
   font-family: var(--font-display);
   line-height: 1.1;
