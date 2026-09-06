@@ -1,0 +1,78 @@
+---
+/**
+ * Previous / contents / next, at the foot of a chapter.
+ *
+ * Takes the resolved neighbours rather than fetching them: the page has
+ * already listed every chapter to build its static paths, and asking the
+ * collection again per page would be the same query run 32 times a build.
+ */
+import { localizePath } from '~/i18n/utils';
+import { t } from '~/i18n/ui';
+import type { ChapterItem } from '~/lib/content';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+  prev?: ChapterItem;
+  next?: ChapterItem;
+}
+const { locale, prev, next } = Astro.props;
+---
+<nav class="chapter-nav" aria-label={t('read.nav.aria', locale)}>
+  {prev ? (
+    <a class="side prev" href={localizePath(`read/${prev.slug}`, locale)}>
+      <span class="dir">&larr; {t('read.prev', locale)}</span>
+      <span class="name">{prev.entry.data.heading}</span>
+    </a>
+  ) : <span class="side" />}
+
+  <a class="contents" href={localizePath('read', locale)}>{t('read.contents', locale)}</a>
+
+  {next ? (
+    <a class="side next" href={localizePath(`read/${next.slug}`, locale)}>
+      <span class="dir">{t('read.next', locale)} &rarr;</span>
+      <span class="name">{next.entry.data.heading}</span>
+    </a>
+  ) : <span class="side" />}
+</nav>
+
+<style>
+  .chapter-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: var(--measure);
+    margin-top: 3.5rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--hair);
+  }
+  .side { flex: 1 1 0; display: flex; flex-direction: column; gap: 0.25rem; }
+  .side.next { text-align: right; }
+  a { text-decoration: none; color: inherit; }
+  .dir {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .name { font-size: 0.92rem; }
+  a.side:hover .name { color: var(--zalian); }
+  .contents {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+    border: 1px solid var(--hair);
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+  }
+  .contents:hover { border-color: var(--zalian); color: var(--ink); }
+
+  @media (max-width: 34rem) {
+    .chapter-nav { flex-wrap: wrap; }
+    .contents { order: 3; width: 100%; text-align: center; }
+  }
+</style>

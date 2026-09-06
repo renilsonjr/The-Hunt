@@ -1,0 +1,17 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import ChapterList from '~/components/ChapterList.astro';
+import { t } from '~/i18n/ui';
+
+const locale = 'en' as const;
+---
+<StoryPage
+  locale={locale}
+  route="read"
+  title="Read — The Hunt"
+  description="The first draft of The Hunt, published as it is written. Sixteen chapters, start to finish."
+  eyebrow={t('read.title', locale)}
+  heading={t('read.heading', locale)}
+>
+  <ChapterList locale={locale} />
+</StoryPage>
