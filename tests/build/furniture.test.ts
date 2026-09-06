@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { ROUTES, LOCALES, DEFAULT_LOCALE } from '~/i18n/config';
 
@@ -8,7 +8,6 @@ const read = (p: string) => readFileSync(dist(p), 'utf8');
 
 // Find all directories in dist that contain index.html
 const findBuiltPages = (dir: string, prefix: string = ''): string[] => {
-  const { readdirSync } = require('node:fs');
   const pages: string[] = [];
   try {
     const entries = readdirSync(dist(dir), { withFileTypes: true });

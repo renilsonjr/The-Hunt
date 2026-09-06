@@ -25,4 +25,31 @@ describe('dream log', () => {
   it('is reachable from the footer', () => {
     expect(html('index.html')).toContain('href="/The-Hunt/dream/"');
   });
+
+  // The note is a factual claim about a primary source document — it tells
+  // the reader exactly how much of what follows was edited. A regression that
+  // dropped it would leave the log looking like fiction, and every other
+  // assertion here would still pass.
+  it('states on the record what was changed and what was not', () => {
+    expect(html('dream/index.html')).toContain(
+      'Typos have been fixed and nothing else has been touched.',
+    );
+    expect(html('pt/dream/index.html')).toContain(
+      'Apenas erros de digitação foram corrigidos.',
+    );
+  });
+
+  // The frame is the site's voice; the log is the artifact. That distinction
+  // is the page's whole editorial argument, so the frame is marked up as one
+  // unit — however many paragraphs it runs to — rather than relying on a CSS
+  // rule that sets apart only the first.
+  it('sets the whole editorial frame apart from the log, not just its first paragraph', () => {
+    const pt = html('pt/dream/index.html');
+    const frame = pt.match(/<div class="frame"[^>]*>([\s\S]*?)<\/div>/);
+    expect(frame, 'the PT page has no marked-up editorial frame').not.toBeNull();
+    expect(frame![1].match(/<p[^>]*>/g)?.length).toBeGreaterThan(1);
+    expect(frame![1]).toContain('Apenas erros de digitação foram corrigidos.');
+    // The log itself stays outside it.
+    expect(frame![1]).not.toContain('REM');
+  });
 });

@@ -12,8 +12,10 @@
  *  - codex: the mythology (this task) — headings in the Zalian gold, body
  *    text dimmed, inline code (the glyph) in mono/gold.
  *  - log:   Task 3's transmission logs — small caps mono headings like a
- *    header stamp, and a first paragraph styled as an editorial note sitting
- *    above the primary document (italic, dimmed, hairline rule on the left).
+ *    header stamp, and an editorial note sitting above the primary document
+ *    (italic, dimmed, hairline rule on the left). The note is marked up in
+ *    the content as `<div class="frame">`, because it is however many
+ *    paragraphs it needs to be and CSS cannot count them.
  *  - entry: Task 4's journal entries — body copy only, nothing else special.
  */
 interface Props {
@@ -54,11 +56,21 @@ const { variant } = Astro.props;
     margin-top: 2rem;
   }
   .prose-body[data-variant='log'] :global(p) { color: var(--ink); }
-  .prose-body[data-variant='log'] :global(p:first-of-type) {
-    font-style: italic;
-    color: var(--dim);
+  /*
+   * The editorial frame: the site's own voice introducing the artifact, which
+   * runs to two paragraphs in Portuguese and one in English. `p:first-of-type`
+   * set apart only the first, so on the PT page the sentence explaining WHY
+   * the log stays untranslated rendered identically to the log it introduces
+   * — collapsing the frame/artifact distinction that page exists to make. The
+   * content marks the frame explicitly, so this no longer counts paragraphs.
+   */
+  .prose-body[data-variant='log'] :global(.frame) {
     border-left: 1px solid var(--hair);
     padding-left: 1rem;
+  }
+  .prose-body[data-variant='log'] :global(.frame p) {
+    font-style: italic;
+    color: var(--dim);
   }
 
   /* entry */

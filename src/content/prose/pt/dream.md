@@ -5,9 +5,10 @@ eyebrow: "A semente · 26/08/26"
 heading: "Sonho 1"
 ---
 
-Tudo neste site — os dois mundos, os deuses, a Barreira, a Esfera — nasceu das anotações abaixo, escritas na manhã seguinte ao sonho, antes de qualquer disso ser uma história.
-
-Este é o **documento original** e permanece em inglês, deliberadamente. É o relato de uma pessoa sobre uma noite, nas palavras dela; traduzi-lo trocaria o registro por uma paráfrase do registro. Apenas erros de digitação foram corrigidos.
+<div class="frame">
+<p>Tudo neste site — os dois mundos, os deuses, a Barreira, a Esfera — nasceu das anotações abaixo, escritas na manhã seguinte ao sonho, antes de qualquer disso ser uma história.</p>
+<p>Este é o <strong>documento original</strong> e permanece em inglês, deliberadamente. É o relato de uma pessoa sobre uma noite, nas palavras dela; traduzi-lo trocaria o registro por uma paráfrase do registro. Apenas erros de digitação foram corrigidos.</p>
+</div>
 
 The Hunt – REM – Dream 1 – 08/26/26 – New Jersey – USA
 Script of what I remember from my dream

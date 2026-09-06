@@ -67,11 +67,3 @@ export async function listJournal(locale: Locale): Promise<JournalItem[]> {
 
   return items.sort((a, b) => b.entry.data.date.getTime() - a.entry.data.date.getTime());
 }
-
-export async function getJournalEntry(
-  slug: string,
-  locale: Locale,
-): Promise<JournalItem | undefined> {
-  const items = await listJournal(locale);
-  return items.find((i) => i.slug === slug);
-}

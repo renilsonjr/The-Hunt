@@ -5,7 +5,10 @@ eyebrow: "The seed · 08/26/26"
 heading: "Dream 1"
 ---
 
-Everything on this site — the two worlds, the gods, the Barrier, the Sphere — grew out of the notes below. They were written the morning after the dream, before any of it was a story. Typos have been fixed and nothing else has been touched.
+<div class="frame">
+<p>Everything on this site — the two worlds, the gods, the Barrier, the Sphere — grew out of the notes below. They were written the morning after the dream, before any of it was a story.</p>
+<p>Typos have been fixed and nothing else has been touched.</p>
+</div>
 
 The Hunt – REM – Dream 1 – 08/26/26 – New Jersey – USA
 Script of what I remember from my dream

@@ -18,7 +18,9 @@ interface Props {
 const { locale, route, pagePath = route } = Astro.props;
 const other: Locale = locale === 'en' ? 'pt' : 'en';
 
-const links = [
+// Annotated, not inferred: without it `route` widens to string and a typo'd
+// nav route type-checks and ships a link to a 404.
+const links: { route: Route; label: string }[] = [
   { route: 'worlds', label: t('nav.worlds', locale) },
   { route: 'gods', label: t('nav.gods', locale) },
   { route: 'hybrids', label: t('nav.hybrids', locale) },
