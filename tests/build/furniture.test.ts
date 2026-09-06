@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { ROUTES, LOCALES, DEFAULT_LOCALE } from '~/i18n/config';
 
 const dist = (p: string) => resolve(process.cwd(), 'dist', p);
 const read = (p: string) => readFileSync(dist(p), 'utf8');
@@ -32,6 +33,35 @@ const findBuiltPages = (dir: string, prefix: string = ''): string[] => {
   }
   return pages;
 };
+
+/**
+ * dist path for a declared route in a locale: '' + en -> index.html,
+ * 'gods' + pt -> pt/gods/index.html. Mirrors localizePath's shape without
+ * the base prefix, which does not appear in the output directory.
+ */
+const pageFile = (route: string, locale: string): string => {
+  const prefix = locale === DEFAULT_LOCALE ? '' : `${locale}/`;
+  return route ? `${prefix}${route}/index.html` : `${prefix}index.html`;
+};
+
+// ROUTES is the site's declaration of what exists; the locale-parity test
+// below compares dist against itself and so cannot see a route that failed to
+// build in BOTH locales — symmetric absence passes it. This is the
+// independent oracle. It was dropped during Phase B because routes led their
+// pages while the sections were still being built; all nine now have pages.
+describe('route coverage', () => {
+  it('builds a page for every declared route in every locale', () => {
+    for (const route of ROUTES) {
+      for (const locale of LOCALES) {
+        const file = pageFile(route, locale);
+        expect(
+          existsSync(dist(file)),
+          `ROUTES declares "${route || '/'}" but ${locale} has no built page at dist/${file}`,
+        ).toBe(true);
+      }
+    }
+  });
+});
 
 describe('404 page', () => {
   // GitHub Pages serves 404.html from the published root for any unmatched

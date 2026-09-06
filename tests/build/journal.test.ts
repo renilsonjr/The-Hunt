@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { t } from '~/i18n/ui';
 
 const dist = (p: string) => resolve(process.cwd(), 'dist', p);
 const html = (p: string) => readFileSync(dist(p), 'utf8');
@@ -83,5 +84,50 @@ describe('journal', () => {
   it('still marks Journal as the current nav item on an entry page', () => {
     const en = html('journal/2026-09-05-the-site-is-live/index.html');
     expect(en).toMatch(/<a href="\/The-Hunt\/journal\/"[^>]*aria-current="page"/);
+  });
+});
+
+/**
+ * The phase's headline promise, verified end to end in built output rather
+ * than only as a pure function over fixtures.
+ *
+ * The fixture is honest: src/content/journal/en/2026-09-06-three-more-rooms.md
+ * ships with no Portuguese counterpart, deliberately, because the site will
+ * genuinely have English-only posts. Do not "fix" that by translating it —
+ * its absence is what these tests measure. If it is ever translated, replace
+ * it here with whatever untranslated entry has taken its place.
+ */
+describe('missing translation', () => {
+  const untranslated = '2026-09-06-three-more-rooms';
+  const translated = '2026-09-05-the-site-is-live';
+  const notice = t('notice.fallback', 'pt');
+
+  it('builds a Portuguese page for an entry that exists only in English', () => {
+    // Otherwise the language toggle on the English entry is a 404.
+    expect(existsSync(dist(`pt/journal/${untranslated}/index.html`))).toBe(true);
+  });
+
+  it('says so, in Portuguese, rather than serving English in silence', () => {
+    const pt = html(`pt/journal/${untranslated}/index.html`);
+    expect(pt).toContain(notice);
+    // And it really is serving the English original underneath.
+    expect(pt).toContain('scaffolding');
+  });
+
+  it('does not cry fallback on the English original itself', () => {
+    expect(html(`journal/${untranslated}/index.html`)).not.toContain(
+      t('notice.fallback', 'en'),
+    );
+  });
+
+  it('does not cry fallback on an entry that is fully translated', () => {
+    expect(html(`pt/journal/${translated}/index.html`)).not.toContain(notice);
+  });
+
+  it('leaves the notice off pages whose prose is translated', () => {
+    // ProsePage carries the same wiring; with full prose parity today it must
+    // stay silent, so an always-on notice cannot pass as a fix.
+    expect(html('pt/codex/index.html')).not.toContain(notice);
+    expect(html('pt/dream/index.html')).not.toContain(notice);
   });
 });
