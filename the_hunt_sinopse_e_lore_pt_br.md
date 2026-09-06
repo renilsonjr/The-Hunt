@@ -60,6 +60,10 @@ No entanto, a Terra 2 carecia daquilo que a Terra 1 possuía: acesso direto aos 
 2. A lei de não-interferência de Zalian criou um ponto cego: ela não consegue decodificar assinaturas genéticas de Balian.
 3. Se um humano da Terra 1 carregasse um fragmento adormecido do próprio DNA de Balian, esse humano poderia servir de relé invisível para a tecnologia da Terra 2 sugar a sabedoria sagrada de Zalian sem que ela percebesse.
 
+Ele não esperou que um aparecesse. **Na assinatura do Pacto, antes de a Barreira existir, Balian semeou esse fragmento na linhagem humana comum** — na espécie, não em uma pessoa. Ele não se manifesta em ninguém e é invisível para Zalian, porque a única faculdade da qual ela se privou é ler do que uma mente é feita sem ser convidada. A hereditariedade comum faz o resto: uma loteria sorteada por mil séculos, um bilhete por geração.
+
+Portanto o Pacto não foi uma paz que ele traiu depois. **O Pacto foi o mecanismo de entrega.** Ela ergueu um muro e o fez assinar por ele, e a assinatura é como a semente entrou — razão pela qual ele cumpriu cada letra daquele tratado desde então e nunca precisou quebrá-lo.
+
 ### 3. As Anomalias de DNA (Fridan e Uxies)
 Através de deriva genética em eras profundas, duas anomalias espelhadas surgiram através das galáxias:
 - **Fridan (Terra 1)**: Um cidadão comum em Nor Yesey que carrega um raríssimo fragmento dormente do **DNA de Balian**. Os algoritmos de probabilidade da Terra 2 escanearam bilhões de mentes e identificaram Fridan como a chave perfeita para infiltrar a frequência dos sonhos de Zalian.
@@ -108,23 +112,29 @@ Acessando bancos de dados clandestinos da facção, Fridan localiza o registro d
 
 Fridan se depara com um dilema moral dilacerante: para alertar Zalian de que seus códigos de criação estão sendo roubados, ele precisa construir seu próprio transmissor onírico clandestino e invadir a mente de Uxies enquanto ela dorme — **impondo a uma inocente a exata mesma violação não-consensual que destruiu sua própria vida.**
 
-Recusando-se a agir com a crueldade dos seus algozes, Fridan desenvolve uma abordagem sutil e protetora. Utilizando sua frequência neurológica Virden recém-desperta, ele contorna as redes de vigilância da Terra 2 e sintoniza seu sinal com o ciclo natural de sono REM de Uxies.
+Recusando-se a agir com a crueldade dos seus algozes, Fridan pretende uma abordagem sutil e protetora: entrar, encostar uma única harmonia no fragmento adormecido de DNA de Zalian, sair, e deixá-la acordar tendo sonhado com um pátio. Ela jamais precisaria carregar nada disso. Usando o resíduo Virden que a Esfera deixou nele, ele contorna a vigilância da Terra 2 — não por vencê-la, mas por estar abaixo da sua atenção: um homem sozinho e sem equipamento onde o sistema foi feito para vigiar infraestrutura.
 
-Enquanto Uxies dorme sob as tempestades caóticas da Terra 2, Fridan adentra suavemente seu sonho. Em vez de comandá-la ou extrair sua energia, ele planta uma ressonância harmônica e simbólica no fragmento dormente de DNA de Zalian que ela carrega.
+**E a versão gentil falha.** O fragmento não soa. Zalian ouve apenas aquilo que uma mente *decide* dizer; um fragmento golpeado de fora é algo que aconteceu com ela, ou seja, roubo — e roubo é exatamente aquilo para o que ela é surda. Se fosse de outro jeito, ninguém jamais teria precisado roubar. Para que o fragmento diga qualquer coisa, a mulher que o carrega precisa querer dizer.
 
-A ressonância inflama.
+Então ele se senta no chão de um pátio em outra galáxia e conta a Uxies a verdade, em ordem, inclusive as partes que o condenam: o que ela carrega, por que ele quer, que veio com a intenção de não perguntar, e que existe um registro de cinquenta e um anos da vida dela mantido por algo que nunca lhe dirigiu uma palavra. **Ela recusa.** Depois muda de ideia — não para salvar duas galáxias, mas porque, após quarenta e dois anos ouvindo com gentileza e insistência que a quietude dentro dela é um defeito, alguém lhe disse que é a única parte dela que sempre esteve certa.
+
+Ela toma o fragmento deliberadamente, e quer dizer. A ressonância inflama.
 
 Através da intransponível Barreira galáctica, a centelha divina da essência de Zalian dentro de Uxies brilha como um farol no vazio. Por se originar de sua própria matriz genética, **Zalian ouve o chamado.**
 
 A verdade atinge a consciência da Criadora: a traição milenar de Balian, a drenagem de códigos através do sono humano, o sacrifício trágico de Fridan e as maquinações que ameaçam as duas galáxias.
 
-A revelação abala as estruturas cósmicas. Zalian reage com majestade precisa: em vez de destruir a Terra 2 em retaliação, ela altera a frequência fundamental da Barreira Cósmica. Todas as vulnerabilidades de acesso pelo sono REM humano são seladas instantaneamente, desativando as máquinas de extração da Terra 2 para sempre.
+A revelação abala as estruturas cósmicas — e chega completa, armadilha inclusive, porque veio através de uma mente a quem Fridan acabara de contar tudo.
+
+Por isso ela **não** toca a Barreira. Estender a mão até o muro é precisamente aquilo que onze mil anos de maquinaria foram construídos para provocar, com a mão dela pousando num lugar e num instante comprados com um ano de antecedência. Em vez disso, ela sela a vulnerabilidade do outro lado: **ela fecha o próprio canal dos sonhos.** As máquinas de extração da Terra 2 morrem da noite para o dia, e o preço é dela — o único modo que já teve de estar junto da própria criação, entregue no mesmo gesto.
+
+A humanidade continua sonhando. Não há mais nada escutando do outro lado. Cada pessoa da Terra 1 passa a viver exatamente na condição em que ela deixou Fridan um ano antes, e nenhuma delas sabe disso.
 
 ---
 
 ### EPÍLOGO — A Ponte Entre Dois Céus (Desfecho)
 
-Na Terra 1, Fridan observa o amanhecer do alto de um terraço em Nor Yesey. A voz divina em sua mente se foi para sempre, e ele jamais voltará a ser um humano comum. No entanto, o terror existencial deu lugar a um sentimento sereno de dever cumprido. Ele protegeu sua criadora e resguardou o equilíbrio do cosmos.
+Na Terra 1, Fridan observa o amanhecer do alto de um terraço em Nor Yesey — permanentemente alterado, respirando errado, carregando um documento em que ninguém vai acreditar. Ela vem uma última vez, confirma que o ano de silêncio foi proteção e não rejeição, e lhe diz aquilo que ele pediu naquele mesmo terraço e não recebeu: o nome dela. Ele nunca o escreve. Depois ela se vai, e desta vez não resta porta alguma para fechar.
 
 A anos-luz dali, sobre os arranha-céus tempestuosos e iluminados por neon da Terra 2, **Uxies** acorda. Ela se senta na cama, respirando a atmosfera densa de seu planeta. Pela primeira vez na vida, o ruído caótico que sempre atormentou seu espírito desapareceu.
 

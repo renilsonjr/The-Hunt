@@ -52,7 +52,9 @@
 - **Her communication constraint:** Zalian can only understand what beings **say aloud** — not what they think. This is a deliberate aspect of the free will framework she built. She will not invade a mind; she only receives what is consciously offered. **This is her limitation — and the reason dreams are the only place where she can read minds**, because in dreams, the boundary between thought and speech dissolves.
 - **Her knowledge of Fridan:** Zalian **is aware** of the Balian DNA fragment in Fridan's genome. She has always known it was there. But she cannot stop him — she made a law for herself: no interference with a creature's free will. She watches, but she does not act.
 - **Her understanding of time:** Gods understand time differently from humans — they see all its branches simultaneously. Zalian knew what Fridan was, what he would be used for, and what would happen. She allowed it. Why? Was Fridan's existence a mistake — or a deliberate seed? A chance at unification between the two worlds?
-- **Why she severs contact:** After Fridan touches the sphere and wakes remembering, Zalian scans him. She finds he is **no longer 100% human.** The sphere transferred Virden knowledge into his biology — he is now a hybrid, less human and more Virden. He is a risk to the balance between the two galaxies. She closes the connection fully. She stops guiding him. She stops protecting him. She withdraws.
+- **Why she severs contact:** After Fridan touches the sphere and wakes remembering, Zalian scans him. She finds he is **no longer 100% human.** The sphere transferred Virden knowledge into his biology — he is now a hybrid, less human and more Virden.
+- **What "severing" actually is — REFINED.** She does not cut a channel; there is no channel to cut. She hears every word spoken aloud by everyone, always, as a property of the universe she made. What she does is *decide not to attend* to him — which means she went on hearing every word he said for the whole of the year he spent believing he had been discarded. It also means the withdrawal is reversible in principle, and that a reason, not a mechanism, is what stands in the way.
+- **And the reason is protective.** Whatever is at the other end of this reads her attention, so anything she attends to they get for free. Taking Fridan out of her regard is the only way she has of taking him out of theirs. She could not tell him that without telling them. Fridan reasons his way to this in Chapter 10 and she confirms it in the epilogue; he can never verify it in between.
 - **What she doesn't know:** That Fridan has already had contact with the Earth 2 civilization. That they convinced him they are peaceful. That they are manipulating him. Zalian assumed the threat was only the barrier breach — she doesn't yet know how far Fridan has already been turned.
 - **Her arc:** A god who cannot interfere, who knows what is coming, who chose to let a hybrid exist rather than prevent him — and now must reckon with the consequences of her own non-interference law.
 
@@ -63,8 +65,9 @@
 - **The Conflict:** Before Earth 1 or Earth 2 were created, Zalian and Balian fought. The nature of their conflict is a story mystery.
 - **The Deal:** They separated. Balian took followers and built Earth 2. Zalian erected the Barrier — different atmospheres, incompatible biology. Shared air between species = death for both.
 - **Balian's relationship with the Virden:** Unlike Zalian, Balian is **physically present** with his people. He can walk among them, argue with them, live alongside them. He chose presence over distance.
-- **His knowledge of Fridan:** Balian is aware that Fridan exists and carries his DNA. Whether he helped Earth 2 discover this, or whether Earth 2 found it independently using their advanced technology, is a mystery to develop. He has never told Earth 2 about the Balian-DNA fragments existing in Earth 1 humans — but "he himself realized" Fridan carried this combination. Did Balian engineer this? Or merely notice it?
-- **His true goal:** Unknown. Does he want war with Zalian? Does he want recognition? Does he want to reunite the two worlds? Or does he want to prove to Zalian that he can reach her — even through her own Barrier?
+- **How his DNA got into Earth 1 — RESOLVED.** He engineered it, and the engineering *was* the drift. At the signing of the Pact, before the Barrier went up, Balian seeded a dormant fragment of his own lineage into the common human line — not into a person, into the species. It expresses in nobody. It is invisible to Zalian because the one thing she bound herself out of is reading what a mind is made of uninvited. Ordinary inheritance then shuffles it for a hundred thousand years and surfaces it in roughly one person per very long while: a lottery with one ticket printed per generation.
+- **Therefore the Pact was the crime.** Not a betrayal of the agreement afterwards — the agreement was the delivery mechanism. She built a wall and made him sign for it, and the signing is how the seed got in. He has kept every letter of that treaty ever since and has never needed to break it. *(Answers the old "engineered or merely noticed?" both ways at once. Dramatized in Chapter 11.)*
+- **His true goal:** Still open. Does he want war with Zalian? Recognition? To reunite the two worlds? Or to prove to Zalian that he can reach her — even through her own Barrier? The draft does not settle this and deliberately leaves room for all four.
 
 ---
 
@@ -116,7 +119,7 @@ After touching the Sphere and waking with memory:
 - **What it is:** The physical separation between Earth 1's galaxy and Earth 2's galaxy, enforced by Zalian after the deal with Balian.
 - **How it works biologically:** The atmospheres of the two worlds are incompatible. A pure Earth 1 human breathing Virden atmosphere = death. A pure Virden breathing Earth 1 atmosphere = death. This is not a technological lock — it is a biological one, baked into the nature of each species.
 - **The only exception:** Hybrids. A being carrying DNA from both sides can survive in both atmospheres. Fridan is this. The Virden with Zalian DNA (Second Lore) is this in reverse.
-- **How Earth 2 crossed it:** They didn't cross it physically — they found the DNA loophole. By threading their signal through Fridan's Balian fragment and using Zalian's dream channel as a relay, they reached Earth 1 without entering its atmosphere. *How they first discovered this loophole is a mystery to develop.*
+- **How Earth 2 crossed it:** They didn't cross it physically — they found the DNA loophole. By threading their signal through Fridan's Balian fragment and using Zalian's dream channel as a relay, they reached Earth 1 without entering its atmosphere. *They did not discover the loophole; Balian built it for them at the signing of the Pact (see his file above).*
 - **The physical crossing question:** Earth 2's long-term goal may not be communication — it may be **physical arrival**. If the Barrier's biological mechanism can be overcome by hybrids, and if Fridan can move between both worlds, then Fridan himself may be the key to a permanent crossing that would end the separation — and potentially cause a catastrophe neither world is prepared for.
 
 ---
@@ -140,7 +143,9 @@ After touching the Sphere and waking with memory:
 - **Nature:** Still to be fully developed — a rival group hacking Earth 2's transmission. Possibly a rogue cell of Earth 2, a human secret society, or a third civilization.
 - **Their role so far:** They accidentally saved Fridan by breaking the REM suppression. Their interference is what let him remember.
 - **Their manipulation:** They contacted Fridan post-awakening and told him Earth 2 is peaceful, that they seek coexistence. This is a lie. Fridan believed them.
-- **Open question:** What do they actually want? The sphere's data? Fridan himself? A different relationship with Zalian?
+- **What they actually want — RESOLVED. The Barrier, moved.** Not the data and never Fridan. You cannot force a god, aim one or persuade one; but she *repairs*. So you leave a hole in her house that she will eventually find, and you arrange that fixing it requires her to reach for the one thing you want moved — with her hand landing at a place and an instant you have known in advance for a year. The extraction is entirely real and is the yield that pays for the operation; it is also the bait.
+- **Which makes Fridan the product, not the anomaly.** Nobody broke his memory suppression, because nothing was suppressed. They ran him, took the yield, and left the memory where it was — because a sleeper who wakes remembering is frightened, alone, unable to tell anyone, and will spend the following year working out entirely on his own that she must be warned. That is the most reliable component in the apparatus. The sleepers who wake with nothing, like Vera Lund, are not failures; they are the ordinary result.
+- **Still open: who they are.** Rogue cell of Earth 2, human secret society, or a third party — the draft is deliberately compatible with all three and Fridan never finds out.
 
 ---
 
@@ -200,15 +205,18 @@ This is the free will mechanic Zalian built into the universe:
 - Fridan learns about the Second Lore — the Virden with Zalian DNA in Earth 2.
 - This Virden may be the only signal Zalian cannot ignore: one of her own fragments, calling from across the Barrier.
 - But reaching this Virden means entering Earth 2's world — or at least their channel. An act that could kill a pure human. Except Fridan is no longer fully pure.
-- The Second Faction's true motives are revealed. They were never peaceful.
-- The full scope of Balian's betrayal is revealed — how Balian himself weaponized his own DNA lineage to exploit Zalian's speech-only constraint.
-- Fridan makes a choice: does he try to warn Zalian? Does he try to unify the worlds? Or does he try to survive?
+- The Second Faction's true motives are revealed. They were never peaceful, and what they want is the Barrier moved.
+- The full scope of Balian's betrayal is revealed — the seed laid in the human line at the signing of the Pact.
+- **Consent turns out to be the mechanism, not the moral.** Fridan goes to Uxies intending a kind version — enter, set one harmonic against the fragment, leave, let her wake having dreamed about a yard. It does not work, and cannot: Zalian hears only what a mind *decides* to say. A fragment struck from outside is a thing that happened to her, which is theft, and theft is exactly what she is deaf to — if it were otherwise, nobody would ever have needed to steal. For the fragment to say anything, the woman carrying it has to mean it. So he has to ask, and she can refuse, and she does before she agrees.
 - Zalian's response — when she finally hears — defines the ending.
 
-### Epilogue — Dream 2
-*Another sleeper. Another city. Another blue sphere on a shelf.*
-*The Hunt continues. Earth 2 adapted.*
-*But in Earth 2, a Virden is dreaming of something they've never seen before: a golden light.*
+### Epilogue
+*Nor Yesey: Fridan survives, permanently altered, and gets one last conversation — including her name, which he never writes down.*
+*Earth 2: Uxies wakes slowly for the first time in fifty-one years, into a world where something that always hummed underneath everything has stopped.*
+
+**The Hunt does not continue.** Zalian does not touch the Barrier — that is precisely the trap. She seals the vulnerability at the other end instead, closing the dream channel itself, which kills Earth 2's extraction overnight and costs her the only way she has ever had of reaching her own creation. Every human on Earth 1 ends the book in exactly the condition she put Fridan in a year earlier, and not one of them knows it.
+
+> The old "Dream 2 — another sleeper, another blue sphere on a shelf, the Hunt continues" epilogue is **retired**: it is incompatible with sealing REM. If you want that door left ajar for a sequel, it has to be reopened somewhere other than human dreaming.
 
 ---
 
@@ -229,10 +237,13 @@ This is the free will mechanic Zalian built into the universe:
 
 - [ ] What did Balian and Zalian actually fight about before the deal?
 - [ ] How did Balian's followers build the dream-infiltration tech using Balian's blueprint of the DNA loophole?
+- [ ] Who is the Second Faction — rogue Earth 2 cell, human secret society, or a third party? *(The draft keeps all three live and never answers it.)*
+- [ ] What is Balian's true goal, now that the mechanism of his betrayal is settled?
+- [ ] With the dream channel closed, how does Zalian ever reach humanity again — and does she want to?
 - [ ] How did Earth 2 physically break through the barrier enough to send signals?
 - [ ] What is the name of Balian's fallen angel followers who mixed with humans to create the Virden?
 - [ ] What does the mirror-Virden (with Zalian DNA) know about their own nature? Do they feel the Zalian fragment?
 - [ ] Was Fridan's creation (a human with Balian DNA) Zalian's deliberate act — a hidden bet that unity was possible?
 - [ ] What happens physically if Fridan enters Earth 2's atmosphere — can he survive it now?
-- [ ] How does Fridan discover the mirror-Virden exists?
-- [ ] Does the Second Faction know about the mirror-Virden?
+- [x] ~~How does Fridan discover the mirror-Virden exists?~~ He deduces her before he finds her: the material has to be Zalian's own, so a mirror must exist. He then reads the faction's own records using the Virden residue the Sphere left in him — alone, unassisted, at serious physical cost.
+- [x] ~~Does the Second Faction know about the mirror-Virden?~~ Yes, and have her whole life. There is a fifty-one-year observational log. They have never approached her precisely because she is the one component that, if it ever went off, could not be walked back — so they spent half a century making sure nothing interesting ever happened to her.
