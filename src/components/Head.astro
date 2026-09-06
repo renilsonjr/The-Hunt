@@ -1,7 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
-import { alternatesFor, localizePath } from '~/i18n/utils';
-import { DEFAULT_LOCALE, HREFLANG, OG_LOCALE, type Locale, type Route } from '~/i18n/config';
+import { alternatesFor } from '~/i18n/utils';
+import { DEFAULT_LOCALE, OG_LOCALE, type Locale, type Route } from '~/i18n/config';
 import { ART, PLATE_QUALITY } from '~/data/art';
 
 interface Props {
@@ -23,9 +23,20 @@ interface Props {
 }
 
 const { locale, route, title, description, noindex = false, pagePath = route } = Astro.props;
-const alternates = alternatesFor(pagePath);
+
+// `alternatesFor` returns site-relative paths, like every other path helper in
+// ~/i18n — those helpers know the base path and nothing about the deploy
+// origin. Absolutising happens here, where `Astro.site` is in scope, exactly
+// as canonical and og:image already do it. Google's hreflang spec requires
+// fully-qualified URLs and silently discards relative ones, so this is not
+// cosmetic: with relative hrefs the annotations do not exist as far as a
+// crawler is concerned.
+const absolute = (href: string): string => new URL(href, Astro.site).href;
+
+const alternates = alternatesFor(pagePath).map((a) => ({ ...a, href: absolute(a.href) }));
 const self = alternates.find((a) => a.locale === locale)!;
-const canonical = new URL(self.href, Astro.site).href;
+const canonical = self.href;
+const xDefault = alternates.find((a) => a.locale === DEFAULT_LOCALE)!.href;
 
 // Social card image. The key art is the story's cover, so every page shares
 // it rather than each carrying its own. Crawlers do not resolve relative
@@ -57,11 +68,12 @@ const favicon = `${base}${base.endsWith('/') ? '' : '/'}favicon.svg`;
 ))}
 {/*
   x-default tells a crawler which version to serve a reader whose language
-  matches neither alternate. It points at the default locale, using the same
-  effective pagePath as canonical and the alternates above so all four agree
-  — for a journal entry that is the entry itself, not the journal index.
+  matches neither alternate. It is the default locale's own alternate — the
+  same object, not a parallel computation — so canonical, both hreflang pairs
+  and x-default cannot drift apart. For a journal entry that is the entry
+  itself, not the journal index.
 */}
-<link rel="alternate" hreflang="x-default" href={localizePath(pagePath, DEFAULT_LOCALE)} />
+<link rel="alternate" hreflang="x-default" href={xDefault} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />

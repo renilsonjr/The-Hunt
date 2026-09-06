@@ -13,10 +13,18 @@ interface Props {
 const { locale } = Astro.props;
 const items = await listJournal(locale);
 
+// timeZone: 'UTC' is load-bearing, not decoration. Frontmatter dates are bare
+// calendar days ('2026-09-05') and `z.coerce.date()` parses them as UTC
+// midnight; formatting without a zone renders them in the *build machine's*
+// zone, so anywhere west of Greenwich the visible date reads a day earlier
+// than the same element's `datetime` attribute and the entry page's own
+// eyebrow. CI builds in UTC, which would have hidden this in production and
+// broken it for anyone building from a laptop.
 const formatter = new Intl.DateTimeFormat(HREFLANG[locale], {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
+  timeZone: 'UTC',
 });
 ---
 <p class="intro">{t('journal.intro', locale)}</p>

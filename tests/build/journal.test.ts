@@ -20,8 +20,21 @@ describe('journal', () => {
     expect(existsSync(dist('pt/journal/2026-09-05-the-site-is-live/index.html'))).toBe(true);
   });
 
-  it('shows the date on the index', () => {
-    expect(html('journal/index.html')).toMatch(/2026/);
+  // Frontmatter dates are bare calendar days parsed as UTC midnight. Rendered
+  // without an explicit zone they shift a day on any build machine west of
+  // Greenwich, so the visible date contradicts the same element's `datetime`
+  // and the entry page's eyebrow. Asserting the exact day in both locales is
+  // the only version of this test that can catch that.
+  it('shows the entry\'s actual date on the index, in each locale', () => {
+    expect(html('journal/index.html')).toContain('September 5, 2026');
+    expect(html('pt/journal/index.html')).toContain('5 de setembro de 2026');
+  });
+
+  it('agrees with its own datetime attribute', () => {
+    const en = html('journal/index.html');
+    expect(en).toMatch(/<time datetime="2026-09-05"[^>]*>\s*September 5, 2026\s*<\/time>/);
+    const pt = html('pt/journal/index.html');
+    expect(pt).toMatch(/<time datetime="2026-09-05"[^>]*>\s*5 de setembro de 2026\s*<\/time>/);
   });
 
   // The whole point of building both locales: the toggle must never 404.
@@ -46,14 +59,14 @@ describe('journal', () => {
     );
   });
 
-  it('gives the entry hreflang alternates that point at the two entry pages, not the two indexes', () => {
-    const en = html('journal/2026-09-05-the-site-is-live/index.html');
-    expect(en).toContain('<link rel="alternate" hreflang="en" href="/The-Hunt/journal/2026-09-05-the-site-is-live/">');
-    expect(en).toContain('<link rel="alternate" hreflang="pt-BR" href="/The-Hunt/pt/journal/2026-09-05-the-site-is-live/">');
-
-    const pt = html('pt/journal/2026-09-05-the-site-is-live/index.html');
-    expect(pt).toContain('<link rel="alternate" hreflang="en" href="/The-Hunt/journal/2026-09-05-the-site-is-live/">');
-    expect(pt).toContain('<link rel="alternate" hreflang="pt-BR" href="/The-Hunt/pt/journal/2026-09-05-the-site-is-live/">');
+  it('gives the entry absolute hreflang alternates pointing at the two entry pages, not the two indexes', () => {
+    const site = 'https://renilsonjr.github.io/The-Hunt';
+    const entry = '2026-09-05-the-site-is-live';
+    for (const page of [`journal/${entry}/index.html`, `pt/journal/${entry}/index.html`]) {
+      const doc = html(page);
+      expect(doc).toContain(`<link rel="alternate" hreflang="en" href="${site}/journal/${entry}/">`);
+      expect(doc).toContain(`<link rel="alternate" hreflang="pt-BR" href="${site}/pt/journal/${entry}/">`);
+    }
   });
 
   // Proves the default-to-`route` behaviour still holds for every ordinary

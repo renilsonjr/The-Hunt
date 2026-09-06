@@ -17,6 +17,15 @@ export function getLocaleFromPath(pathname: string): Locale {
   return (LOCALES as readonly string[]).includes(first) ? (first as Locale) : DEFAULT_LOCALE;
 }
 
+/**
+ * Every locale's version of one page, for hreflang annotation.
+ *
+ * `href` is site-relative, like everything else this module returns: these
+ * helpers know the base path and deliberately not the deploy origin, which
+ * only `Astro.site` knows. hreflang requires fully-qualified URLs, so the
+ * caller (`Head.astro`) absolutises against `Astro.site` — the same step it
+ * already takes for the canonical URL and the social image.
+ */
 export function alternatesFor(path: string) {
   return LOCALES.map((locale) => ({
     locale,

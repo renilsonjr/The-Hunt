@@ -19,11 +19,24 @@ describe('document head', () => {
     expect(html('pt/index.html')).toMatch(/<html[^>]+lang="pt-BR"/);
   });
 
-  it('emits hreflang alternates pointing at both locales', () => {
+  // hreflang hrefs must be fully qualified: Google's spec requires absolute
+  // URLs and silently discards relative ones, so a relative alternate is not
+  // a weaker annotation, it is no annotation at all.
+  it('emits absolute hreflang alternates pointing at both locales', () => {
     const doc = html('index.html');
-    expect(doc).toContain('hreflang="en"');
-    expect(doc).toContain('hreflang="pt-BR"');
-    expect(doc).toContain('href="/The-Hunt/pt/"');
+    expect(doc).toContain(
+      '<link rel="alternate" hreflang="en" href="https://renilsonjr.github.io/The-Hunt/">'
+    );
+    expect(doc).toContain(
+      '<link rel="alternate" hreflang="pt-BR" href="https://renilsonjr.github.io/The-Hunt/pt/">'
+    );
+  });
+
+  it('leaves no relative hreflang href on any page', () => {
+    for (const page of ['index.html', 'pt/index.html', 'codex/index.html', 'pt/codex/index.html']) {
+      const relative = html(page).match(/<link rel="alternate"[^>]*href="\/[^"]*"/g);
+      expect(relative, `${page} has relative hreflang hrefs: ${relative}`).toBeNull();
+    }
   });
 
   it('emits a canonical url', () => {
@@ -57,7 +70,9 @@ describe('document head', () => {
     // Without it, a crawler has no instruction for, say, a French reader.
     // x-default points at the default locale.
     const doc = html('index.html');
-    expect(doc).toMatch(/<link rel="alternate" hreflang="x-default" href="\/The-Hunt\/"/);
+    expect(doc).toContain(
+      '<link rel="alternate" hreflang="x-default" href="https://renilsonjr.github.io/The-Hunt/">'
+    );
   });
 
   it('points x-default at the journal entry itself, not the journal index', () => {
@@ -65,8 +80,8 @@ describe('document head', () => {
     // "journal" — x-default must follow the entry's own pagePath like
     // canonical and the other alternates do, not fall back to the index.
     const doc = html('journal/2026-09-05-the-site-is-live/index.html');
-    expect(doc).toMatch(
-      /<link rel="alternate" hreflang="x-default" href="\/The-Hunt\/journal\/2026-09-05-the-site-is-live\/"/,
+    expect(doc).toContain(
+      '<link rel="alternate" hreflang="x-default" href="https://renilsonjr.github.io/The-Hunt/journal/2026-09-05-the-site-is-live/">',
     );
   });
 });
