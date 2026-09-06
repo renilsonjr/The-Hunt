@@ -19,5 +19,15 @@ export const OG_LOCALE: Record<Locale, string> = {
 };
 
 /** Every route on the site, without locale prefix or slashes. '' is home. */
-export const ROUTES = ['', 'worlds', 'gods', 'hybrids', 'sphere', 'gallery'] as const;
+export const ROUTES = [
+  '',
+  'worlds',
+  'gods',
+  'hybrids',
+  'sphere',
+  'codex',
+  'gallery',
+  'journal',
+  'dream',
+] as const;
 export type Route = (typeof ROUTES)[number];
