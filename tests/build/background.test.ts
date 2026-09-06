@@ -28,9 +28,13 @@ const cssFor = (htmlPath: string): string => {
   const hrefs = [...html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)]
     .map((m) => m[1])
     .filter((href) => href.startsWith('/The-Hunt/'));
-  return hrefs
-    .map((href) => readFileSync(resolve(dist, href.replace(/^\/The-Hunt\//, '')), 'utf8'))
-    .join('\n');
+  const linked = hrefs.map((href) =>
+    readFileSync(resolve(dist, href.replace(/^\/The-Hunt\//, '')), 'utf8'),
+  );
+  // Astro inlines small stylesheets rather than emitting a file for them, so a
+  // page's CSS is its linked sheets plus whatever is in its own <style> tags.
+  const inlined = [...html.matchAll(/<style>([\s\S]*?)<\/style>/g)].map((m) => m[1]);
+  return [...linked, ...inlined].join('\n');
 };
 
 // esbuild minifies `body::before` to the equivalent legacy `body:before`.
