@@ -1,0 +1,26 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import JournalEntry from '~/components/JournalEntry.astro';
+import { listJournal } from '~/lib/content';
+
+const locale = 'pt' as const;
+
+export async function getStaticPaths() {
+  const items = await listJournal('pt');
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const { data } = item.entry;
+---
+<StoryPage
+  locale={locale}
+  route="journal"
+  pagePath={`journal/${item.slug}`}
+  title={`${data.title} — The Hunt`}
+  description={data.description}
+  eyebrow={data.date.toISOString().slice(0, 10)}
+  heading={data.title}
+>
+  <JournalEntry locale={locale} item={item} />
+</StoryPage>

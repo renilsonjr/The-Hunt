@@ -1,0 +1,66 @@
+---
+/**
+ * The spoiler boundary. A native <details> element, deliberately:
+ *  - the content sits in the DOM, so it is crawlable and readable without JS,
+ *    which the spec requires ("a courtesy, not access control")
+ *  - it is closed by default in the HTML, so there is no flash of the ending
+ *    before any script runs
+ *  - <summary> is focusable and operable by keyboard with no work from us
+ *
+ * The only enhancement is memory: once a reader opens it, we record that and
+ * open it automatically next time, so they are not asked again on every page.
+ */
+interface Props {
+  summary: string;
+  storageKey: string;
+}
+const { summary, storageKey } = Astro.props;
+---
+<details class="gate" data-gate={storageKey}>
+  <summary>{summary}</summary>
+  <div class="gate-body">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .gate {
+    border: 1px solid var(--hair);
+    border-left: 2px solid var(--balian);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin: 2rem 0;
+    background: color-mix(in srgb, var(--panel) 70%, transparent);
+  }
+  summary {
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  summary:hover { color: var(--ink); }
+  .gate[open] summary {
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--hair);
+  }
+</style>
+
+<script>
+  // Remember the reader's choice across pages. Wrapped because storage throws
+  // in some privacy modes, and a thrown error here must not break the page —
+  // the <details> still works perfectly without this.
+  document.querySelectorAll<HTMLDetailsElement>('details[data-gate]').forEach((gate) => {
+    const key = `the-hunt:gate:${gate.dataset.gate}`;
+    try {
+      if (localStorage.getItem(key) === 'open') gate.open = true;
+    } catch {}
+    gate.addEventListener('toggle', () => {
+      try {
+        localStorage.setItem(key, gate.open ? 'open' : 'closed');
+      } catch {}
+    });
+  });
+</script>

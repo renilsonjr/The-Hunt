@@ -1,0 +1,85 @@
+---
+/**
+ * A whole prose page: the codex and the dream log, in either locale.
+ *
+ * Two reasons this exists rather than four near-identical route files.
+ *
+ * First, `Localized.isFallback` is a contract, stated in ~/lib/content: a page
+ * showing the default locale's copy under a `lang="pt-BR"` document must say
+ * so, because silently serving the wrong language is worse than admitting the
+ * translation is missing. Four route files each had to remember that and none
+ * of them did. One component cannot forget.
+ *
+ * Second, the Global Constraint that locale page pairs must not duplicate
+ * markup or CSS. The two codex routes differed only in a string literal.
+ *
+ * The gated shape (codex) and the plain shape (dream) are the same page with
+ * and without a second entry: pass `gatedSlug` to get the spoiler boundary.
+ * The codex's two halves resolve independently, so a half-translated codex is
+ * possible — Portuguese mythology, English ending. The notice therefore fires
+ * if EITHER half fell back, since either way part of what the reader is
+ * looking at is not in the language the page claims.
+ */
+import StoryPage from '~/layouts/StoryPage.astro';
+import ProseBody from '~/components/ProseBody.astro';
+import SpoilerGate from '~/components/SpoilerGate.astro';
+import TranslationNotice from '~/components/TranslationNotice.astro';
+import { getProse } from '~/lib/content';
+import { t } from '~/i18n/ui';
+import { render } from 'astro:content';
+import type { Locale, Route } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+  /** Which nav item this page highlights. */
+  route: Route;
+  /** Slug of the prose entry, within its locale directory. */
+  slug: string;
+  /** How ProseBody sets the rendered Markdown. */
+  variant: 'codex' | 'log';
+  /**
+   * A second entry rendered behind the spoiler boundary. The split lives at
+   * the content layer because Astro's content layer pre-renders each entry's
+   * Markdown and `render()` looks that compiled output up by collection and
+   * id — it cannot be pointed at a `body` string spliced at page-render time.
+   * See the ledger's Task 2 amendment.
+   */
+  gatedSlug?: string;
+}
+
+const { locale, route, slug, variant, gatedSlug } = Astro.props;
+
+const open = await getProse(slug, locale);
+if (!open) throw new Error(`prose entry "${slug}" missing for ${locale}`);
+
+const gated = gatedSlug ? await getProse(gatedSlug, locale) : undefined;
+if (gatedSlug && !gated) throw new Error(`prose entry "${gatedSlug}" missing for ${locale}`);
+
+const isFallback = open.isFallback || gated?.isFallback === true;
+
+const { Content: OpenPart } = await render(open.entry);
+const GatedPart = gated ? (await render(gated.entry)).Content : undefined;
+const { data } = open.entry;
+---
+<StoryPage
+  locale={locale}
+  route={route}
+  title={data.title}
+  description={data.description}
+  eyebrow={data.eyebrow}
+  heading={data.heading}
+>
+  {isFallback && <TranslationNotice locale={locale} />}
+
+  <ProseBody variant={variant}>
+    <OpenPart />
+  </ProseBody>
+
+  {GatedPart && (
+    <SpoilerGate summary={t('gate.summary', locale)} storageKey={slug}>
+      <ProseBody variant={variant}>
+        <GatedPart />
+      </ProseBody>
+    </SpoilerGate>
+  )}
+</StoryPage>

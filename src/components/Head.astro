@@ -1,7 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import { alternatesFor } from '~/i18n/utils';
-import { HREFLANG, OG_LOCALE, type Locale, type Route } from '~/i18n/config';
+import { DEFAULT_LOCALE, OG_LOCALE, type Locale, type Route } from '~/i18n/config';
 import { ART, PLATE_QUALITY } from '~/data/art';
 
 interface Props {
@@ -11,12 +11,32 @@ interface Props {
   description: string;
   /** Keep this page out of search results. Only the 404 page needs it. */
   noindex?: boolean;
+  /**
+   * The path this page actually lives at, when that differs from its nav
+   * `route`. Defaults to `route`, which is correct for every whole-page
+   * route. Dynamic routes with their own counterpart (e.g. a journal entry)
+   * pass their own slug path here so the canonical URL and hreflang
+   * alternates point at the entry itself rather than falling back to the
+   * section index.
+   */
+  pagePath?: string;
 }
 
-const { locale, route, title, description, noindex = false } = Astro.props;
-const alternates = alternatesFor(route);
+const { locale, route, title, description, noindex = false, pagePath = route } = Astro.props;
+
+// `alternatesFor` returns site-relative paths, like every other path helper in
+// ~/i18n — those helpers know the base path and nothing about the deploy
+// origin. Absolutising happens here, where `Astro.site` is in scope, exactly
+// as canonical and og:image already do it. Google's hreflang spec requires
+// fully-qualified URLs and silently discards relative ones, so this is not
+// cosmetic: with relative hrefs the annotations do not exist as far as a
+// crawler is concerned.
+const absolute = (href: string): string => new URL(href, Astro.site).href;
+
+const alternates = alternatesFor(pagePath).map((a) => ({ ...a, href: absolute(a.href) }));
 const self = alternates.find((a) => a.locale === locale)!;
-const canonical = new URL(self.href, Astro.site).href;
+const canonical = self.href;
+const xDefault = alternates.find((a) => a.locale === DEFAULT_LOCALE)!.href;
 
 // Social card image. The key art is the story's cover, so every page shares
 // it rather than each carrying its own. Crawlers do not resolve relative
@@ -46,6 +66,14 @@ const favicon = `${base}${base.endsWith('/') ? '' : '/'}favicon.svg`;
 {alternates.map((a) => (
   <link rel="alternate" hreflang={a.hreflang} href={a.href} />
 ))}
+{/*
+  x-default tells a crawler which version to serve a reader whose language
+  matches neither alternate. It is the default locale's own alternate — the
+  same object, not a parallel computation — so canonical, both hreflang pairs
+  and x-default cannot drift apart. For a journal entry that is the entry
+  itself, not the journal index.
+*/}
+<link rel="alternate" hreflang="x-default" href={xDefault} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />

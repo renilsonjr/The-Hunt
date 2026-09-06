@@ -1,0 +1,78 @@
+---
+/**
+ * Shared styling for rendered Markdown across Phase B's prose pages.
+ *
+ * Locale page pairs must not duplicate CSS: this component owns every rule
+ * for Markdown output, and each locale route file supplies only content
+ * (frontmatter-driven copy, rendered through `render()`). `:global()` is
+ * required because the Markdown output arrives through the default slot,
+ * unscoped to this component.
+ *
+ * Three variants, one per Phase B prose surface:
+ *  - codex: the mythology (this task) — headings in the Zalian gold, body
+ *    text dimmed, inline code (the glyph) in mono/gold.
+ *  - log:   Task 3's transmission logs — small caps mono headings like a
+ *    header stamp, and an editorial note sitting above the primary document
+ *    (italic, dimmed, hairline rule on the left). The note is marked up in
+ *    the content as `<div class="frame">`, because it is however many
+ *    paragraphs it needs to be and CSS cannot count them.
+ *  - entry: Task 4's journal entries — body copy only, nothing else special.
+ */
+interface Props {
+  variant: 'codex' | 'log' | 'entry';
+}
+const { variant } = Astro.props;
+---
+<div class="prose-body" data-variant={variant}>
+  <slot />
+</div>
+
+<style>
+  .prose-body {
+    max-width: var(--measure);
+  }
+
+  /* codex */
+  .prose-body[data-variant='codex'] :global(h2) {
+    font-size: 1.3rem;
+    margin-top: 2.4rem;
+    color: var(--zalian);
+  }
+  .prose-body[data-variant='codex'] :global(p) { color: var(--dim); }
+  .prose-body[data-variant='codex'] :global(strong) { color: var(--ink); font-weight: 500; }
+  .prose-body[data-variant='codex'] :global(code) {
+    font-family: var(--font-mono);
+    color: var(--zalian);
+    font-size: 0.95em;
+  }
+
+  /* log */
+  .prose-body[data-variant='log'] :global(h2) {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-top: 2rem;
+  }
+  .prose-body[data-variant='log'] :global(p) { color: var(--ink); }
+  /*
+   * The editorial frame: the site's own voice introducing the artifact, which
+   * runs to two paragraphs in Portuguese and one in English. `p:first-of-type`
+   * set apart only the first, so on the PT page the sentence explaining WHY
+   * the log stays untranslated rendered identically to the log it introduces
+   * — collapsing the frame/artifact distinction that page exists to make. The
+   * content marks the frame explicitly, so this no longer counts paragraphs.
+   */
+  .prose-body[data-variant='log'] :global(.frame) {
+    border-left: 1px solid var(--hair);
+    padding-left: 1rem;
+  }
+  .prose-body[data-variant='log'] :global(.frame p) {
+    font-style: italic;
+    color: var(--dim);
+  }
+
+  /* entry */
+  .prose-body[data-variant='entry'] :global(p) { color: var(--dim); }
+</style>

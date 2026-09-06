@@ -1,0 +1,57 @@
+---
+title: "Dream 1 — The Hunt"
+description: "The original dream log of 08/26/26, unedited: the document every other page on this site grew out of."
+eyebrow: "The seed · 08/26/26"
+heading: "Dream 1"
+---
+
+<div class="frame">
+<p>Everything on this site — the two worlds, the gods, the Barrier, the Sphere — grew out of the notes below. They were written the morning after the dream, before any of it was a story.</p>
+<p>Typos have been fixed and nothing else has been touched.</p>
+</div>
+
+The Hunt – REM – Dream 1 – 08/26/26 – New Jersey – USA
+Script of what I remember from my dream
+
+## Intro
+
+A Being in my head like a female supreme being, seems to help me to find this thing that could grant me something bit like “infinity knowledge or wisdom”, when I found “it” I felt a big goosebump, like a sense of achievement, feel like nothing else matter than that moment, feel like I know what I should know. 
+
+## Development of the dream
+
+Initially I was with some other people looking for this “sphere” in a random place, like a building, these people looked like rich and important, like if they were doing something very exotic, very religious, and for some reason I was there. 
+
+I felt intimidate by them, the first moment of this run, I had a clue that was there, I was looking for that so convinced that I could find, like a big challenge, like my life depended on that.
+
+So, I was instructed that the time for that run in that place was done, so we had to go to another place, so I started going to this other place, sounds like a building. I remember that this being started talking to me when I was on top of one of these buildings, this being was very friendly and helpful. 
+This being gave me the instructions to go this other building, it made a train rail red so I could follow that to the next place to find the sphere. This being was altering the reality to favor me in this run/hunt.
+
+I was approaching to this building at night, and I entered this building, and a group of people was there waiting for me, like I was doing something there, like participating of an event, like a competition, so they took me to an apartment, like a place I had to stay before participating of this event, and told me to accommodate, but after that I started looking for the sphere, but never left, they sound like they knew I was looking for this thing, and they were watching me, observing, and also looking for, the same thing, but no obeying the rules like I was, everything sounds like a smokescreen for something else.
+
+Something tells me that I was being used to find this important thing to someone else, but they couldn’t find or look for it.
+
+The entire time this being and the situation made me feel I was doing the right thing, at that time feel like I had to do this.
+
+Meanwhile I was looking for this, they were suspiciously asking why I am looking so much for something, I knew this would grant me something big, beyond my knowledge, beyond my human capabilities.
+
+When I finally found it, was like my whole life was meant to direct me to that moment, an “AMAZING” feeling, I could feel my body trembling, my hand and arm goose bumped, and in my ears a big pressure followed up with a “string chord”, like those sounds track made by Hans Zimmer.
+
+The visual of the ball was very simple, like those “fur ball laundry” that remove excessive fur from clothes and was a little blue with a symbol “(: .)”  two dots in the front and one dot in the back.
+
+When I realized that I had it, my brain turned into the entire universe, like expanded to receive a lot of things at the same time, got quiet for a second and I woke up.
+
+## My points of this story that could be a development
+
+I think I dreamed with this because someone picked me to look for this sphere, in a way I could be the only one (or not), to find it. That’s why I felt like “Three Body Problem”, someone or something is using human dream to work for them, as a way for organic free labor job. (Another thing I was thinking is that they chose people based in the probabilities of what they have being living, and they create the scenarios to make it possible based on life experiences as well, sounds like this organization has very advanced technology to do this, and they have been doing for very long time, could be a plot for this story, a simulation that we are living and these being are using us for their evolution, and they found on our humanity keys for their questions. Could be 2 sides, they have been doing this for all the time we are alive, or they are a very advanced civilizations that has a technology to explore in our most advanced and imaginary mode to “work” for them to not only find, but to give answers for their most unanswered questions, not about from where we came, but how they can master the creation of the universe, using this “god” that talk to us in our dreams to give them the answer without this god knows they are doing it, a way to fool a god.)
+
+Because we dream without asking about it, seems not harmful for these being to use our dreams to work for them.
+
+I have a guess that I was not supposed to remember about this dream, they used the REM to make more real and solid, because we tend to engage more REM, maybe a failure let this morning pass.
+
+So many questions, who they are? What they want? Can we communicate with them? Were they gods we’ve being worshiping all these times?
+
+## Second theory
+
+Could be an external access to my brain from different organizations fighting for this thing
+This explain me why the “being? In my brain had different attitude to me
+Like another group hacking that transmission

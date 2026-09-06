@@ -1,0 +1,17 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import JournalList from '~/components/JournalList.astro';
+import { t } from '~/i18n/ui';
+
+const locale = 'pt' as const;
+---
+<StoryPage
+  locale={locale}
+  route="journal"
+  title="Diário — The Hunt"
+  description="Notas sobre a construção deste site e sobre a escrita do livro de que trata."
+  eyebrow={t('journal.title', locale)}
+  heading={t('journal.title', locale)}
+>
+  <JournalList locale={locale} />
+</StoryPage>

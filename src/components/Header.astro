@@ -6,16 +6,28 @@ import type { Locale, Route } from '~/i18n/config';
 interface Props {
   locale: Locale;
   route: Route;
+  /**
+   * The path this page actually lives at, when that differs from its nav
+   * `route`. Defaults to `route`, which is correct for every whole-page
+   * route. Dynamic routes with their own counterpart (e.g. a journal entry)
+   * pass their own slug path here so the language toggle lands on that
+   * entry's translation rather than falling back to the section index.
+   */
+  pagePath?: string;
 }
-const { locale, route } = Astro.props;
+const { locale, route, pagePath = route } = Astro.props;
 const other: Locale = locale === 'en' ? 'pt' : 'en';
 
-const links = [
+// Annotated, not inferred: without it `route` widens to string and a typo'd
+// nav route type-checks and ships a link to a 404.
+const links: { route: Route; label: string }[] = [
   { route: 'worlds', label: t('nav.worlds', locale) },
   { route: 'gods', label: t('nav.gods', locale) },
   { route: 'hybrids', label: t('nav.hybrids', locale) },
   { route: 'sphere', label: t('nav.sphere', locale) },
+  { route: 'codex', label: t('nav.codex', locale) },
   { route: 'gallery', label: t('nav.gallery', locale) },
+  { route: 'journal', label: t('nav.journal', locale) },
 ];
 ---
 <header class="site-header">
@@ -31,7 +43,7 @@ const links = [
     ))}
   </nav>
 
-  <a class="lang" href={localizePath(route, other)} lang={other === 'pt' ? 'pt-BR' : 'en'}>
+  <a class="lang" href={localizePath(pagePath, other)} lang={other === 'pt' ? 'pt-BR' : 'en'}>
     {t('lang.switch', locale)}
   </a>
 </header>
