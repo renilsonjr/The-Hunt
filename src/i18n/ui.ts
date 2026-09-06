@@ -21,6 +21,16 @@ const STRINGS = {
     en: 'Everything past this point is the ending. Open it when you want it.',
     pt: 'Tudo daqui em diante é o final. Abra quando quiser.',
   },
+  'journal.title':    { en: 'Journal', pt: 'Diário' },
+  'journal.intro':    {
+    en: 'Notes from building this, and from writing the book it is about.',
+    pt: 'Notas sobre a construção disto e sobre a escrita do livro de que trata.',
+  },
+  'journal.back':     { en: 'All entries', pt: 'Todas as entradas' },
+  'notice.fallback':  {
+    en: 'This entry has not been translated yet — showing the English original.',
+    pt: 'Esta entrada ainda não foi traduzida — exibindo o original em inglês.',
+  },
 } as const;
 
 export type UIKey = keyof typeof STRINGS;

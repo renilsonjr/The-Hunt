@@ -6,8 +6,16 @@ import type { Locale, Route } from '~/i18n/config';
 interface Props {
   locale: Locale;
   route: Route;
+  /**
+   * Path (without locale prefix) the language toggle should link to.
+   * Defaults to `route`, which is correct for every whole-page route. Dynamic
+   * routes with their own counterpart (e.g. a journal entry) pass their own
+   * slug path here so the toggle lands on that entry's translation rather
+   * than falling back to the section index.
+   */
+  togglePath?: string;
 }
-const { locale, route } = Astro.props;
+const { locale, route, togglePath = route } = Astro.props;
 const other: Locale = locale === 'en' ? 'pt' : 'en';
 
 const links = [
@@ -17,6 +25,7 @@ const links = [
   { route: 'sphere', label: t('nav.sphere', locale) },
   { route: 'codex', label: t('nav.codex', locale) },
   { route: 'gallery', label: t('nav.gallery', locale) },
+  { route: 'journal', label: t('nav.journal', locale) },
 ];
 ---
 <header class="site-header">
@@ -32,7 +41,7 @@ const links = [
     ))}
   </nav>
 
-  <a class="lang" href={localizePath(route, other)} lang={other === 'pt' ? 'pt-BR' : 'en'}>
+  <a class="lang" href={localizePath(togglePath, other)} lang={other === 'pt' ? 'pt-BR' : 'en'}>
     {t('lang.switch', locale)}
   </a>
 </header>

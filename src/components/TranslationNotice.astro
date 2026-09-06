@@ -1,0 +1,21 @@
+---
+import { t } from '~/i18n/ui';
+import type { Locale } from '~/i18n/config';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<p class="notice">{t('notice.fallback', locale)}</p>
+
+<style>
+  .notice {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--dim);
+    border: 1px solid var(--hair);
+    border-left: 2px solid var(--virden);
+    border-radius: 6px;
+    padding: 0.7rem 0.9rem;
+    margin-bottom: 1.6rem;
+  }
+</style>

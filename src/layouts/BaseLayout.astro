@@ -13,9 +13,11 @@ interface Props {
   description: string;
   /** Keep this page out of search results. Only the 404 page needs it. */
   noindex?: boolean;
+  /** See Header's prop of the same name. Defaults to `route` there. */
+  togglePath?: string;
 }
 
-const { locale, route, title, description, noindex = false } = Astro.props;
+const { locale, route, title, description, noindex = false, togglePath } = Astro.props;
 ---
 <!doctype html>
 <html lang={HREFLANG[locale]}>
@@ -30,7 +32,7 @@ const { locale, route, title, description, noindex = false } = Astro.props;
   </head>
   <body>
     <a class="skip-link" href="#main">{t('nav.skip', locale)}</a>
-    <Header locale={locale} route={route} />
+    <Header locale={locale} route={route} togglePath={togglePath} />
     <main id="main">
       <slot />
     </main>

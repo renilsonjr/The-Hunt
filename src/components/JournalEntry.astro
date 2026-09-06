@@ -1,0 +1,37 @@
+---
+// Shared markup and styling for a journal entry page's whole body. Locale
+// page pairs must not duplicate CSS: this component owns the fallback
+// notice, the rendered body, and the "back to all entries" link, so both
+// [slug].astro files carry only getStaticPaths plus the StoryPage wiring.
+import ProseBody from '~/components/ProseBody.astro';
+import TranslationNotice from '~/components/TranslationNotice.astro';
+import { localizePath } from '~/i18n/utils';
+import { t } from '~/i18n/ui';
+import { render } from 'astro:content';
+import type { Locale } from '~/i18n/config';
+import type { JournalItem } from '~/lib/content';
+
+interface Props {
+  locale: Locale;
+  item: JournalItem;
+}
+const { locale, item } = Astro.props;
+const { Content } = await render(item.entry);
+---
+{item.isFallback && <TranslationNotice locale={locale} />}
+<ProseBody variant="entry">
+  <Content />
+</ProseBody>
+<p class="back"><a href={localizePath('journal', locale)}>← {t('journal.back', locale)}</a></p>
+
+<style>
+  .back {
+    margin-top: 2.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .back a { text-decoration: none; }
+  .back a:hover { text-decoration: underline; }
+</style>
