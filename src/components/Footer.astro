@@ -28,4 +28,13 @@ const { locale } = Astro.props;
   }
   .site-footer a { color: var(--zalian); text-decoration: none; }
   .site-footer a:hover { text-decoration: underline; }
+
+  /* 18px hit boxes under a thumb. See the note in Header.astro. */
+  @media (pointer: coarse) {
+    .site-footer a {
+      display: inline-flex;
+      align-items: center;
+      min-height: var(--tap);
+    }
+  }
 </style>

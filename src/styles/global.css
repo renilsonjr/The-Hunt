@@ -30,6 +30,13 @@
   --font-glitch: 'Rubik Glitch', var(--font-display);
 
   --measure: 62ch;
+  /* Minimum comfortable touch target. Applied by each component that owns an
+     interactive element, behind `@media (pointer: coarse)` so it costs desktop
+     layout nothing. 44px is the Apple HIG / WCAG 2.5.5 figure; the AA bar
+     (2.5.8) is 24px, which the mono nav at 19px missed on its own and passed
+     only through the spacing exception. Padding, not font size: the targets
+     grow, the design does not. */
+  --tap: 44px;
   --gutter: clamp(1.2rem, 4vw, 2.6rem);
 
   /* The Barrier's jagged edge, as a mask for Seam.astro. The shape lives here

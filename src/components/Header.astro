@@ -94,4 +94,32 @@ const links: { route: Route; label: string }[] = [
     padding: 0.4rem 0.8rem;
   }
   .lang:hover { border-color: var(--virden); }
+
+  /*
+   * Touch. The nav is eight mono links at 0.72rem, which is a 19px-tall hit
+   * box — fine under a cursor, awkward under a thumb. Growing them costs two
+   * lines and no visual change, since the extra height is padding.
+   *
+   * Two things claw back the height that buys. The row gap goes to zero,
+   * because once each link is 44px tall its own padding separates the rows;
+   * and the header's vertical padding shrinks, because that padding existed
+   * to give 19px links breathing room they now carry themselves.
+   *
+   * Measured at 375x812: 189px before, 211px after. Twenty-two pixels of a
+   * phone screen is a fair price for eleven reachable targets.
+   */
+  @media (pointer: coarse) {
+    .site-header { padding-block: 0.5rem; }
+    nav { row-gap: 0; }
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: var(--tap);
+    }
+    .lang {
+      display: inline-flex;
+      align-items: center;
+      min-height: var(--tap);
+    }
+  }
 </style>

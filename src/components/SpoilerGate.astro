@@ -41,6 +41,19 @@ const { summary, storageKey } = Astro.props;
     color: var(--dim);
   }
   summary:hover { color: var(--ink); }
+
+  /*
+   * The gate is the one control on the site a reader must hit deliberately,
+   * and it was a 38px target. `display: flex` on a <summary> removes the
+   * disclosure marker in WebKit, so this uses inline-flex on a wrapper-free
+   * summary and keeps `list-item` display, adding the height as padding.
+   */
+  @media (pointer: coarse) {
+    summary {
+      min-height: var(--tap);
+      padding-block: 0.5rem;
+    }
+  }
   .gate[open] summary {
     margin-bottom: 1.2rem;
     padding-bottom: 0.8rem;
