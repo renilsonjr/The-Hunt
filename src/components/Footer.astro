@@ -1,5 +1,6 @@
 ---
 import { t } from '~/i18n/ui';
+import { localizePath } from '~/i18n/utils';
 import type { Locale } from '~/i18n/config';
 
 interface Props { locale: Locale }
@@ -7,6 +8,7 @@ const { locale } = Astro.props;
 ---
 <footer class="site-footer">
   <span>{t('footer.status', locale)}</span>
+  <a href={localizePath('dream', locale)}>{t('footer.dream', locale)}</a>
   <a href="https://github.com/renilsonjr/The-Hunt">{t('footer.repo', locale)}</a>
 </footer>
 

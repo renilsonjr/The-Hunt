@@ -15,6 +15,7 @@ const STRINGS = {
   'lightbox.title': { en: 'Artwork viewer', pt: 'Visualizador de arte' },
   'lightbox.close': { en: 'Close',       pt: 'Fechar' },
   'footer.status':  { en: 'A novel in development', pt: 'Um romance em desenvolvimento' },
+  'footer.dream':   { en: 'The original dream', pt: 'O sonho original' },
   'footer.repo':    { en: 'Source on GitHub', pt: 'Código no GitHub' },
   'gate.summary':   {
     en: 'Everything past this point is the ending. Open it when you want it.',

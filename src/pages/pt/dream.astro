@@ -1,0 +1,24 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import ProseBody from '~/components/ProseBody.astro';
+import { getProse } from '~/lib/content';
+import { render } from 'astro:content';
+
+const locale = 'pt' as const;
+const result = await getProse('dream', locale);
+if (!result) throw new Error('dream content missing for ' + locale);
+const { Content } = await render(result.entry);
+const { data } = result.entry;
+---
+<StoryPage
+  locale={locale}
+  route="dream"
+  title={data.title}
+  description={data.description}
+  eyebrow={data.eyebrow}
+  heading={data.heading}
+>
+  <ProseBody variant="log">
+    <Content />
+  </ProseBody>
+</StoryPage>
