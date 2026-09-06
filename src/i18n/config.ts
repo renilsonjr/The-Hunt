@@ -21,6 +21,7 @@ export const OG_LOCALE: Record<Locale, string> = {
 /** Every route on the site, without locale prefix or slashes. '' is home. */
 export const ROUTES = [
   '',
+  'read',
   'worlds',
   'gods',
   'hybrids',

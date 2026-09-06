@@ -1,0 +1,17 @@
+---
+import StoryPage from '~/layouts/StoryPage.astro';
+import ChapterList from '~/components/ChapterList.astro';
+import { t } from '~/i18n/ui';
+
+const locale = 'pt' as const;
+---
+<StoryPage
+  locale={locale}
+  route="read"
+  title="Ler — A Caçada"
+  description="O primeiro rascunho de A Caçada, publicado conforme é escrito. Dezesseis capítulos, do começo ao fim."
+  eyebrow={t('read.title', locale)}
+  heading={t('read.heading', locale)}
+>
+  <ChapterList locale={locale} />
+</StoryPage>

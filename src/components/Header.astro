@@ -21,6 +21,7 @@ const other: Locale = locale === 'en' ? 'pt' : 'en';
 // Annotated, not inferred: without it `route` widens to string and a typo'd
 // nav route type-checks and ships a link to a 404.
 const links: { route: Route; label: string }[] = [
+  { route: 'read', label: t('nav.read', locale) },
   { route: 'worlds', label: t('nav.worlds', locale) },
   { route: 'gods', label: t('nav.gods', locale) },
   { route: 'hybrids', label: t('nav.hybrids', locale) },

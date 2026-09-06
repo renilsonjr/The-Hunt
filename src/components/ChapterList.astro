@@ -1,0 +1,130 @@
+---
+/**
+ * The table of contents for the novel, in either locale.
+ *
+ * House pattern, same as GalleryGrid and JournalList: one `locale` prop, the
+ * component does its own data access, and every rule lives here so the two
+ * locale routes carry no CSS between them.
+ *
+ * Grouped by act rather than rendered flat. The acts are a real feature of the
+ * book — the narration changes person and tense at each boundary — so the
+ * index is the first place a reader can see that the thing has a shape.
+ * Groups are built by walking the sorted list and starting a new group when
+ * `act` changes, which keeps act order tied to reading order instead of to a
+ * separate list that could disagree with it.
+ */
+import { listChapters, type ChapterItem } from '~/lib/content';
+import { localizePath } from '~/i18n/utils';
+import { t } from '~/i18n/ui';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+
+const items = await listChapters(locale);
+
+const acts: { act: string; items: ChapterItem[] }[] = [];
+for (const item of items) {
+  const last = acts.at(-1);
+  if (last && last.act === item.entry.data.act) last.items.push(item);
+  else acts.push({ act: item.entry.data.act, items: [item] });
+}
+
+const first = items[0];
+---
+<p class="intro">{t('read.intro', locale)}</p>
+<p class="draft">{t('read.draft', locale)}</p>
+
+{first && (
+  <a class="start" href={localizePath(`read/${first.slug}`, locale)}>
+    {t('read.start', locale)} &rarr;
+  </a>
+)}
+
+{acts.map((group) => (
+  <section class="act">
+    <h2>{group.act}</h2>
+    <ol class="chapters">
+      {group.items.map((item) => (
+        <li>
+          <a href={localizePath(`read/${item.slug}`, locale)}>
+            <span class="n">{String(item.entry.data.number).padStart(2, '0')}</span>
+            <span class="text">
+              <span class="h">{item.entry.data.heading}</span>
+              <span class="s">{item.entry.data.summary}</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+))}
+
+<style>
+  .intro {
+    color: var(--dim);
+    max-width: var(--measure);
+  }
+  .draft {
+    max-width: var(--measure);
+    color: var(--dim);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    border-left: 1px solid var(--hair);
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+  }
+  .start {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--bg);
+    background: var(--zalian);
+    border-radius: 999px;
+    padding: 0.7rem 1.3rem;
+    margin-bottom: 3rem;
+  }
+  .start:hover { filter: brightness(1.1); }
+
+  .act { margin-bottom: 2.8rem; max-width: var(--measure); }
+  .act h2 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dim);
+    border-bottom: 1px solid var(--hair);
+    padding-bottom: 0.6rem;
+    margin: 0 0 0.8rem;
+  }
+  .chapters { list-style: none; margin: 0; padding: 0; }
+  .chapters a {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.75rem 0.6rem;
+    border-radius: 8px;
+    border-left: 2px solid transparent;
+  }
+  .chapters a:hover {
+    background: var(--panel);
+    border-left-color: var(--zalian);
+  }
+  .n {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--dim);
+    flex: none;
+  }
+  .text { display: flex; flex-direction: column; gap: 0.2rem; }
+  .h { font-size: 1rem; }
+  .s { color: var(--dim); font-size: 0.88rem; }
+</style>

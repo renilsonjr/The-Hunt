@@ -8,6 +8,7 @@ A science-fiction novel in development, plus early product concepts for adapting
 
 | | |
 |---|---|
+| 📖 **[Read the novel](https://renilsonjr.github.io/The-Hunt/read/)** | The complete first draft — sixteen chapters |
 | 🌗 **[Website concept](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html#site)** | The two worlds either side of the Barrier |
 | 🎮 **[Game concept](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html#game)** | Four playable scenes — pick a chapter, then a line |
 
@@ -24,6 +25,7 @@ A science-fiction novel in development, plus early product concepts for adapting
 | [`the_hunt_analysis.md`](the_hunt_analysis.md) | Story analysis and science-fiction reference points |
 | [`dream-log-2026-08-26.md`](dream-log-2026-08-26.md) | The original dream log, the document everything else grew out of |
 | [`book_roadmap.md`](book_roadmap.md) | Six-phase development plan from dream log to published illustrated novel |
+| [`src/content/chapters/`](src/content/chapters/) | The novel. The first draft, sixteen chapters, one Markdown file each |
 | [`src/`](src/) | The site (below) |
 | [`src/assets/art/`](src/assets/art/) | 22 illustrations — character sheets, world plates, key scenes |
 | [`public/concepts/`](public/concepts/) | Interactive product concepts (below) |
@@ -45,6 +47,7 @@ Every one of these exists in both languages — `/gods/` and `/pt/gods/`, and so
 | Route | What it is |
 |---|---|
 | `/` | Landing page |
+| `/read/` · `/read/<slug>/` | The novel — contents page and one page per chapter |
 | `/worlds/` | Earth 1 and Earth 2 either side of the Barrier |
 | `/gods/` · `/hybrids/` | Zalian and Balian; Fridan and Uxies |
 | `/sphere/` | The Sphere and the glyph |
@@ -57,10 +60,13 @@ Plus a `404.html` that GitHub Pages serves for unmatched paths.
 
 ### How it is put together
 
-- **Prose lives in Markdown, not in components.** `src/content/prose/` and
-  `src/content/journal/` are Astro content collections, keyed by locale in
-  the directory name (`prose/en/codex.md`, `prose/pt/codex.md`), so publishing
-  is a content commit rather than a code change. The six Phase A teaser pages
+- **Prose lives in Markdown, not in components.** `src/content/prose/`,
+  `src/content/journal/` and `src/content/chapters/` are Astro content
+  collections, keyed by locale in the directory name (`prose/en/codex.md`,
+  `prose/pt/codex.md`), so publishing is a content commit rather than a code
+  change. Chapters order themselves on a frontmatter `number` rather than on
+  their filename, because slugs are permanent URLs and inserting a chapter
+  must not renumber the ones after it. The six Phase A teaser pages
   are the deliberate exception: they are hand-authored `.astro` layouts, not
   documents, and gain nothing from the collections.
 - **A missing translation is visible, never silent.** When a page exists only
@@ -120,9 +126,33 @@ Silence is a completable playstyle, not a fail state: a player can go whole chap
 
 ## Status
 
-Phase 1 — foundation. The world, cosmology, characters and three-act structure
-are locked, and the site that presents them is up: the teaser pages, the codex,
-the dream log and the journal, in both languages. The first draft is not yet
-written. Open development questions are tracked at the end of
+**The first draft is written and published.** Sixteen chapters, ~33,000 words,
+covering all three acts and both epilogues — from the room where nobody takes
+off their coat to a yard on the wrong side of the Barrier. It is a first draft
+in the literal sense: unedited, and readable at
+[`/read/`](https://renilsonjr.github.io/The-Hunt/read/).
+
+It compresses the thirty-chapter structure in
+[`book_roadmap.md`](book_roadmap.md) at roughly two roadmap chapters per
+drafted chapter; every beat is present, at about half the target density.
+Revision means restoring the merged chapters, not adding filler.
+
+Three things the draft settles that the bible left open, and which the bible
+should be updated to match — or the draft changed, whichever way you decide:
+
+- **Balian did engineer the DNA loophole**, by salting the human line at the
+  signing of the Pact rather than by placing a fragment in one person. The
+  treaty is the delivery mechanism.
+- **The Second Faction's goal is the Barrier**, not the extracted data. They
+  need Zalian to reach for the wall at a known instant; the theft is the bait.
+- **Zalian does not touch the Barrier.** She closes the dream channel instead,
+  which costs her every human she has ever been able to reach.
+
+The Second Faction's *identity* is deliberately still open in the draft — all
+three of the bible's options survive it.
+
+Remaining open questions are tracked at the end of
 [`story_bible.md`](story_bible.md); outstanding work on the site is tracked in
 [`docs/superpowers/phase-a-followups.md`](docs/superpowers/phase-a-followups.md).
+The novel is English-only: every Portuguese chapter route builds and says, in
+Portuguese, that it is showing the English original.

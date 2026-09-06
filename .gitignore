@@ -7,3 +7,6 @@ grok-assets.zip
 node_modules/
 dist/
 .astro/
+
+# Local, machine-specific tool permissions
+.claude/settings.local.json

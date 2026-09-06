@@ -1,0 +1,17 @@
+---
+import ChapterPage from '~/components/ChapterPage.astro';
+import { listChapters, neighbours } from '~/lib/content';
+
+const locale = 'pt' as const;
+
+export async function getStaticPaths() {
+  const items = await listChapters('pt');
+  return items.map((item) => ({
+    params: { slug: item.slug },
+    props: { item, ...neighbours(items, item.slug) },
+  }));
+}
+
+const { item, prev, next } = Astro.props;
+---
+<ChapterPage locale={locale} item={item} prev={prev} next={next} />

@@ -17,9 +17,14 @@
  *    the content as `<div class="frame">`, because it is however many
  *    paragraphs it needs to be and CSS cannot count them.
  *  - entry: Task 4's journal entries — body copy only, nothing else special.
+ *  - chapter: the novel. Long-form reading rather than reference: larger and
+ *    looser body text, a real gap between paragraphs, and `---` section breaks
+ *    rendered as whitespace with a centred mark rather than a rule across the
+ *    measure. Dialogue attributed to Zalian and Anser is bold in the source,
+ *    so `strong` is the voice-of-the-other and gets the Zalian gold.
  */
 interface Props {
-  variant: 'codex' | 'log' | 'entry';
+  variant: 'codex' | 'log' | 'entry' | 'chapter';
 }
 const { variant } = Astro.props;
 ---
@@ -75,4 +80,35 @@ const { variant } = Astro.props;
 
   /* entry */
   .prose-body[data-variant='entry'] :global(p) { color: var(--dim); }
+
+  /* chapter */
+  .prose-body[data-variant='chapter'] {
+    font-size: 1.06rem;
+    line-height: 1.75;
+  }
+  .prose-body[data-variant='chapter'] :global(p) {
+    color: var(--ink);
+    margin: 0 0 1.25em;
+  }
+  .prose-body[data-variant='chapter'] :global(em) { color: var(--dim); }
+  /* Zalian and Anser speak in bold in the manuscript: the other voice. */
+  .prose-body[data-variant='chapter'] :global(strong) {
+    color: var(--zalian);
+    font-weight: 400;
+  }
+  /*
+   * Scene breaks. The manuscript uses `---`, which Markdown renders as an
+   * <hr>; a rule drawn across the measure reads as a divider between
+   * documents rather than a pause inside one.
+   */
+  .prose-body[data-variant='chapter'] :global(hr) {
+    border: 0;
+    margin: 2.6rem 0;
+    text-align: center;
+  }
+  .prose-body[data-variant='chapter'] :global(hr)::before {
+    content: '\2042';
+    color: var(--dim);
+    font-size: 0.9rem;
+  }
 </style>

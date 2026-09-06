@@ -33,4 +33,27 @@ const journal = defineCollection({
   }),
 });
 
-export const collections = { prose, journal };
+/**
+ * The novel itself. Same locale-keyed shape as the other two collections, so
+ * a translated chapter is a file in chapters/pt/ and nothing else changes.
+ * `number` rather than the filename drives reading order: slugs are stable
+ * identifiers in URLs and must not have to be renumbered if a chapter is ever
+ * inserted between two others.
+ */
+const chapters = defineCollection({
+  loader: glob({ pattern: '*/*.md', base: './src/content/chapters' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    /** Reading order. Unique within a locale. */
+    number: z.number().int().positive(),
+    /** Act label, shown as the eyebrow and used to group the index. */
+    act: z.string(),
+    /** The <h1>, e.g. 'Chapter Four'. */
+    heading: z.string(),
+    /** Spoiler-free one-liner for the index. */
+    summary: z.string(),
+  }),
+});
+
+export const collections = { prose, journal, chapters };

@@ -46,24 +46,66 @@ export async function getProse(
   return pickLocalized(await getCollection('prose'), slug, locale);
 }
 
+/**
+ * Every slug present in any locale, resolved for the requested one.
+ *
+ * This is what makes the language toggle structurally incapable of 404ing on
+ * a per-slug route: the set of slugs is the union across locales, so a page
+ * exists in both languages even when only one has a translation — and the
+ * `isFallback` it carries is what obliges the page to say so.
+ *
+ * Shared by the journal and the chapters, which differ only in how they sort.
+ */
+function listLocalized<T extends { id: string }>(
+  all: readonly T[],
+  locale: Locale,
+): (Localized<T> & { slug: string })[] {
+  const slugs = new Set(
+    all.map((e) => parseId(e.id)).filter((p) => isLocale(p.locale)).map((p) => p.slug),
+  );
+
+  const items: (Localized<T> & { slug: string })[] = [];
+  for (const slug of slugs) {
+    const picked = pickLocalized(all, slug, locale);
+    if (!picked) continue;
+    items.push({ slug, ...picked });
+  }
+  return items;
+}
+
 export interface JournalItem extends Localized<CollectionEntry<'journal'>> {
   slug: string;
 }
 
 /** Every journal slug that exists in any locale, newest first. */
 export async function listJournal(locale: Locale): Promise<JournalItem[]> {
-  const all = await getCollection('journal');
-
-  const slugs = new Set(
-    all.map((e) => parseId(e.id)).filter((p) => isLocale(p.locale)).map((p) => p.slug),
-  );
-
-  const items: JournalItem[] = [];
-  for (const slug of slugs) {
-    const picked = pickLocalized(all, slug, locale);
-    if (!picked) continue;
-    items.push({ slug, ...picked });
-  }
-
+  const items = listLocalized(await getCollection('journal'), locale);
   return items.sort((a, b) => b.entry.data.date.getTime() - a.entry.data.date.getTime());
+}
+
+export interface ChapterItem extends Localized<CollectionEntry<'chapters'>> {
+  slug: string;
+}
+
+/**
+ * Every chapter slug that exists in any locale, in reading order.
+ *
+ * Sorted on `number`, not on the slug: slugs are permanent URLs, so inserting
+ * a chapter must not require renaming the ones after it.
+ */
+export async function listChapters(locale: Locale): Promise<ChapterItem[]> {
+  const items = listLocalized(await getCollection('chapters'), locale);
+  return items.sort((a, b) => a.entry.data.number - b.entry.data.number);
+}
+
+export interface ChapterNeighbours {
+  prev?: ChapterItem;
+  next?: ChapterItem;
+}
+
+/** The chapters either side of `slug` in reading order. */
+export function neighbours(items: readonly ChapterItem[], slug: string): ChapterNeighbours {
+  const i = items.findIndex((item) => item.slug === slug);
+  if (i === -1) return {};
+  return { prev: items[i - 1], next: items[i + 1] };
 }

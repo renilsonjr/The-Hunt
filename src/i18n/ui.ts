@@ -1,6 +1,7 @@
 import type { Locale } from './config';
 
 const STRINGS = {
+  'nav.read':       { en: 'Read',        pt: 'Ler' },
   'nav.worlds':     { en: 'Worlds',      pt: 'Mundos' },
   'nav.gods':       { en: 'Gods',        pt: 'Deuses' },
   'nav.hybrids':    { en: 'Hybrids',     pt: 'Híbridos' },
@@ -26,6 +27,21 @@ const STRINGS = {
     pt: 'Notas sobre a construção disto e sobre a escrita do livro de que trata.',
   },
   'journal.back':     { en: 'All entries', pt: 'Todas as entradas' },
+  'read.title':       { en: 'Read', pt: 'Ler' },
+  'read.heading':     { en: 'The Hunt', pt: 'A Caçada' },
+  'read.intro':       {
+    en: 'The first draft, published as it is written. Sixteen chapters, start to finish.',
+    pt: 'O primeiro rascunho, publicado conforme é escrito. Dezesseis capítulos, do começo ao fim.',
+  },
+  'read.draft':       {
+    en: 'This is a first draft. It has not been edited, and any of it may change.',
+    pt: 'Este é um primeiro rascunho. Não foi editado, e qualquer parte pode mudar.',
+  },
+  'read.start':       { en: 'Start reading', pt: 'Começar a ler' },
+  'read.contents':    { en: 'All chapters', pt: 'Todos os capítulos' },
+  'read.prev':        { en: 'Previous', pt: 'Anterior' },
+  'read.next':        { en: 'Next', pt: 'Próximo' },
+  'read.nav.aria':    { en: 'Chapter', pt: 'Capítulo' },
   'notice.fallback':  {
     en: 'This entry has not been translated yet — showing the English original.',
     pt: 'Esta entrada ainda não foi traduzida — exibindo o original em inglês.',

@@ -1,0 +1,45 @@
+---
+/**
+ * A whole chapter page, in either locale.
+ *
+ * Exists for the same two reasons ProsePage does: `isFallback` is a contract
+ * that four near-identical route files would each have to remember, and the
+ * Global Constraint that locale page pairs must not duplicate markup or CSS.
+ * The two `read/[slug]` routes differ only in a locale string literal.
+ */
+import StoryPage from '~/layouts/StoryPage.astro';
+import ProseBody from '~/components/ProseBody.astro';
+import ChapterNav from '~/components/ChapterNav.astro';
+import TranslationNotice from '~/components/TranslationNotice.astro';
+import { render } from 'astro:content';
+import type { ChapterItem } from '~/lib/content';
+import type { Locale } from '~/i18n/config';
+
+interface Props {
+  locale: Locale;
+  item: ChapterItem;
+  prev?: ChapterItem;
+  next?: ChapterItem;
+}
+const { locale, item, prev, next } = Astro.props;
+
+const { Content } = await render(item.entry);
+const { data } = item.entry;
+---
+<StoryPage
+  locale={locale}
+  route="read"
+  pagePath={`read/${item.slug}`}
+  title={data.title}
+  description={data.description}
+  eyebrow={data.act}
+  heading={data.heading}
+>
+  {item.isFallback && <TranslationNotice locale={locale} />}
+
+  <ProseBody variant="chapter">
+    <Content />
+  </ProseBody>
+
+  <ChapterNav locale={locale} prev={prev} next={next} />
+</StoryPage>
