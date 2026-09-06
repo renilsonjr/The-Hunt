@@ -137,19 +137,29 @@ It compresses the thirty-chapter structure in
 drafted chapter; every beat is present, at about half the target density.
 Revision means restoring the merged chapters, not adding filler.
 
-Three things the draft settles that the bible left open, and which the bible
-should be updated to match — or the draft changed, whichever way you decide:
+The draft's answers to three questions the bible left open have been **ruled
+canon and folded back in** — `story_bible.md`, both synopses and this file now
+agree with it:
 
-- **Balian did engineer the DNA loophole**, by salting the human line at the
+- **Balian engineered the DNA loophole**, by salting the human line at the
   signing of the Pact rather than by placing a fragment in one person. The
-  treaty is the delivery mechanism.
-- **The Second Faction's goal is the Barrier**, not the extracted data. They
-  need Zalian to reach for the wall at a known instant; the theft is the bait.
-- **Zalian does not touch the Barrier.** She closes the dream channel instead,
-  which costs her every human she has ever been able to reach.
+  treaty was the delivery mechanism, which is why he has never had to break it.
+- **The Second Faction wants the Barrier moved**, not the extracted data. You
+  cannot force a god, but she repairs — so you leave a hole she will find and
+  arrange that fixing it means reaching for the thing you want moved. The theft
+  is real, and it is the bait.
+- **Zalian never touches the Barrier.** She closes the dream channel instead,
+  sealing the vulnerability at the cost of the only way she has ever had of
+  reaching anyone. Humanity ends the book in the condition she put Fridan in.
 
-The Second Faction's *identity* is deliberately still open in the draft — all
-three of the bible's options survive it.
+Two consequences that followed: the old *Dream 2 — the Hunt continues* epilogue
+is retired, because sealing REM makes it impossible; and consent turns out to be
+the story's **mechanism**, not its moral — Zalian hears only what a mind decides
+to say, so the kind version of the reverse dream cannot work and Fridan has to
+ask.
+
+Deliberately still open: who the Second Faction are (all three of the bible's
+options survive the draft) and what Balian ultimately wants.
 
 Remaining open questions are tracked at the end of
 [`story_bible.md`](story_bible.md); outstanding work on the site is tracked in
