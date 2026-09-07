@@ -253,10 +253,12 @@ Three things this buys:
 | 8 — the corridor of doors | written | 1,866 |
 | 9 — the wear-path | written | 1,812 |
 | 10 — the Sphere | written | 1,844 |
+| 11 — the document | written | 1,780 |
 | 12 — Uxies I | written | 1,711 |
+| 13 — eleven days | written | 1,846 |
 | 17 — on paper | written | 1,960 |
 | 18 — Uxies II | written | 1,831 |
-| **total** | | **23,574** |
+| **total** | | **27,200** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
@@ -394,6 +396,32 @@ with a compass.*
 It also sharpens the stairwell. He is not deceived on that step; for about
 ninety seconds he is the best-informed man in the building. And he goes up.
 
-Remaining: the Act 2 and Act 3 splits (Draft 1 chapters 5–14 → Draft 2 11,
-13–16, 19–24, 26–30), Uxies III and IV, and the Fridan-life threading, which
-§5 puts last because it needs the finished shape.
+Chapters 10 through 13 now run contiguously, which was the point of doing 11
+and 13 before 14: the reader gets the waking, the document, Uxies, and the
+eleven days in order, and Act 2 stops being an unbroken block of one man alone
+in a flat before it has even started.
+
+**A continuity error Chapter 1 exposed and Chapter 11 fixes.** Draft 1's
+Chapter 5 said *"The window said Tuesday"* on the morning of the twenty-sixth.
+But Chapter 1 establishes the twenty-fifth as a Tuesday — Cass rings on
+Tuesdays, and she rings that evening — so the twenty-sixth is a Wednesday.
+Chapter 11 says Wednesday. Nothing else in either draft depends on it, but it
+would have been the kind of error a reader finds and never forgives.
+
+Chapter 11's own gain is **the control experiment**, which is the most
+in-character thing he does in Act 2. He does not merely assert that the memory
+is not fading; he needs a baseline, so he takes the twenty-fifth — an ordinary
+day he lived through with his eyes open, twenty-six hours older than the
+dream — and finds it exactly as a memory should be: lossy, summarised, mostly
+reconstruction. *One of them was memory: constructed, lossy, summarised, his.
+The other was a recording somebody else had made and left in him.*
+
+Chapter 13 gives the eleven days their weight — the matrix of attempts, the
+roof at five, the fourth day when he works out he has no name for her and no
+pronoun she agreed to, the two sentences written one under the other, and the
+breathing. It ends on the decision to sleep on purpose, and on the thing that
+does not occur to him in twenty-four hours of preparing for it.
+
+Remaining: Draft 1 chapters 6–14 → Draft 2 14–16, 19–24, 26–30; Uxies III and
+IV; and the Fridan-life threading, which §5 puts last because it needs the
+finished shape.
