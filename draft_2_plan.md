@@ -246,13 +246,15 @@ Three things this buys:
 | 1 — the night before | written | 1,331 |
 | 2 — the room in coats | written | 1,755 |
 | 3 — the apple | written | 2,083 |
+| 4 — the footbridge | written | 1,876 |
+| 5 — the red rail | written | 1,766 |
 | 8 — the corridor of doors | written | 1,866 |
 | 9 — the wear-path | written | 1,812 |
 | 10 — the Sphere | written | 1,844 |
 | 12 — Uxies I | written | 1,711 |
 | 17 — on paper | written | 1,960 |
 | 18 — Uxies II | written | 1,831 |
-| **total** | | **16,193** |
+| **total** | | **19,835** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
@@ -334,6 +336,37 @@ had been established for years.
 And Malde asks, for the first time in forty-two years, what it is *like* out
 there. Nobody has ever asked. Everyone has asked what it is for.
 
-Next, per §5: Draft 1's Chapter 2 → Draft 2 chapters 4–5 (the voice, then the
-red rail), and Draft 1's Chapter 3 → chapters 6–7. Uxies III and IV depend on
-Act 3 material and come after those.
+Draft 1's Chapter 2 was 1,563 words carrying two roadmap chapters. It is now
+two chapters and **3,642 words**.
+
+The best thing the split bought is **the bus stop**, which only exists because
+Chapter 1 gave him a job. He stops at a lit timetable case on a pole and reads
+it for eleven minutes, and it is *good* — sensible headways, a proper evening
+taper, last departures staggered so they do not all hit the interchange in the
+same four minutes, and a real six-minute layover at the outer end that nobody
+has stolen back to make the frequency look better on paper. It is the work of
+somebody who has done his job and taken pleasure in it.
+
+And the places are not places, and the running times imply a geography that is
+not geography. What goes through him is not wonder. It is the feeling of being
+*catered for*: somebody knew that whoever came down that hill would go to a lit
+case the way a dog goes to a smell, and would look first at the layover
+allowances, and they made sure the layover allowances were right.
+
+He walks away from it, gets forty metres, and goes back to check the Sunday
+service. It is there. It is correct.
+
+Two smaller gains. The empty trains — two go past on the far tracks, lit,
+seventy miles an hour, no one aboard, and after the second he stops looking at
+trains. And the padlock on the gate, which is closed, and hanging from one
+staple through nothing: *there is a version of tonight in which that padlock is
+the thing that stops me, and I can feel the shape of that version standing next
+to me.*
+
+The speech-not-thought discovery is kept unremarked and given room. He reaches
+*she cannot hear my thoughts, only my speech* — complete and correct — and the
+next sentence does not arrive. Not refused: it does not form.
+
+Next, per §5: Draft 1's Chapter 3 → chapters 6–7 (the lobby and the flat, then
+the search and the watchers), which completes every Act 1 split. Uxies III and
+IV depend on Act 3 material and come after.
