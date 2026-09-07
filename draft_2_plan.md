@@ -232,5 +232,38 @@ Three things this buys:
    Which means manufacturing more Fridans, and more Uxieses, for as long as it
    takes. The Hunt does not end. It changes purpose.
 
-> **Confirm or redirect.** Uxies III and the Act 3 chapters depend on this;
-> nothing written so far does.
+> **CONFIRMED.** This is canon for Draft 2. `story_bible.md` should be updated
+> to match once the Act 3 chapters that dramatise it are written — the bible
+> currently still lists the faction's identity as an open question, and this
+> answers it while leaving Balian's ultimate goal open.
+
+---
+
+## 8. Progress
+
+| Draft 2 ch. | Status | Words |
+|---|---|---:|
+| 1 — the night before | written | 1,342 |
+| 8 — the corridor of doors | written | 1,866 |
+| 9 — the wear-path | written | 1,812 |
+| 10 — the Sphere | written | 1,844 |
+| 12 — Uxies I | written | 1,711 |
+
+Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
+three chapters and **5,522 words** — the largest single improvement available
+in the revision, and it is done.
+
+Three things the split bought that the merged version could not hold:
+
+- **The train ticket.** Among the sixteen flats is one dated six weeks ago.
+  Fridan had been carrying an unexamined assumption that this was all *old*;
+  it is not, and the arithmetic of the night comes apart in his hands.
+- **The wear-path narrows.** Broad at the stairwell end, a single set of feet
+  at the door. Everyone came in spread out and everyone converged. That is
+  four hundred people seen from above, and it needed room to be noticed.
+- **The man on the wall gets to speak.** "This is my fourth." He does not mean
+  nights. And when Fridan tells him there is a door — the one genuinely kind
+  thing he does in that building — the man slides his palm across a brushed
+  steel handle and registers nothing, and says *there's nothing here*.
+
+Next, per §5: the remaining splits, 2–3 first.
