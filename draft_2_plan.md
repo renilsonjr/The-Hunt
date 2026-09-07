@@ -248,13 +248,15 @@ Three things this buys:
 | 3 — the apple | written | 2,083 |
 | 4 — the footbridge | written | 1,876 |
 | 5 — the red rail | written | 1,766 |
+| 6 — you should rest | written | 1,841 |
+| 7 — the ones who are guessing | written | 1,898 |
 | 8 — the corridor of doors | written | 1,866 |
 | 9 — the wear-path | written | 1,812 |
 | 10 — the Sphere | written | 1,844 |
 | 12 — Uxies I | written | 1,711 |
 | 17 — on paper | written | 1,960 |
 | 18 — Uxies II | written | 1,831 |
-| **total** | | **19,835** |
+| **total** | | **23,574** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
@@ -367,6 +369,31 @@ The speech-not-thought discovery is kept unremarked and given room. He reaches
 *she cannot hear my thoughts, only my speech* — complete and correct — and the
 next sentence does not arrive. Not refused: it does not form.
 
-Next, per §5: Draft 1's Chapter 3 → chapters 6–7 (the lobby and the flat, then
-the search and the watchers), which completes every Act 1 split. Uxies III and
-IV depend on Act 3 material and come after.
+**Act 1 is finished.** Chapters 1–10 are written and total
+**18,072 words** — an average of 1,807 a chapter, which is the
+density Chapter 14 of Draft 1 set. Draft 1's entire Act 1 was 6,613 words in
+four chapters.
+
+Chapter 6's gains are all objects. The woman in grey carries her lanyard folded
+with the card turned in against her palm, for the whole conversation — there is
+only one reason a person folds a badge before they speak to you. Every door on
+the ninth floor is numbered except his, which sits between 906 and 908 with
+nothing on it. And there is no post on the console table by the door: his real
+table has had post on it for three weeks and is the reason he eats standing up.
+*Somebody has built a version of my home in which nobody has ever tried to
+reach me.*
+
+Chapter 7 adds a third searcher — a man of about twenty-five going through the
+hanging files of an empty filing cabinet one at a time, from the front, who has
+been crying and has stopped — and makes the badness of their searching explicit:
+they are working the *set of hiding places*, exhaustively, with sixty years of
+technique between them, which is the technique of people told there is
+something in a building and given nothing else. *A man reading a map and a man
+with a compass.*
+
+It also sharpens the stairwell. He is not deceived on that step; for about
+ninety seconds he is the best-informed man in the building. And he goes up.
+
+Remaining: the Act 2 and Act 3 splits (Draft 1 chapters 5–14 → Draft 2 11,
+13–16, 19–24, 26–30), Uxies III and IV, and the Fridan-life threading, which
+§5 puts last because it needs the finished shape.
