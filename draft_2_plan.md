@@ -256,9 +256,11 @@ Three things this buys:
 | 11 — the document | written | 1,780 |
 | 12 — Uxies I | written | 1,711 |
 | 13 — eleven days | written | 1,846 |
-| 17 — on paper | written | 1,960 |
-| 18 — Uxies II | written | 1,831 |
-| **total** | | **27,200** |
+| 14 — the following | written | 1,288 |
+| 15 — Anser | written | 1,691 |
+| 18 — on paper | written | 1,960 |
+| 19 — Uxies II | written | 1,831 |
+| **total** | | **30,179** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
@@ -422,6 +424,36 @@ pronoun she agreed to, the two sentences written one under the other, and the
 breathing. It ends on the decision to sleep on purpose, and on the thing that
 does not occur to him in twenty-four hours of preparing for it.
 
-Remaining: Draft 1 chapters 6–14 → Draft 2 14–16, 19–24, 26–30; Uxies III and
+**Structure change: Draft 2 is now 32 chapters, not 31.** Draft 1's Chapter 6
+carried two roadmap chapters in one, which is the pattern every other split has
+undone, so it becomes 14 (the following) and 15 (Anser). Everything after
+shifts by one: Vera Lund is 16, the platform 17, on-paper 18, Uxies II 19. The
+files have been renumbered.
+
+Chapter 14's new material is **the control on the bus network** — the second
+time his job is the only instrument he has. He designs a journey no reasonable
+person would ever make: the 14 south to the interchange, the 6 back *north* two
+stops, then the 22 east on a loop that returns within three hundred metres of
+where he started. Forty-one minutes to end up where he began, and a shape only
+somebody holding the timetable could follow smoothly.
+
+It comes back negative, and he does not believe it — and he catches himself not
+believing it, and writes it down: *A structure that cannot be disconfirmed is
+not a structure. It is a symptom. I know that. I still think there was a man on
+the bus.*
+
+That is the chapter's real subject: perfect recall did not give him certainty,
+it **took away his doubt**, and doubt had been quietly disposing of nine-tenths
+of everything he ever noticed without telling him it was doing it.
+
+Chapter 15 keeps Anser's first contact whole and adds one exchange — Fridan
+asks about the timetable, and the answer is the most frightening thing in the
+chapter: *"Because you would have looked. And because a man who looks at a
+timetable and finds it wrong stops walking downhill and starts asking what kind
+of place he is in. It was cheaper to make it right."*
+
+Remaining: Draft 1 chapters 7–14 → Draft 2 16, 17, 20–25, 27–31; Uxies III and
 IV; and the Fridan-life threading, which §5 puts last because it needs the
-finished shape.
+finished shape. **Uxies III should move earlier than §3 placed it** — the run
+from 20 to 25 is otherwise six consecutive Fridan chapters, which is the
+problem the interleaving exists to prevent.
