@@ -250,7 +250,9 @@ Three things this buys:
 | 9 — the wear-path | written | 1,812 |
 | 10 — the Sphere | written | 1,844 |
 | 12 — Uxies I | written | 1,711 |
-| **total** | | **12,402** |
+| 17 — on paper | written | 1,960 |
+| 18 — Uxies II | written | 1,831 |
+| **total** | | **16,193** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
@@ -300,5 +302,38 @@ One small fix: Chapter 1 no longer ends on "the room is too warm and nobody has
 taken off their coat." It was stealing Chapter 2's opening line. It now hands
 over on him going under, and Chapter 2 says the line.
 
+**§2.3 is closed.** Chapter 17 is written. Fridan finds the loophole on the
+train back from Halverton — she hears what is *said*, so he can write — builds
+a twenty-two page case file with the weakest material at the front and every
+claim separated from every inference, and hands it to Cass at her kitchen table.
+
+The failure is not disbelief. She reads all twenty-two pages carefully, takes
+his hand, and asks him to say it out loud — and he cannot, because saying it
+aloud sends it to Zalian. So he sits in his sister's kitchen and declines to
+speak while she waits, for forty seconds, and *that* is what convinces her
+something is seriously wrong.
+
+The constraint keeping him alive is the same constraint that makes him look
+like a man coming apart. His best evidence — perfect recall — presents as a man
+boasting about his memory. His most honest inclusion, the lie he told on Vera
+Lund's doorstep, presents as a man who drove two hours to deceive a stranger.
+It also answers a question Draft 1 never asked: why nobody in four hundred runs
+has ever been believed. *"It is not that we are not believed. It is that we
+cannot be told about — and the difference between those two is the whole of the
+thing."*
+
+Chapter 18 gives Uxies the two years. She stopped going at nineteen because she
+found Malde crying on the floor of the hall; she was ill for two years and one
+month; she was diagnosed with a category that translates roughly as *the
+tiredness of the unsociable* and prescribed company, and she took it, and by
+the twentieth month she could not lift her arm without deciding to. She
+recovered completely in a fortnight after walking back out to the yard, and
+nobody connected the two things — because the walking was the symptom, and that
+had been established for years.
+
+And Malde asks, for the first time in forty-two years, what it is *like* out
+there. Nobody has ever asked. Everyone has asked what it is for.
+
 Next, per §5: Draft 1's Chapter 2 → Draft 2 chapters 4–5 (the voice, then the
-red rail), and Draft 1's Chapter 3 → chapters 6–7.
+red rail), and Draft 1's Chapter 3 → chapters 6–7. Uxies III and IV depend on
+Act 3 material and come after those.
