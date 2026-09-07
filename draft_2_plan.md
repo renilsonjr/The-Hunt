@@ -258,9 +258,11 @@ Three things this buys:
 | 13 — eleven days | written | 1,846 |
 | 14 — the following | written | 1,288 |
 | 15 — Anser | written | 1,691 |
+| 16 — Vera Lund | written | 2,289 |
+| 17 — the platform | written | 1,400 |
 | 18 — on paper | written | 1,960 |
 | 19 — Uxies II | written | 1,831 |
-| **total** | | **30,179** |
+| **total** | | **33,868** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
@@ -452,8 +454,42 @@ chapter: *"Because you would have looked. And because a man who looks at a
 timetable and finds it wrong stops walking downhill and starts asking what kind
 of place he is in. It was cheaper to make it right."*
 
-Remaining: Draft 1 chapters 7–14 → Draft 2 16, 17, 20–25, 27–31; Uxies III and
-IV; and the Fridan-life threading, which §5 puts last because it needs the
-finished shape. **Uxies III should move earlier than §3 placed it** — the run
-from 20 to 25 is otherwise six consecutive Fridan chapters, which is the
-problem the interleaving exists to prevent.
+**Chapters 1 through 19 now run unbroken.** Draft 1's Chapter 7 becomes 16 and
+17, and with 18 and 19 already written, the first nineteen chapters of Draft 2
+are complete and contiguous.
+
+Chapter 16 answers a question Draft 1 never asked: **why he actually goes to
+Halverton.** Not obedience. *Vera Lund of fourteen Cowl Street* is the first
+falsifiable thing anybody has said to him since the twenty-sixth — everything
+else was unfalsifiable by construction, including his own memory — and he
+checks her before he goes. Electoral roll, thirty-one years at that address, a
+badly digitised school newsletter thanking Mrs V. Lund on her retirement for
+knowing where everything was, and an obituary for Roy Lund four years old. It
+is the first thing anybody has told him that turned out to be checkable, and it
+checked. He knows that is also exactly what being managed would feel like.
+
+And the chapter's real payload is one question that is not on his list:
+
+> "Did you ever have a feeling of being *sure* about something? Certain. About
+> anything at all, for no reason you could give."
+>
+> "Me? No, love. I have never in my whole life been sure of anything."
+
+She went into that building with **nothing** — no pull, no bearing, no compass
+— and searched it for a fortnight, and got tired the way you are after you have
+done something, and got further than anyone ever had. By exhaustion. Which
+explains the wear-path and why it narrows: not four hundred people who knew
+where to go, but four hundred who did not, converging on the far end of a
+corridor because they had been everywhere else first.
+
+Chapter 17 gives the platform man more room, and the additions are all in what
+he does not know. He asked once at the start, got a polite non-answer and a
+raise, and stopped. There is a woman on his list he has been writing down since
+before his eldest was born. And on the sleeping: *"It's in the terms. There's a
+paragraph. I've read it about four hundred times and I still couldn't tell you
+what it means, but it's there, and it's not about people like me."*
+
+Remaining: Draft 1 chapters 8–14 → Draft 2 20–25, 27–31; Uxies III and IV; and
+the Fridan-life threading. **Uxies III goes inside the 20–25 run**, not after
+it — six consecutive Fridan chapters is the problem the interleaving exists to
+prevent.
