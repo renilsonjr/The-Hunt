@@ -243,11 +243,14 @@ Three things this buys:
 
 | Draft 2 ch. | Status | Words |
 |---|---|---:|
-| 1 — the night before | written | 1,342 |
+| 1 — the night before | written | 1,331 |
+| 2 — the room in coats | written | 1,755 |
+| 3 — the apple | written | 2,083 |
 | 8 — the corridor of doors | written | 1,866 |
 | 9 — the wear-path | written | 1,812 |
 | 10 — the Sphere | written | 1,844 |
 | 12 — Uxies I | written | 1,711 |
+| **total** | | **12,402** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
@@ -266,4 +269,36 @@ Three things the split bought that the merged version could not hold:
   thing he does in that building — the man slides his palm across a brushed
   steel handle and registers nothing, and says *there's nothing here*.
 
-Next, per §5: the remaining splits, 2–3 first.
+Draft 1's Chapter 1 was 1,431 words carrying two roadmap chapters. It is now
+two chapters and **3,838 words**.
+
+What the split bought:
+
+- **The man with his coat over his arm.** The only person in that room who has
+  stopped, and the only one who looks comfortable. He lets the whole room file
+  past him, sits down, and puts his head back. Fridan never learns his name and
+  thinks about him for the rest of his life.
+- **The one rule.** The man with the ring now answers the question and the
+  answer is worse than a refusal: *"There's one. Everything else is manners.
+  You'll find it. It's not hidden — it's just not the sort of thing anybody can
+  tell you, because saying it out loud makes it a different rule."*
+- **He tries to doubt the certainty and cannot.** He is a man whose working
+  life is the discipline of assuming the optimistic version is wrong, and he
+  presses the floorboard and finds nothing to press. The doubt does not fail;
+  it does not form.
+- **The room that does not reconcile gets worked through.** A study, a bedroom,
+  a bathroom, and back into the same study through a wall that had a bookcase
+  in it. And his reaction is *irritation* — which is the whole method: they
+  never made him believe the impossible, they made it not worth the argument.
+- **The woman with her hair pinned up gets a second line.** *"You want to be
+  careful how thorough you are. It gets noticed."*
+- **The man with the ring says what happens next.** *"Now you go home and you
+  sleep it off, and in a while somebody gets in touch, and you say yes or you
+  say no. Most people say yes. Nobody's ever had to make anybody do anything."*
+
+One small fix: Chapter 1 no longer ends on "the room is too warm and nobody has
+taken off their coat." It was stealing Chapter 2's opening line. It now hands
+over on him going under, and Chapter 2 says the line.
+
+Next, per §5: Draft 1's Chapter 2 → Draft 2 chapters 4–5 (the voice, then the
+red rail), and Draft 1's Chapter 3 → chapters 6–7.

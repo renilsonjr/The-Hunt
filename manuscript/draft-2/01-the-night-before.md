@@ -76,6 +76,4 @@ I remember lying there for a while thinking about the northbound run and whether
 
 That is the last thought I ever had that was entirely my own, and it was about a bus.
 
-Then I go under, the ordinary way, the way you have done every night of your life without once being asked whether you agree to it.
-
-And the room is too warm, and nobody has taken off their coat.
+Then I go under, the ordinary way — the way you have gone under every night of your life without once being asked whether you agreed to it.
