@@ -9,7 +9,11 @@ heading: "Conceito, Lore e Sinopse"
 
 Este é o documento do qual todo o projeto nasceu: a cosmologia, as duas Terras, a Barreira e a sinopse completa em três atos, escritos **antes de existir um único capítulo do romance**.
 
-Ele é reproduzido aqui exatamente como estava na época. O rascunho divergiu dele em quatro pontos — como o fragmento de Balian chegou à Terra 1, o que a Segunda Facção realmente quer, o que Zalian faz no final e, sobretudo, o que a Esfera fez. Este documento diz que tocá-la *provocou uma troca genética*. Não provocou. Nada foi acrescentado a Fridan e nada foi trocado; o fragmento já estava nele e a Esfera apenas o despertou. Essas divergências estão registradas em `story_bible.md`, não corrigidas aqui. O sentido desta página é justamente que ela *não* foi corrigida.
+Ele é reproduzido aqui como estava na época, com **uma correção**, descrita abaixo.
+
+O rascunho divergiu deste documento em três pontos — como o fragmento de Balian chegou à Terra 1, o que a Segunda Facção realmente quer, e o que Zalian faz no final. Esses ficam de pé. Não são erros; são uma história mudando de ideia, e o registro dessa mudança vale mais do que uma página arrumada.
+
+A correção é de outra natureza. O original dizia que tocar na Esfera *provocou uma troca genética*, implantando biologia Virden em Fridan. Isso nunca foi o que acontece nesta história — foi um erro sobre o próprio mecanismo dela, e invertia a causa de tudo o que vem depois. Nada foi acrescentado a Fridan. O fragmento já estava nele, desde o nascimento, e a Esfera apenas o despertou. A passagem sobre a Esfera, abaixo, traz o relato corrigido; o resto do documento está intacto.
 
 </div>
 
@@ -103,7 +107,7 @@ Na manhã seguinte, Fridan tenta digerir o que vivenciou. O mundo físico parece
 
 **Silêncio absoluto.**
 
-Ao tocar na Esfera, ocorreu uma troca genética profunda: o artefato implantou biologia ancestral Virden em suas células. Ao examinar a alma de Fridan, Zalian detecta a assinatura híbrida. Presa às suas leis imutáveis sobre a Barreira e o equilíbrio das galáxias, **ela corta total e permanentemente sua conexão com ele.** Fridan é expulso — desprotegido, solitário e não mais 100% humano.
+Ao tocar na Esfera, **nada foi implantado nele e não houve troca alguma.** A Esfera e o fragmento no sangue dele são a mesma espécie de coisa, e o contato despertou aquilo que estava adormecido em seu genoma desde o nascimento. Esse despertar é a expansão — a própria biologia dele funcionando pela primeira vez. É também por isso que ele se lembrou: a supressão que encerra toda corrida foi aplicada nele exatamente como é aplicada em todos, e falhou, porque é construída para uma mente humana e por alguns segundos a dele havia deixado de ser apenas isso. Ao examiná-lo, Zalian encontra esse fragmento **desperto**. Presa às suas leis imutáveis sobre a Barreira e o equilíbrio das galáxias, **ela corta total e permanentemente sua conexão com ele.** Fridan é expulso — desprotegido, solitário e ligado.
 
 Logo, agentes misteriosos da **Segunda Facção** entram em contato. Fazendo-se passar por aliados que lutam pela coexistência pacífica, tentam convencê-lo de que a Terra 2 é um lugar justo. Mas Fridan, cuja cognição evolui aceleradamente devido à fusão biológica com a sabedoria Virden, percebe as mentiras da facção. Eles não são salvadores; são oportunistas tentando usurpar os códigos de criação extraídos de seu sonho.
 
