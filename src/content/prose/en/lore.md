@@ -9,7 +9,11 @@ heading: "Concept, Lore & Synopsis"
 
 This is the document the whole project grew out of: the cosmology, the two Earths, the Barrier and the full three-act synopsis, written **before a single chapter of the novel existed**.
 
-It is reproduced here exactly as it stood then. The draft has since diverged from it in four places — how Balian's fragment reached Earth 1, what the Second Faction actually wants, what Zalian does at the end, and, most importantly, what the Sphere did. This document says touching it *completed a genetic exchange*. It did not. Nothing was added to Fridan and nothing was traded; the fragment was already in him and the Sphere only woke it. Those divergences are recorded in `story_bible.md` rather than corrected here. The point of this page is that it is *not* corrected.
+It is reproduced here as it stood then, with **one correction**, described below.
+
+The draft has since diverged from this document in three places — how Balian's fragment reached Earth 1, what the Second Faction actually wants, and what Zalian does at the end. Those are left standing. They are not mistakes; they are a story changing its mind, and the record of it changing is worth more than a tidy page.
+
+The correction is different in kind. The original said that touching the Sphere *completed a genetic exchange*, implanting Virden biology into Fridan. That was never what happened in this story — it was an error about the story's own mechanism, and it inverted the cause of everything that follows. Nothing was added to Fridan. The fragment was already in him, from birth, and the Sphere only woke it. The passage on the Sphere below carries the corrected account; the rest of the document is untouched.
 
 </div>
 
@@ -103,7 +107,7 @@ Fridan attempts to process the morning after. The physical world feels hollow, w
 
 **Absolute silence.**
 
-When Fridan touched the Sphere, it did not merely bestow knowledge; it completed a genetic exchange, embedding ancient Virden biology into his system. Scanning his soul, Zalian detects the hybrid signature. Bound by her ancient laws regarding the Barrier and the balance of creation, **she permanently severs her connection to him.** Fridan is cast out—unprotected, alone, and no longer entirely human.
+When Fridan touched the Sphere, **nothing was put into him and nothing was exchanged.** The Sphere and the fragment in his blood are the same kind of thing, and contact woke what had been dormant in his genome since birth. That waking is the expansion — his own biology running for the first time. It is also why he remembered: the suppression that ends every run was applied to him exactly as it is applied to everybody, and it failed, because it is built for a human mind and for a few seconds his had stopped being only that. Scanning him, Zalian finds that fragment **awake**. Bound by her ancient laws regarding the Barrier and the balance of creation, **she permanently severs her connection to him.** Fridan is cast out — unprotected, alone, and switched on.
 
 Soon, shadowy operatives from the **Second Faction** approach him. Playing the role of sympathetic liberators, they claim Earth 2 is an egalitarian paradise seeking peaceful coexistence with their creator. But Fridan, whose cognitive faculties are rapidly evolving due to the Virden integration, spots the cracks in their narrative. They are not liberators; they are manipulative opportunists trying to harness the creation codes extracted during his Hunt.
 
