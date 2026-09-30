@@ -3,8 +3,8 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { t } from '~/i18n/ui';
 
-const dist = (p: string) => resolve(process.cwd(), 'dist', p);
-const html = (p: string) => readFileSync(dist(p), 'utf8');
+const dist = resolve(process.cwd(), 'dist');
+const html = (p: string) => readFileSync(resolve(dist, p), 'utf8');
 
 const SLUGS = [
   ...Array.from({ length: 14 }, (_, i) => `chapter-${String(i + 1).padStart(2, '0')}`),
@@ -14,14 +14,14 @@ const SLUGS = [
 
 describe('read', () => {
   it('has an index in both locales', () => {
-    expect(existsSync(dist('read/index.html'))).toBe(true);
-    expect(existsSync(dist('pt/read/index.html'))).toBe(true);
+    expect(existsSync(resolve(dist, 'read/index.html'))).toBe(true);
+    expect(existsSync(resolve(dist, 'pt/read/index.html'))).toBe(true);
   });
 
   it('builds every chapter in both locales', () => {
     for (const slug of SLUGS) {
-      expect(existsSync(dist(`read/${slug}/index.html`)), `en ${slug}`).toBe(true);
-      expect(existsSync(dist(`pt/read/${slug}/index.html`)), `pt ${slug}`).toBe(true);
+      expect(existsSync(resolve(dist, `read/${slug}/index.html`)), `en ${slug}`).toBe(true);
+      expect(existsSync(resolve(dist, `pt/read/${slug}/index.html`)), `pt ${slug}`).toBe(true);
     }
   });
 
@@ -107,8 +107,25 @@ describe('read', () => {
     );
   });
 
-  it('puts Read in the nav on both locales', () => {
-    expect(html('index.html')).toContain('href="/The-Hunt/read/"');
-    expect(html('pt/index.html')).toContain('href="/The-Hunt/pt/read/"');
+  // Unlisted, not removed. The pages still build and still resolve for anyone
+  // holding a URL — the language toggle on a chapter is asserted above — but
+  // nothing on the site points at them and nothing advertises them.
+  it('is not linked from the nav in either locale', () => {
+    expect(html('index.html')).not.toContain('href="/The-Hunt/read/"');
+    expect(html('pt/index.html')).not.toContain('href="/The-Hunt/pt/read/"');
+  });
+
+  it('is not advertised in the sitemap', () => {
+    const xml = readFileSync(resolve(dist, 'sitemap-0.xml'), 'utf8');
+    expect(xml).not.toContain('/The-Hunt/read/');
+    expect(xml).not.toContain('/The-Hunt/pt/read/');
+  });
+
+  it('tells crawlers not to index it', () => {
+    const noindex = '<meta name="robots" content="noindex">';
+    expect(html('read/index.html')).toContain(noindex);
+    expect(html('pt/read/index.html')).toContain(noindex);
+    expect(html('read/chapter-04/index.html')).toContain(noindex);
+    expect(html('pt/read/epilogue-2/index.html')).toContain(noindex);
   });
 });

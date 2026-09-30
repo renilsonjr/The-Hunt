@@ -2,6 +2,7 @@ import type { Locale } from './config';
 
 const STRINGS = {
   'nav.read':       { en: 'Read',        pt: 'Ler' },
+  'nav.lore':       { en: 'Lore',        pt: 'Lore' },
   'nav.worlds':     { en: 'Worlds',      pt: 'Mundos' },
   'nav.gods':       { en: 'Gods',        pt: 'Deuses' },
   'nav.hybrids':    { en: 'Hybrids',     pt: 'Híbridos' },

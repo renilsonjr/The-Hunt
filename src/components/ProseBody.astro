@@ -17,6 +17,12 @@
  *    the content as `<div class="frame">`, because it is however many
  *    paragraphs it needs to be and CSS cannot count them.
  *  - entry: Task 4's journal entries — body copy only, nothing else special.
+ *  - lore: the founding document. The only surface on the site whose content
+ *    is a preserved artifact rather than authored copy, so it is the only one
+ *    that can contain arbitrary Markdown — tables, fenced ASCII diagrams,
+ *    blockquotes, ordered and unordered lists, h3s. Every one of those is
+ *    styled here rather than left to the browser, which closes the parked
+ *    follow-up about ProseBody only handling h2/p/strong/code.
  *  - chapter: the novel. Long-form reading rather than reference: larger and
  *    looser body text, a real gap between paragraphs, and `---` section breaks
  *    rendered as whitespace with a centred mark rather than a rule across the
@@ -24,7 +30,7 @@
  *    so `strong` is the voice-of-the-other and gets the Zalian gold.
  */
 interface Props {
-  variant: 'codex' | 'log' | 'entry' | 'chapter';
+  variant: 'codex' | 'log' | 'entry' | 'chapter' | 'lore';
 }
 const { variant } = Astro.props;
 ---
@@ -80,6 +86,106 @@ const { variant } = Astro.props;
 
   /* entry */
   .prose-body[data-variant='entry'] :global(p) { color: var(--dim); }
+
+  /*
+   * lore — the widest Markdown surface on the site. The measure is relaxed
+   * because the document contains tables and a fenced ASCII cosmology diagram
+   * that cannot reflow, and would otherwise either overflow or be scrolled at
+   * a width narrower than they were drawn for.
+   */
+  .prose-body[data-variant='lore'] { max-width: 78ch; }
+  .prose-body[data-variant='lore'] :global(h2) {
+    font-size: 1.25rem;
+    margin-top: 2.6rem;
+    color: var(--zalian);
+  }
+  .prose-body[data-variant='lore'] :global(h3) {
+    font-size: 1.02rem;
+    margin-top: 1.8rem;
+    color: var(--ink);
+  }
+  .prose-body[data-variant='lore'] :global(p) { color: var(--dim); }
+  .prose-body[data-variant='lore'] :global(strong) { color: var(--ink); font-weight: 500; }
+  .prose-body[data-variant='lore'] :global(em) { color: var(--ink); }
+  .prose-body[data-variant='lore'] :global(ul),
+  .prose-body[data-variant='lore'] :global(ol) {
+    color: var(--dim);
+    padding-left: 1.2rem;
+  }
+  .prose-body[data-variant='lore'] :global(li) { margin-bottom: 0.4rem; }
+  .prose-body[data-variant='lore'] :global(li)::marker { color: var(--zalian); }
+  .prose-body[data-variant='lore'] :global(blockquote) {
+    margin: 1.6rem 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--balian);
+    color: var(--ink);
+  }
+  .prose-body[data-variant='lore'] :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--hair);
+    margin: 2.4rem 0;
+  }
+  /* The cosmology diagram is drawn in monospace and must not wrap. */
+  .prose-body[data-variant='lore'] :global(pre) {
+    background: var(--panel);
+    border: 1px solid var(--hair);
+    border-radius: 10px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.74rem;
+    line-height: 1.5;
+  }
+  .prose-body[data-variant='lore'] :global(pre code) { color: var(--dim); }
+  .prose-body[data-variant='lore'] :global(code) {
+    font-family: var(--font-mono);
+    color: var(--zalian);
+    font-size: 0.92em;
+    /*
+     * Two fixes for one collision. The editorial frame is italic, which the
+     * browser was synthesising onto the monospace — an ugly slant, and one
+     * that leaned the glyphs into the following word until the word space
+     * disappeared entirely ("story_bible.mdrather"). The space was always in
+     * the markup; it was being eaten optically. Upright, with a little room
+     * either side, so mono meeting italic serif never closes up again.
+     */
+    font-style: normal;
+    margin-inline: 0.15em;
+  }
+  .prose-body[data-variant='lore'] :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.4rem 0;
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+  }
+  .prose-body[data-variant='lore'] :global(th) {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dim);
+    font-weight: 400;
+    border-bottom: 1px solid var(--hair);
+    padding: 0.5rem 0.8rem 0.5rem 0;
+  }
+  .prose-body[data-variant='lore'] :global(td) {
+    color: var(--dim);
+    border-bottom: 1px solid var(--hair);
+    padding: 0.6rem 0.8rem 0.6rem 0;
+    vertical-align: top;
+  }
+  /* The editorial frame: the site's voice introducing the artifact. */
+  .prose-body[data-variant='lore'] :global(.frame) {
+    border-left: 1px solid var(--hair);
+    padding-left: 1rem;
+    margin-bottom: 2.4rem;
+  }
+  .prose-body[data-variant='lore'] :global(.frame p) {
+    font-style: italic;
+    color: var(--dim);
+  }
 
   /* chapter */
   .prose-body[data-variant='chapter'] {

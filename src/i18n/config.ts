@@ -18,10 +18,17 @@ export const OG_LOCALE: Record<Locale, string> = {
   pt: 'pt_BR',
 };
 
-/** Every route on the site, without locale prefix or slashes. '' is home. */
+/**
+ * Every route on the site, without locale prefix or slashes. '' is home.
+ *
+ * `read` stays in this list although it is not in the nav: the pages still
+ * build and the language toggle still resolves for anyone holding a URL. What
+ * hides it is Header's link list and the `noindex` on the pages themselves.
+ */
 export const ROUTES = [
   '',
   'read',
+  'lore',
   'worlds',
   'gods',
   'hybrids',
