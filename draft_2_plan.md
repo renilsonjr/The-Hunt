@@ -262,7 +262,11 @@ Three things this buys:
 | 17 — the platform | written | 1,400 |
 | 18 — on paper | written | 1,960 |
 | 19 — Uxies II | written | 1,831 |
-| **total** | | **33,868** |
+| 20 — eighty-nine ninety-five | written | 1,453 |
+| 21 — the compass | written | 1,492 |
+| 22 — two columns | written | 1,245 |
+| 23 — the roof | written | 1,843 |
+| **total** | | **39,901** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
@@ -489,7 +493,56 @@ before his eldest was born. And on the sleeping: *"It's in the terms. There's a
 paragraph. I've read it about four hundred times and I still couldn't tell you
 what it means, but it's there, and it's not about people like me."*
 
-Remaining: Draft 1 chapters 8–14 → Draft 2 20–25, 27–31; Uxies III and IV; and
-the Fridan-life threading. **Uxies III goes inside the 20–25 run**, not after
-it — six consecutive Fridan chapters is the problem the interleaving exists to
-prevent.
+**Chapters 1 through 23 run unbroken.** The remaining shape is now fixed:
+
+| | |
+|---|---|
+| **24** | **Uxies III** — new, placed here rather than after the run |
+| 25–26 | D1 ch10 — the supermarket and the deduction; then the launderette |
+| 27–28 | D1 ch11 — the terms and the number; then the long version |
+| 29 | D1 ch12 — the mirror |
+| 30 | D1 ch13 — the test |
+| 31 | D1 ch14 — the yard |
+| 32 | Uxies IV — new, the hours after |
+| Epi 1–2 | from D1 |
+
+Uxies III lands directly after the severance on purpose. The reader watches
+Fridan lose the only thing that was ever listening to him, and then cuts to a
+woman standing in an industrial yard, leaning her whole self toward something
+that has never answered — which is the same condition, arrived at from opposite
+directions.
+
+Chapter 22 has Fridan argue himself *into* the roof rather than simply
+deciding on it — under headings, the way he would kill a bad timetable
+proposal — and the last risk is the real one: *two-thirds noble and one-third a
+man who wants to be spoken to, and I cannot separate the thirds.* It also
+sharpens why "she knew" is unbearable (not a decision, which could be argued
+with, but never having been interesting enough to be a problem) and plants the
+crack: every one of six months of conversations terminates at the same door.
+
+Chapter 23 keeps Zalian to her one line per §4 and grows the scan instead —
+being *legible*, both notebook columns read together — plus the confession that
+for two seconds it was the best thing that had ever happened to him, because
+being entirely known means not having to give an account. Chapter 18 is what
+makes that land.
+
+Chapter 20's new material is the emotional logic connecting it to Chapter 18.
+Having failed to be believed by a person, he goes to a company — and the reason
+is not just that the answer would be checkable but that *the company does not
+have to believe him*. **"It would look at the material and produce a number,
+and the number would be true or false regardless of what anybody thought of the
+man who sent it."** Which is what makes 0.6% and *likely to dislike coriander*
+land as hard as they do.
+
+Chapter 21 gives the reveal its room. The fragment is deliberately
+under-described, per §4 — small, old, and quiet in the way a laundry ball on a
+white shelf is quiet — and the weight goes on the match instead: the same
+event, filed and available, that happened in his chest in a doorway on the
+third floor. Then the compass. *It would have been in any other body it
+happened to land in, and it had done what it did with no more regard for Fridan
+than a compass has for the hand that is holding it.*
+
+And the Barrier passage now sits next to the open window in December, with the
+narration refusing to make the connection for him: he has read that page of his
+own document more often than any other and has never been able to make it say
+anything except what it says.
