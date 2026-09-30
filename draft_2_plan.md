@@ -262,7 +262,9 @@ Three things this buys:
 | 17 — the platform | written | 1,400 |
 | 18 — on paper | written | 1,960 |
 | 19 — Uxies II | written | 1,831 |
-| **total** | | **33,868** |
+| 22 — two columns | written | 1,245 |
+| 23 — the roof | written | 1,843 |
+| **total** | | **36,956** |
 
 Draft 1's Chapter 4 was 1,959 words carrying four roadmap chapters. It is now
 three chapters and **5,522 words** — the largest single improvement available
