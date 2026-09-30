@@ -8,7 +8,7 @@ A science-fiction novel in development, plus early product concepts for adapting
 
 | | |
 |---|---|
-| 📖 **[Read the novel](https://renilsonjr.github.io/The-Hunt/read/)** | The complete first draft — sixteen chapters |
+| 📜 **[The founding document](https://renilsonjr.github.io/The-Hunt/lore/)** | Concept, lore and synopsis, as written before the novel existed |
 | 🌗 **[Website concept](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html#site)** | The two worlds either side of the Barrier |
 | 🎮 **[Game concept](https://renilsonjr.github.io/The-Hunt/concepts/worlds-of-the-hunt.html#game)** | Four playable scenes — pick a chapter, then a line |
 
@@ -26,6 +26,8 @@ A science-fiction novel in development, plus early product concepts for adapting
 | [`dream-log-2026-08-26.md`](dream-log-2026-08-26.md) | The original dream log, the document everything else grew out of |
 | [`book_roadmap.md`](book_roadmap.md) | Six-phase development plan from dream log to published illustrated novel |
 | [`src/content/chapters/`](src/content/chapters/) | The novel. The first draft, sixteen chapters, one Markdown file each |
+| [`manuscript/draft-2/`](manuscript/draft-2/) | The second draft in progress — 32 chapters planned, not yet published |
+| [`draft_2_plan.md`](draft_2_plan.md) | The revision plan: where Draft 1 is thin, and what Draft 2 does about it |
 | [`src/`](src/) | The site (below) |
 | [`src/assets/art/`](src/assets/art/) | 22 illustrations — character sheets, world plates, key scenes |
 | [`public/concepts/`](public/concepts/) | Interactive product concepts (below) |
@@ -47,7 +49,8 @@ Every one of these exists in both languages — `/gods/` and `/pt/gods/`, and so
 | Route | What it is |
 |---|---|
 | `/` | Landing page |
-| `/read/` · `/read/<slug>/` | The novel — contents page and one page per chapter |
+| `/lore/` | The founding document: concept, lore and synopsis, preserved from before the novel |
+| `/read/` · `/read/<slug>/` | The novel. **Currently unlisted** — the pages build and resolve, but they are absent from the nav and the sitemap and carry `noindex` while the first draft there is replaced |
 | `/worlds/` | Earth 1 and Earth 2 either side of the Barrier |
 | `/gods/` · `/hybrids/` | Zalian and Balian; Fridan and Uxies |
 | `/sphere/` | The Sphere and the glyph |

@@ -11,9 +11,11 @@ interface Props {
   heading: string;
   /** See Head's prop of the same name. Defaults to `route` there. */
   pagePath?: string;
+  /** Keep this page out of search results. Forwarded to BaseLayout. */
+  noindex?: boolean;
 }
 
-const { locale, route, title, description, eyebrow, heading, pagePath } = Astro.props;
+const { locale, route, title, description, eyebrow, heading, pagePath, noindex } = Astro.props;
 ---
 <BaseLayout
   locale={locale}
@@ -21,6 +23,7 @@ const { locale, route, title, description, eyebrow, heading, pagePath } = Astro.
   title={title}
   description={description}
   pagePath={pagePath}
+  noindex={noindex}
 >
   <article class="page">
     <p class="eyebrow">{eyebrow}</p>

@@ -90,9 +90,12 @@ describe('sitemap', () => {
     expect(existsSync(dist('sitemap-0.xml'))).toBe(true);
   });
 
-  it('lists every route in every locale', () => {
+  it('lists every advertised route in every locale', () => {
     const xml = read('sitemap-0.xml');
-    const builtPages = findBuiltPages('');
+    // /read/ builds but is deliberately unlisted while the first draft there
+    // is being replaced, so it is excluded from the sitemap by config and must
+    // be excluded from this expectation too. See astro.config.mjs.
+    const builtPages = findBuiltPages('').filter((page) => !/(^|\/)read(\/|$)/.test(page));
 
     // Convert pages to expected sitemap URLs
     // Format: https://renilsonjr.github.io/The-Hunt/{page}/
