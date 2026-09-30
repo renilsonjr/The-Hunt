@@ -15,7 +15,7 @@ The most original elements (updated):
 - **Atmospheric incompatibility as the physical Barrier** — two civilizations that literally cannot breathe the same air. Only hybrids can survive both. This biological lock is more visceral than any technological barrier in comparable sci-fi.
 - **The DNA loophole as a cosmic backdoor** — a divine being's genetic fragment hidden in an ordinary human, used to thread a signal through a god's biological blind spot.
 - **Zalian's speech-only constraint** — a god who cannot read minds, only words. Dreams are the single exception. This mechanic is original and has enormous narrative implications.
-- **Fridan's transformation** — contact with the Sphere makes him less human and more Virden, causing the god to withdraw her protection. The artifact doesn't grant power — it contaminates, and the contamination costs him everything.
+- **Fridan's transformation** — contact with the Sphere wakes a fragment of Balian that was in him from birth, causing the god to withdraw her protection. The artifact doesn't grant power and it doesn't contaminate: it *switches on* something he was always carrying, and being switched on costs him everything. The horror is not that he was given something. It is that it was already his.
 - **The mirror-Virden (Second Lore)** — a Virden in Earth 2 who carries Zalian's DNA, mirroring Fridan's situation in reverse. Two hybrids, one in each world, potentially forming a circuit across an impossible barrier.
 - **Manipulation at every scale** — Earth 2 manipulated Zalian. They manipulated Fridan. The Second Faction manipulated Fridan. The story has no clean heroes, only degrees of deception.
 

@@ -23,7 +23,7 @@ Then he opened the window as far as it would go, and lay down on top of the bed 
 
 He had one advantage and it was the only one he ever had, and it was that he was nothing.
 
-Everything on that side of the operation was built to see infrastructure. It watched for signal, for apparatus, for the great patient machinery of a civilisation reaching across; it had been watching for eleven thousand years and it was extremely good at it. A man on a bed in Nor Yesey with a residue in him and no equipment at all was not below its threshold in the sense of being hidden. He was below it in the sense that a moth is below a customs regime.
+Everything on that side of the operation was built to see infrastructure. It watched for signal, for apparatus, for the great patient machinery of a civilisation reaching across; it had been watching for eleven thousand years and it was extremely good at it. A man on a bed in Nor Yesey with one woken fragment in him and no equipment at all was not below its threshold in the sense of being hidden. He was below it in the sense that a moth is below a customs regime.
 
 He went out under everything.
 

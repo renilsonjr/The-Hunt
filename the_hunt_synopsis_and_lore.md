@@ -6,7 +6,7 @@
 ---
 
 ## 📑 Logline
-When an ordinary man in Nor Yesey wakes with forbidden memories of an impossible dream, he discovers he was exploited as an unwitting biological key by an advanced sibling civilization to extract the master codes of creation from God herself. Severed from divine grace and transformed into something no longer purely human, he must execute a daring reverse-engineering of the dream realm to reach an unsuspecting hybrid in an alien galaxy and warn a creator who can no longer hear him.
+When an ordinary man in Nor Yesey wakes with forbidden memories of an impossible dream, he discovers he was exploited as an unwitting biological key by an advanced sibling civilization to extract the master codes of creation from God herself. Severed from divine grace, and carrying a fragment of an alien god that was always in him and is now awake, he must execute a daring reverse-engineering of the dream realm to reach an unsuspecting hybrid in an alien galaxy and warn a creator who can no longer hear him.
 
 ---
 
@@ -95,11 +95,17 @@ Fridan attempts to process the morning after. The physical world feels hollow, w
 
 **Absolute silence.**
 
-When Fridan touched the Sphere, it did not merely bestow knowledge; it completed a genetic exchange, embedding ancient Virden biology into his system. Scanning his soul, Zalian detects the hybrid signature. Bound by her ancient laws regarding the Barrier and the balance of creation, **she permanently severs her connection to him.** Fridan is cast out—unprotected, alone, and no longer entirely human.
+When Fridan touched the Sphere, **nothing was put into him and nothing was exchanged.** The Sphere and the fragment are the same kind of thing, and contact woke what had been dormant in his genome since birth. That waking is what expanded his cognition to universal scale and let him understand, for a few seconds, the whole of what was being done in that building.
+
+It is also why he remembered. **The suppression that ends every run was applied to him exactly as it is applied to everyone, and it failed** — because it is built for a human mind, and for a few seconds his had stopped being only that. The fragment is the cause of everything that follows. Not a gift, not an accident, not a rival faction's interference: the thing that was already inside him.
+
+Scanning him, Zalian finds that fragment **awake**. Bound by her ancient laws regarding the Barrier and the balance of creation, **she permanently severs her connection to him.** Fridan is cast out — unprotected, alone, and switched on.
+
+And the question that severance leaves behind is the one Act 2 has to answer: *she made him. How did she not know what was in him?*
 
 Soon, shadowy operatives from the **Second Faction** approach him. Playing the role of sympathetic liberators, they claim Earth 2 is an egalitarian paradise seeking peaceful coexistence with their creator. But Fridan, whose cognitive faculties are rapidly evolving due to the Virden integration, spots the cracks in their narrative. They are not liberators; they are manipulative opportunists trying to harness the creation codes extracted during his Hunt.
 
-Synthesizing his personal memory, the Sphere's transferred knowledge, and the mechanics of his exploitation, Fridan achieves a breakthrough deduction:
+Synthesizing his personal memory, what the woken fragment lets him reach, and the mechanics of his exploitation, Fridan achieves a breakthrough deduction:
 1. Earth 2 hijacked Zalian’s trust by anchoring a signal to his dormant **Balian DNA**.
 2. Zalian never knew she was being tapped because she respects conscious free will and can only commune during dreams.
 3. Therefore, an inverse mirror must exist on Earth 2: a Virden carrying **Zalian DNA**.

@@ -175,6 +175,46 @@ first:
 
 ---
 
+## 5b. A canon correction, 2026-09-29
+
+**The Sphere transfers nothing.** The early lore said touching it completed a
+genetic exchange and left Fridan "no longer entirely human." That is wrong and
+is now corrected everywhere: the Balian fragment was in him from birth, dormant
+and unreadable, and the Sphere — the same kind of thing as the fragment — simply
+**woke** it. The waking is the expansion. Nothing was added.
+
+It also relocates the cause of the whole story. He was supposed to forget by
+morning; the suppression ran correctly and **failed**, because it is built for a
+human mind and for a few seconds his had stopped being only that. *The fragment
+already inside him is the culprit.*
+
+This collided with Draft 1's Chapter 13, where Anser said **"There was nothing
+to break"** — i.e. no suppression was ever applied. That is now replaced with
+*"You did. Or the thing in you did, which is the same sentence said politely."*
+The suppression was applied, exactly as it is to everyone, and lost.
+
+**The reveal survives the correction**, which is why this is an improvement
+rather than a loss. Earth 2 ran four hundred near matches, on whom the wipe
+always held, and knew it would not hold on him — and ran him anyway, and stood
+back. He was still the product; they simply did not have to leave the memory,
+because they knew they could not take it.
+
+It also sharpens the severance. Zalian does not find a man who has been altered.
+She finds the fragment **awake** — a thing that was in one of her own humans his
+whole life, that she made, and never saw. Her halt is not disgust. It is a god
+meeting her own blind spot, which is why the closest word Fridan ever found for
+what came off her was *grief*.
+
+> **New open question, now load-bearing:** she made him. How did she not know
+> what was in him? Recorded at the top of `story_bible.md`'s open questions.
+> Chapters 27–31 should press on it rather than resolve it cleanly.
+
+**Chapters 29 and 31 must not call it a residue.** Draft 1's Chapter 12 used
+that word for what the Sphere left behind; there is nothing left behind. It is
+equipment he was always carrying, switched on.
+
+---
+
 ## 6. Open, and genuinely the author's
 
 - ~~Whether the book opens on the Hunt or the night before~~ — **the night before**
