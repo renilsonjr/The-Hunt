@@ -9,7 +9,7 @@ heading: "Concept, Lore & Synopsis"
 
 This is the document the whole project grew out of: the cosmology, the two Earths, the Barrier and the full three-act synopsis, written **before a single chapter of the novel existed**.
 
-It is reproduced here exactly as it stood then. The draft has since diverged from it in three places — how Balian's fragment reached Earth 1, what the Second Faction actually wants, and what Zalian does at the end — and those divergences are recorded in `story_bible.md` rather than corrected here. The point of this page is that it is *not* corrected.
+It is reproduced here exactly as it stood then. The draft has since diverged from it in four places — how Balian's fragment reached Earth 1, what the Second Faction actually wants, what Zalian does at the end, and, most importantly, what the Sphere did. This document says touching it *completed a genetic exchange*. It did not. Nothing was added to Fridan and nothing was traded; the fragment was already in him and the Sphere only woke it. Those divergences are recorded in `story_bible.md` rather than corrected here. The point of this page is that it is *not* corrected.
 
 </div>
 

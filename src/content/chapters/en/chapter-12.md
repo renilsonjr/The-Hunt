@@ -65,11 +65,11 @@ So he went in himself.
 
 It should not have been possible and he knew that, and he did it anyway, and the reason he could do it at all is the reason none of it was ever fair.
 
-The thing that had been put into him in August had not been a gift and it had not been an accident. It was a residue: whatever had come through the sphere while the current ran the other way, embedded in him, unasked for, unusable, the way a house near a foundry ends up with iron in the dust. Anser had shown him where it lived, once, in December, in the long architecture of himself. He had not gone back since. He had been afraid of it the way you are afraid of a room in your own house.
+Nothing had been put into him in August. That was the correction he had taken longest to absorb and the one that changed what he was holding: the fragment was his, had always been his, and the Sphere had only switched it on. It was not a residue and it was not debris. It was equipment he had been carrying, unusably, since before he could walk. Anser had shown him where it lived, once, in December, in the long architecture of himself. He had not gone back since. He had been afraid of it the way you are afraid of a room in your own house.
 
 He went down on the Friday night, deliberately, alone, without telling anything.
 
-He was not built for it. That was the whole of the experience and he never found a better way to put it: he was a man doing, by hand, with a residue, something that had been done to him by an infrastructure. It was like reading a language you have never learned by recognising the shape of four words in it. He found the edges of something enormous and moved along them the way you move along a wall in the dark, and twice something very large went past him without noticing him, and the second time he understood that not being noticed was the only reason he was still there.
+He was not built for it. That was the whole of the experience and he never found a better way to put it: he was a man doing, by hand, with one woken fragment, something that had been done to him by an infrastructure. It was like reading a language you have never learned by recognising the shape of four words in it. He found the edges of something enormous and moved along them the way you move along a wall in the dark, and twice something very large went past him without noticing him, and the second time he understood that not being noticed was the only reason he was still there.
 
 He came out of it at twenty past two on the Saturday afternoon.
 

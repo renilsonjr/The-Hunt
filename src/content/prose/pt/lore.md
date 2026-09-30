@@ -9,7 +9,7 @@ heading: "Conceito, Lore e Sinopse"
 
 Este é o documento do qual todo o projeto nasceu: a cosmologia, as duas Terras, a Barreira e a sinopse completa em três atos, escritos **antes de existir um único capítulo do romance**.
 
-Ele é reproduzido aqui exatamente como estava na época. O rascunho divergiu dele em três pontos — como o fragmento de Balian chegou à Terra 1, o que a Segunda Facção realmente quer, e o que Zalian faz no final — e essas divergências estão registradas em `story_bible.md`, não corrigidas aqui. O sentido desta página é justamente que ela *não* foi corrigida.
+Ele é reproduzido aqui exatamente como estava na época. O rascunho divergiu dele em quatro pontos — como o fragmento de Balian chegou à Terra 1, o que a Segunda Facção realmente quer, o que Zalian faz no final e, sobretudo, o que a Esfera fez. Este documento diz que tocá-la *provocou uma troca genética*. Não provocou. Nada foi acrescentado a Fridan e nada foi trocado; o fragmento já estava nele e a Esfera apenas o despertou. Essas divergências estão registradas em `story_bible.md`, não corrigidas aqui. O sentido desta página é justamente que ela *não* foi corrigida.
 
 </div>
 

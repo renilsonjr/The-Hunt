@@ -52,7 +52,7 @@
 - **Her communication constraint:** Zalian can only understand what beings **say aloud** — not what they think. This is a deliberate aspect of the free will framework she built. She will not invade a mind; she only receives what is consciously offered. **This is her limitation — and the reason dreams are the only place where she can read minds**, because in dreams, the boundary between thought and speech dissolves.
 - **Her knowledge of Fridan:** Zalian **is aware** of the Balian DNA fragment in Fridan's genome. She has always known it was there. But she cannot stop him — she made a law for herself: no interference with a creature's free will. She watches, but she does not act.
 - **Her understanding of time:** Gods understand time differently from humans — they see all its branches simultaneously. Zalian knew what Fridan was, what he would be used for, and what would happen. She allowed it. Why? Was Fridan's existence a mistake — or a deliberate seed? A chance at unification between the two worlds?
-- **Why she severs contact:** After Fridan touches the sphere and wakes remembering, Zalian scans him. She finds he is **no longer 100% human.** The sphere transferred Virden knowledge into his biology — he is now a hybrid, less human and more Virden.
+- **Why she severs contact:** After Fridan touches the sphere and wakes remembering, Zalian scans him — and finds the Balian fragment **awake.** Nothing was added to him and nothing was exchanged: the fragment had been in him since birth, dormant and unreadable, and the Sphere woke it. What she is looking at is not a man who has been altered. It is a man who has been *switched on*, and who was always capable of being switched on, in front of a god who never noticed.
 - **What "severing" actually is — REFINED.** She does not cut a channel; there is no channel to cut. She hears every word spoken aloud by everyone, always, as a property of the universe she made. What she does is *decide not to attend* to him — which means she went on hearing every word he said for the whole of the year he spent believing he had been discarded. It also means the withdrawal is reversible in principle, and that a reason, not a mechanism, is what stands in the way.
 - **And the reason is protective.** Whatever is at the other end of this reads her attention, so anything she attends to they get for free. Taking Fridan out of her regard is the only way she has of taking him out of theirs. She could not tell him that without telling them. Fridan reasons his way to this in Chapter 10 and she confirms it in the epilogue; he can never verify it in between.
 - **What she doesn't know:** That Fridan has already had contact with the Earth 2 civilization. That they convinced him they are peaceful. That they are manipulating him. Zalian assumed the threat was only the barrier breach — she doesn't yet know how far Fridan has already been turned.
@@ -101,8 +101,10 @@
 
 ### Fridan's Transformation
 After touching the Sphere and waking with memory:
-- The Sphere did not just enlighten him — it **transferred** something. Ancient Virden knowledge embedded itself into his biology.
-- He is now **less human and more Virden.** Not physically visible on the outside — but detectable by Zalian.
+- **Nothing was transferred. Nothing was exchanged.** This is the single most important correction to the early lore: the Sphere is not a needle and it did not put anything into him.
+- What it did was **wake what was already there.** The Balian fragment had been dormant in his genome his whole life. Contact with the Sphere — the same kind of thing as the fragment — roused it.
+- The waking is what expanded his cognition to universal scale, and what let him understand, for a few seconds, the whole of what was being done in that building.
+- He is not *less human and more Virden* than he was the day before. He is exactly what he always was, running.
 - He knows the world he lives in is hiding enormous things. He knows the god he was in contact with was hiding things from him.
 - He wants more. He wants to find Zalian again — to warn her. But he also wants answers only the Virden can give him.
 
@@ -132,7 +134,7 @@ After touching the Sphere and waking with memory:
   - A **Balian code signature** — proof it was engineered by Earth 2, not made by Zalian
   - An **activation key** — only readable by a being with Balian DNA, which is why only Fridan could find it in the dream
   - A **serial number** — not the first sphere. The Hunt has run before.
-- **What it did to Fridan:** Temporarily expanded his cognition to universal scale. Total clarity. The feeling of knowing what he should know. And then — it transferred. Virden knowledge embedded into his biology. He woke up different.
+- **What it did to Fridan:** It woke the Balian fragment already in him, and the waking expanded his cognition to universal scale. Total clarity. The feeling of knowing what he should know. It added nothing. He did not wake up carrying something new; he woke up with something old switched on.
 - **What it did for Earth 2:** Extracted everything Zalian communicated through the dream, everything Fridan processed, and transmitted it all to Earth 2's receivers. The sphere is a two-way interface: gift and extraction simultaneously.
 - **What it may actually be:** A key. The final component Earth 2 needs to either establish a permanent channel with Zalian — or to enable physical crossing of the Barrier.
 
@@ -192,7 +194,7 @@ This is the free will mechanic Zalian built into the universe:
 
 - He processes the dream. Tries to reconnect with Zalian. Silence.
 - The Second Faction makes contact. They tell him: Earth 2 is peaceful. They need his help.
-- He begins to believe them. He is corrupted by the knowledge he carries — and by what the sphere transferred into his DNA.
+- He begins to believe them. He is corrupted by the knowledge he carries — and by the fragment now awake in him, which was always his.
 - He learns: what the Barrier actually is. What the Virden are. Why he was selected.
 - He discovers: Zalian knew about his Balian DNA fragment all along. She chose not to stop it.
 - Zalian scans him. She sees what he has become. She closes the connection.
@@ -235,6 +237,7 @@ This is the free will mechanic Zalian built into the universe:
 
 ## Open Development Questions
 
+- [ ] **How did Zalian make Fridan and not know what was in him?** She made Earth 1 and everyone on it. A fragment of her brother's lineage sat dormant in one of her own humans for thirty-four years — for a hundred thousand years, in the line — and she never saw it. Did she not look? Could she not look, by her own law? Or did she look, see nothing, and be wrong? *This is the question Act 2 has to answer, and it is the reason the severance hurts her.*
 - [ ] What did Balian and Zalian actually fight about before the deal?
 - [ ] How did Balian's followers build the dream-infiltration tech using Balian's blueprint of the DNA loophole?
 - [ ] Who is the Second Faction — rogue Earth 2 cell, human secret society, or a third party? *(The draft keeps all three live and never answers it.)*

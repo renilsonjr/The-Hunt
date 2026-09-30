@@ -6,7 +6,7 @@
 ---
 
 ## 📑 Logline (Premissa)
-Quando um homem comum em Nor Yesey acorda com memórias proibidas de um sonho impossível, ele descobre que foi explorado como uma chave biológica inconsciente por uma civilização irmã avançada para extrair os códigos mestre da criação da própria Deusa. Cortado da graça divina e transformado em algo não mais puramente humano, ele precisa realizar uma ousada engenharia reversa no reino dos sonhos para alcançar uma híbrida desavisada em uma galáxia alienígena e alertar uma criadora que não pode mais ouvi-lo.
+Quando um homem comum em Nor Yesey acorda com memórias proibidas de um sonho impossível, ele descobre que foi explorado como uma chave biológica inconsciente por uma civilização irmã avançada para extrair os códigos mestre da criação da própria Deusa. Cortado da graça divina, e carregando um fragmento de um deus alienígena que sempre esteve nele e agora está desperto, ele precisa realizar uma ousada engenharia reversa no reino dos sonhos para alcançar uma híbrida desavisada em uma galáxia alienígena e alertar uma criadora que não pode mais ouvi-lo.
 
 ---
 
@@ -95,7 +95,13 @@ Na manhã seguinte, Fridan tenta digerir o que vivenciou. O mundo físico parece
 
 **Silêncio absoluto.**
 
-Ao tocar na Esfera, ocorreu uma troca genética profunda: o artefato implantou biologia ancestral Virden em suas células. Ao examinar a alma de Fridan, Zalian detecta a assinatura híbrida. Presa às suas leis imutáveis sobre a Barreira e o equilíbrio das galáxias, **ela corta total e permanentemente sua conexão com ele.** Fridan é expulso — desprotegido, solitário e não mais 100% humano.
+Ao tocar na Esfera, **nada foi implantado nele e não houve troca alguma.** A Esfera e o fragmento são a mesma espécie de coisa, e o contato despertou aquilo que estava adormecido no genoma dele desde o nascimento. Esse despertar é o que expandiu sua cognição à escala universal e o fez compreender, por alguns segundos, tudo o que estava sendo feito naquele prédio.
+
+É também por isso que ele se lembrou. **A supressão que encerra toda corrida foi aplicada nele exatamente como é aplicada em todos, e falhou** — porque foi construída para uma mente humana, e por alguns segundos a dele havia deixado de ser apenas isso. O fragmento é a causa de tudo o que vem depois. Não um presente, não um acidente, não a interferência de uma facção rival: a coisa que já estava dentro dele.
+
+Ao examiná-lo, Zalian encontra esse fragmento **desperto**. Presa às suas leis imutáveis sobre a Barreira e o equilíbrio das galáxias, **ela corta total e permanentemente sua conexão com ele.** Fridan é expulso — desprotegido, solitário e ligado.
+
+E a pergunta que essa ruptura deixa é a que o Ato 2 precisa responder: *ela o criou. Como não sabia o que havia dentro dele?*
 
 Logo, agentes misteriosos da **Segunda Facção** entram em contato. Fazendo-se passar por aliados que lutam pela coexistência pacífica, tentam convencê-lo de que a Terra 2 é um lugar justo. Mas Fridan, cuja cognição evolui aceleradamente devido à fusão biológica com a sabedoria Virden, percebe as mentiras da facção. Eles não são salvadores; são oportunistas tentando usurpar os códigos de criação extraídos de seu sonho.
 

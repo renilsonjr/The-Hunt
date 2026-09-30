@@ -33,7 +33,7 @@ Phase 6 → Publishing        (Format + distribution)
 - [x] Atmospheric incompatibility — the physical Barrier mechanic
 - [x] Zalian's speech-only constraint (cannot read thoughts, only words)
 - [x] Fridan's post-sphere transformation (less human, more Virden)
-- [x] Why Zalian severs contact (Fridan is no longer 100% human)
+- [x] Why Zalian severs contact (she finds the Balian fragment in him **awake** — nothing was added to him; it was always there)
 - [x] The Second Faction's manipulation of Fridan
 - [x] The Second Lore: a Virden in Earth 2 carries a Zalian DNA fragment
 
@@ -61,7 +61,7 @@ Phase 6 → Publishing        (Format + distribution)
 - What is Fridan's age, job, and background? What specific life experiences made him the highest probability match?
 - How did a Balian DNA fragment end up in his Earth 1 lineage — was it ancient drift, a secret ancestor, or Zalian's deliberate choice?
 - Does he have family, a partner, or a close friend who witnesses his transformation in Act 2?
-- Can he physically survive Earth 2's atmosphere now that the Sphere transferred Virden biology into him?
+- Can he physically survive Earth 2's atmosphere now that the fragment in him is awake? (Nothing was transferred — the question is what a woken fragment does to a human body, not what was added to it.)
 
 **About Uxies (The Second Lore):**
 - How does Uxies perceive the subtle Zalian DNA resonance in her daily life on Earth 2?

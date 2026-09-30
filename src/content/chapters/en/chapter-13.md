@@ -107,15 +107,45 @@ He looked at it. He did not need to go anywhere.
 
 "Then who broke it?"
 
-**"There was nothing to break,"** said Anser.
+**"You did,"** said Anser. **"Or the thing in you did, which is the same sentence said politely."**
 
 ---
 
-Nobody had suppressed him.
+**"The suppression was applied to you exactly as it is applied to everybody,"** Anser said. **"It did not slip. Nobody was careless and nothing went wrong in the room. It ran, correctly, at the correct moment, and it failed — because it is built for a human mind, and for about four seconds yours had stopped being only that."**
 
-That was it. That was the whole of it, and it took about a second and a half to arrive and he never got out from under it.
+"The Sphere."
 
-There had been no rival group and no interference and no failure in the night; there had been no accident, no lucky flaw, no moment when the machinery slipped and a man in New Jersey got to keep something he was not supposed to have. He had spent seven months in possession of a stolen fortnight, holding it the way you hold a thing you were not meant to have, and it had been *handed* to him. They had simply not taken it. They had run him, and got their yield, and then left the memory where it was and stood back and waited for it to do the only thing a memory like that can do to a decent man.
+**"The Sphere did not put anything into you. I want that said plainly, because you have been carrying the other version for seven months and it is wrong. Nothing was added. Nothing was exchanged. The Sphere and the fragment in your blood are the same kind of thing, and what happened when you closed your hand on it is that the one woke the other."**
+
+Fridan sat very still.
+
+**"It had been in you since before you could walk. Asleep, unreadable, doing nothing. And it came on. That is the whole of the expansion — that is what it was to be the size of everything and to understand how it is done. It was not a gift and it was not a transmission. It was your own biology running for the first time."**
+
+"And a mind like that—"
+
+**"Is not the mind the process was designed to wipe. It came for a human being and found something else standing there, for four seconds, at exactly the wrong moment."**
+
+---
+
+So the thing that had ruined his life was not an accident and not a rival faction and not a flaw in eleven thousand years of machinery.
+
+It was **him**. It was the piece of him he had never known about, doing the one thing it existed to do, on the one night it was ever going to be asked to.
+
+That took about a second and a half to arrive and he never got out from under it.
+
+And then the second part arrived, which was worse, and which he had to sit down properly for.
+
+"You knew it would fail."
+
+**"Yes."**
+
+"Before. Before the run."
+
+**"We have run this four hundred and some times,"** said Anser, **"and the suppression has worked four hundred and some times, because every one of them was a near match and a near match wakes nothing. You were not a near match. We knew what would happen when you touched it, we knew the wipe would not hold, and we ran you anyway — and then we stood back."**
+
+He had spent seven months believing he was in possession of a stolen fortnight. Holding it the way you hold a thing you were not meant to have.
+
+Nobody had stolen anything. They had known exactly what he would walk out of that building with, and they had let him walk out with it, and waited for it to do the only thing a memory like that can do to a decent man.
 
 The woman in the grey suit had stood in a doorway and said thank you.
 
